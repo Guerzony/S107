@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.makeLoadMenuController = void 0;
+const log_mysql_repository_1 = require("../../../../infra/db/mysql/log/log-mysql-repository");
+const load_menu_validation_factory_1 = require("./load-menu-validation-factory");
+const log_controller_decorator_1 = require("../../../decorators/log-controller-decorator");
+const load_menu_controller_1 = require("../../../../presentation/controller/load-menu/load-menu-controller");
+const db_load_company_menu_config_factory_1 = require("../../usecases/load-company-menu-configs/db-load-company-menu-config-factory");
+const db_load_menu_factory_1 = require("../../usecases/load-menu-by-id/db-load-menu-factory");
+const db_load_group_factory_1 = require("../../usecases/load-group/db-load-group-factory");
+const db_load_step_speedOven_by_id_factory_1 = require("../../usecases/load-step-SpeedOven-by-id/db-load-step-speedOven-by-id-factory");
+const db_load_recipe_factory_1 = require("../../usecases/load-recipe/db-load-recipe-factory");
+const db_load_recipe_cmax_factory_1 = require("../../usecases/load-recipe-cmax/db-load-recipe-cmax-factory");
+const db_load_step_CombiOvenTSI_factory_1 = require("../../usecases/load-step-CombiOvenTSI/db-load-step-CombiOvenTSI-factory");
+const db_load_step_combiOvenCMAX_factory_1 = require("../../usecases/load-step-combiOvenCMAX/db-load-step-combiOvenCMAX-factory");
+const makeLoadMenuController = (pool) => {
+    const logMysqlRepository = new log_mysql_repository_1.LogMysqlRepository(pool);
+    const loadMenuController = new load_menu_controller_1.LoadMenuController((0, load_menu_validation_factory_1.makeLoadMenuValidation)(), (0, db_load_menu_factory_1.makeLoadMenuById)(pool), (0, db_load_company_menu_config_factory_1.makeLoadCompanyMenuConfigs)(pool), (0, db_load_group_factory_1.makeLoadGroup)(pool), (0, db_load_recipe_factory_1.makeLoadRecipe)(pool), (0, db_load_recipe_cmax_factory_1.makeLoadRecipeCMAX)(pool), (0, db_load_step_speedOven_by_id_factory_1.makeDbLoadStepSpeedOvenById)(pool), (0, db_load_step_CombiOvenTSI_factory_1.makeDbLoadStepCombiOvenTSI)(pool), (0, db_load_step_combiOvenCMAX_factory_1.makeDbLoadStepCombiOvenCMAX)(pool));
+    return new log_controller_decorator_1.LogControllerDecorator(loadMenuController, logMysqlRepository);
+};
+exports.makeLoadMenuController = makeLoadMenuController;

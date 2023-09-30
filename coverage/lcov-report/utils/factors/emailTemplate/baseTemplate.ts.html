@@ -1,0 +1,422 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for utils/factors/emailTemplate/baseTemplate.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">utils/factors/emailTemplate</a> baseTemplate.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>14/14</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>4/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>14/14</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable*/
+'use strict'
+const FACEBOOK = {
+  logo: 'https://praticabr.zendesk.com/attachments/token/O0cQW7GV7miSzPw2YJRZ1ocW7/?name=facebook.jpeg',
+  link: 'https://www.facebook.com/praticabr',
+  alt: 'Facebook'
+}
+const INSTAGRAM = {
+  logo: 'https://praticabr.zendesk.com/attachments/token/VaRgyNPNB8RdRfVaklLbumJMx/?name=instagram.jpeg',
+  link: 'https://www.instagram.com/praticabr/',
+  alt: 'Instagram'
+}
+const LINKEDIN = {
+  logo: 'https://praticabr.zendesk.com/attachments/token/Rn5MldIlqfLlgEnuOZnW3pppx/?name=linkedin.jpeg',
+  link: 'https://www.linkedin.com/company/praticabr/',
+  alt: 'LinkedIn'
+}
+const YOUTUBE = {
+  logo: 'https://praticabr.zendesk.com/attachments/token/t82e3wqiok5OI0Ak9kUYsm2fg/?name=youtube.jpeg',
+  link: 'https://www.youtube.com/user/praticabr',
+  alt: 'YouTube'
+}
+const BASE_TEXT = {
+  headerLogo: 'https://www.praticabr.com/img/logo-pratica.png',
+  company: 'Pratica Klimaquip Ind. e Com. S/A',
+  address: 'Pouso Alegre, MG',
+  emailProtected: 'ajuda@praticabr.com'
+}
+&nbsp;
+/**
+ * @description Return all base e-mail body template.
+ * @param additionalTemplate HTML Template selected to compose this HTML e-mail
+ * @param mainTitle HTML e-mail title
+ */
+function get (additionalTemplate: string, mainTitle: string) {
+  const header = getHeader()
+  const body = createBody(additionalTemplate, mainTitle)
+  const footer = getFooter()
+&nbsp;
+  return header + body + footer
+}
+&nbsp;
+/**
+ * @description Receive a main content in html to add on all entire e-mail HTML body.
+ * @param mainContent HTML content from a specific template.
+ */
+function createBody (mainContent: string, mainTitle: string) {
+  return (
+    '&lt;body style=\'font-family: \'Roboto\', sans-serif;\'&gt;&lt;table border=\'0\' align=\'center\' width=\'100%\' cellpadding=\'0\' cellspacing=\'0\' class=\'main-template\' bgcolor=\'#f9fafc\' style=\'background-color: rgb(249, 250, 252);\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=\'center\' valign=\'top\'&gt;&lt;table border=\'0\' cellpadding=\'0\' cellspacing=\'0\' width=\'590\' class=\'templateContainer\' style=\'max-width:590px!important; width: 590px;\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=\'center\' valign=\'top\'&gt;&lt;div style=\'background-color: rgb(25, 72, 131); border-radius: 0px;\'&gt;' +
+		'&lt;table class=\'rnb-del-min-width\' width=\'100%\' cellpadding=\'0\' border=\'0\' cellspacing=\'0\' style=\'min-width:590px;\' name=\'Layout_1\' id=\'Layout_1\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-del-min-width\' align=\'center\' valign=\'top\' style=\'min-width:590px;\'&gt; &lt;a href=\'#\' name=\'Layout_1\'&gt;&lt;/a&gt;&lt;table width=\'100%\' border=\'0\' cellpadding=\'0\' cellspacing=\'0\' class=\'rnb-container\' bgcolor=\'#194883\' style=\'background-color: rgb(25, 72, 131); border-radius: 0px; padding-left: 20px; padding-right: 20px; border-collapse: separate;\'&gt;&lt;tbody&gt;&lt;tr&gt;' +
+		'&lt;td height=\'20\' style=\'font-size:1px; line-height:0px; mso-hide: all;\'&gt; &amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign=\'top\' class=\'rnb-container-padding\' align=\'left\'&gt;&lt;table width=\'100%\' cellpadding=\'0\' border=\'0\' align=\'center\' cellspacing=\'0\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign=\'top\' align=\'center\'&gt;&lt;table cellpadding=\'0\' border=\'0\' align=\'center\' cellspacing=\'0\' class=\'logo-img-center\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign=\'middle\' align=\'center\' style=\'line-height: 1px;\'&gt;&lt;div style=\'border-top:0px None #000;border-right:0px None #000;border-bottom:0px None #000;' +
+		`border-left:0px None #000;display:inline-block; ' cellspacing='0' cellpadding='0' border='0'&gt;&lt;div&gt;&lt;img width='221' vspace='0' hspace='0' border='0' alt='Prática' style='float: left;max-width:221px;display:block;' class='rnb-logo-img' src='${BASE_TEXT.headerLogo}'&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td height='20' style='font-size:1px; line-height:0px; mso-hide: all;'&gt; &amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;` +
+		'&lt;tr&gt;&lt;td align=\'center\' valign=\'top\'&gt;&lt;div style=\'background-color: rgb(255, 255, 255); border-radius: 0px;\'&gt;&lt;table width=\'100%\' cellpadding=\'0\' border=\'0\' cellspacing=\'0\' name=\'Layout_\' id=\'Layout_\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=\'center\' valign=\'top\'&gt;&lt;a href=\'#\' name=\'Layout_\'&gt;&lt;/a&gt;&lt;table border=\'0\' width=\'100%\' cellpadding=\'0\' cellspacing=\'0\' class=\'rnb-container\' bgcolor=\'#ffffff\' style=\'height: 0px; background-color: rgb(255, 255, 255); border-radius: 0px; border-collapse: separate; padding-left: 20px; padding-right: 20px;\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-container-padding\' style=\'font-size: 18px;font-family: \'Roboto\', sans-serif; color: #000;\'&gt;&lt;table border=\'0\' cellpadding=\'0\' cellspacing=\'0\' class=\'rnb-columns-container\' align=\'center\' style=\'margin:auto;\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class=\'rnb-force-col\' align=\'center\' style=\'text-align: center; font-weight: normal\'&gt;&lt;table border=\'0\' cellspacing=\'0\' cellpadding=\'0\' align=\'center\' class=\'rnb-col-1\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td height=\'10\'&gt;&lt;/td&gt;&lt;/tr&gt;' +
+		`&lt;tr&gt;&lt;td class='content-spacing' style='font-family: 'Roboto', sans-serif; color:#3c4858; text-align:center;'&gt; &lt;span style='color:#3c4858;'&gt;&lt;strong&gt;&lt;span style='font-size:24px;'&gt;${mainTitle}&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td height='10'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;` +
+		'&lt;tr&gt;&lt;td align=\'center\' valign=\'top\'&gt;&lt;div style=\'background-color: rgb(255, 255, 255); border-radius: 0px;\'&gt;' +
+		'&lt;table class=\'rnb-del-min-width\' width=\'100%\' cellpadding=\'0\' border=\'0\' cellspacing=\'0\'style=\'min-width:100%;\' name=\'Layout_5\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-del-min-width\' align=\'center\' valign=\'top\'&gt;' +
+		'&lt;table width=\'100%\' border=\'0\' cellpadding=\'0\' cellspacing=\'0\' class=\'rnb-container\' bgcolor=\'#ffffff\' ' +
+		'style=\'background-color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px; border-collapse: separate; border-radius: 0px; border-bottom: 0px none rgb(200, 200, 200);\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td height=\'20\' style=\'font-size:1px; line-height:0px; mso-hide: all;\'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;' +
+		'&lt;tr&gt;&lt;td valign=\'top\' class=\'rnb-container-padding\' align=\'left\'&gt;&lt;table width=\'100%\' border=\'0\' cellpadding=\'0\' cellspacing=\'0\' class=\'rnb-columns-container\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;th class=\'rnb-force-col\' style=\'text-align: left; font-weight: normal; padding-right: 0px;\' valign=\'top\'&gt;' +
+		'&lt;table border=\'0\' valign=\'top\' cellspacing=\'0\'cellpadding=\'0\' width=\'100%\' align=\'left\'class=\'rnb-col-1\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'content-spacing\' style=\'font-size: 14px;; font-family: \'Roboto\', sans-serif; color:#3c4858; line-height: 21px;\'&gt;' +
+		`${mainContent}` +
+		'&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;' +
+		'&lt;tr&gt;&lt;td height=\'20\' style=\'font-size:1px; line-height:0px; mso-hide: all;\'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;' +
+		'&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;'
+  )
+}
+&nbsp;
+/**
+ * @description Returns all HTML header text, Head, Styles, Metadata and first part from e-mail table body.
+ */
+function getHeader () {
+  return (
+    '&lt;!DOCTYPE html PUBLIC \'-//W3C//DTD XHTML 1.0 Transitional//EN\' \'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\'&gt;&lt;html xmlns=\'http://www.w3.org/1999/xhtml\' xmlns:v=\'urn:schemas-microsoft-com:vml\' xmlns:o=\'urn:schemas-microsoft-com:office:office\'&gt;&lt;head&gt;&lt;meta http-equiv=\'X-UA-Compatible\' content=\'IE=edge\' /&gt;&lt;meta name=\'viewport\' content=\'width=device-width, initial-scale=1\' /&gt;&lt;meta http-equiv=\'Content-Type\' content=\'text/html; charset=utf-8\' /&gt;&lt;meta name=\'x-apple-disable-message-reformatting\' /&gt;' +
+		'&lt;meta name=\'apple-mobile-web-app-capable\' content=\'yes\' /&gt;&lt;meta name=\'apple-mobile-web-app-status-bar-style\' content=\'black\' /&gt;&lt;meta name=\'format-detection\' content=\'telephone=no\' /&gt;&lt;title&gt;&lt;/title&gt;' +
+		'&lt;style&gt;@import url(\'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap\');&lt;/style&gt;' +
+		'&lt;style type=\'text/css\'&gt;.ReadMsgBody{width:100%;background-color:#ebebeb}.ExternalClass{width:100%;background-color:#ebebeb}.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%}a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-family: \'Roboto\', sans-serif !important;font-weight:inherit !important;line-height:inherit !important}' +
+		'body{-webkit-text-size-adjust:none;-ms-text-size-adjust:none}body{margin:0;padding:0}.yshortcuts a{border-bottom:none !important}.rnb-del-min-width{min-width:0 !important}.templateContainer{max-width:590px !important;width:auto !important}img[class=\'rnb-col-3-img\']{max-width:170px}img[class=\'rnb-col-2-img\']{max-width:264px}img[class=\'rnb-col-2-img-side-xs\']{max-width:180px}img[class=\'rnb-col-2-img-side-xl\']{max-width:350px}img[class=\'rnb-col-1-img\']{max-width:550px}img[class=\'rnb-header-img\']{max-width:590px}' +
+		'.rnb-force-col p,ul,ol{margin:0px !important}.rnb-del-min-width p,ul,ol{margin:0px !important}.rnb-tmpl-width{width:100% !important}.rnb-social-width{padding-right:15px !important}.rnb-social-align{float:right !important}li{mso-margin-top-alt:0;mso-margin-bottom-alt:0}table{mso-table-lspace:0pt;mso-table-rspace:0pt}table,tr,td{border-collapse:collapse}p,a,li,blockquote{mso-line-height-rule:exactly}.msib-right-img{mso-padding-alt:0 !important}.content-spacing div{display:list-item;list-style-type:none}' +
+		'@media only screen and (min-width:590px){.templateContainer{width:590px !important}}@media screen and (max-width: 360px){.rnb-yahoo-width{width:360px !important}}@media screen and (max-width: 380px){.element-img-text{font-size:24px !important}.element-img-text2{width:230px !important}.content-img-text-tmpl-6{font-size:24px !important}.content-img-text2-tmpl-6{width:220px !important}}@media screen and (max-width: 480px){td[class=\'rnb-container-padding\']{padding-left:10px !important;padding-right:10px !important}' +
+		'td.rnb-force-nav{display:inherit}.rnb-social-text-left{width:100%;text-align:center;margin-bottom:15px}.rnb-social-text-right{width:100%;text-align:center}}@media only screen and (max-width: 600px){.rnb-text-center{text-align:center !important}td.rnb-force-col{display:block;padding-right:0 !important;padding-left:0 !important;width:100%}table.rnb-container{width:100% !important}table.rnb-btn-col-content{width:100% !important}table.rnb-col-3{float:none !important;width:100% !important;margin-bottom:10px;padding-bottom:10px}' +
+		'table.rnb-last-col-3{float:none !important;width:100% !important}table.rnb-col-2{float:none !important;width:100% !important;margin-bottom:10px;padding-bottom:10px}table.rnb-col-2-noborder-onright{float:none !important;width:100% !important;margin-bottom:10px;padding-bottom:10px}table.rnb-col-2-noborder-onleft{float:none !important;width:100% !important;margin-top:10px;padding-top:10px}table.rnb-last-col-2{float:none !important;width:100% !important}table.rnb-col-1{float:none !important;width:100% !important}img.rnb-col-3-img{width:100% !important}' +
+		'img.rnb-col-2-img{width:100% !important}img.rnb-col-2-img-side-xs{width:100% !important}img.rnb-col-2-img-side-xl{width:100% !important}img.rnb-col-1-img{width:100% !important}img.rnb-header-img{width:100% !important;margin:0 auto}img.rnb-logo-img{width:100% !important}td.rnb-mbl-float-none{float:inherit !important}.img-block-center{text-align:center !important}.logo-img-center{float:inherit !important}.rnb-social-align{margin:0 auto !important;float:inherit !important}.rnb-social-center{display:inline-block}' +
+		'.social-text-spacing{margin-bottom:0px !important;padding-bottom:0px !important}.social-text-spacing2{padding-top:15px !important}}&lt;/style&gt;&lt;style type=\'text/css\'&gt;table{border-spacing:0}table td{border-collapse:collapse}&lt;/style&gt;&lt;/head&gt;'
+  )
+}
+&nbsp;
+/**
+ * @description Return all HTML text with all footer data, social links, address and the final tags from HTML.
+ */
+function getFooter () {
+  const copyright = `© ${new Date(Date.now()).getFullYear()} Prática`
+  return (
+    '&lt;tr&gt;&lt;td valign=\'top\' align=\'center\'&gt;&lt;div style=\'background-color: rgb(249, 250, 252); color: #888888;\'&gt;&lt;table class=\'rnb-del-min-width rnb-tmpl-width\' style=\'min-width:590px;\' name=\'Layout_\' id=\'Layout_\' width=\'100%\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-del-min-width\' style=\'min-width: 590px; background-color: rgb(249, 250, 252);\' valign=\'top\' bgcolor=\'#f9fafc\' align=\'center\'&gt;&lt;table class=\'rnb-container\' width=\'590\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\' align=\'center\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td style=\'font-size:1px; line-height:0px; mso-hide: all;\' height=\'20\'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=\'rnb-container-padding\' style=\'font-size: 14px;; font-family: \'Roboto\', sans-serif; color: #888888;\' valign=\'top\' align=\'left\'&gt;&lt;table class=\'rnb-columns-container\' width=\'100%\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-force-col\' style=\'padding-right:20px; padding-left:20px; mso-padding-alt: 0 0 0 20px;\' valign=\'top\'&gt;' +
+		`&lt;table valign='top' class='rnb-col-2 rnb-social-text-left' style='border-bottom:0;' width='264' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign='top'&gt;&lt;table class='rnb-btn-col-content' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='font-size: 14px;; font-family: 'Roboto', sans-serif; color:#888888; line-height: 16px' class='rnb-text-center' valign='middle' align='left'&gt;&lt;div&gt;&lt;div&gt; ${BASE_TEXT.company}&lt;br&gt; ${BASE_TEXT.address}&lt;br&gt;` +
+		`&lt;a href='#' style='text-decoration: underline; color: rgb(102, 102, 102);'&gt;&lt;span class='__cf_email__'&gt;${BASE_TEXT.emailProtected}&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;td ng-if='item.text.align=='left'' class='rnb-force-col rnb-social-width' style='mso-padding-alt: 0 20px 0 0; padding-right: 15px;' valign='top'&gt;&lt;table valign='top' class='rnb-last-col-2' width='246' cellspacing='0' cellpadding='0' border='0' align='right'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign='top'&gt;&lt;table class='rnb-social-align' style='float: right;' cellspacing='0' cellpadding='0' border='0' align='right'&gt;` +
+		`&lt;tbody&gt;&lt;tr&gt;&lt;td class='rnb-text-center' ng-init='width=setSocialIconsBlockWidth(item)' width='165' valign='middle' align='right'&gt;&lt;div class='rnb-social-center'&gt;&lt;table style='float:left; display: inline-block' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='padding:0px 5px 5px 0px; mso-padding-alt: 0px 2px 5px 0px;' align='left'&gt; &lt;span style='color:#ffffff; font-weight:normal;'&gt; &lt;a target='_blank' href='${FACEBOOK.link}'&gt;` +
+		`&lt;img alt='${FACEBOOK.alt}' style='vertical-align:top;' target='_blank' src='${FACEBOOK.logo}' vspace='0' hspace='0' border='0'&gt;&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class='rnb-social-center'&gt;&lt;table style='float:left; display: inline-block' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='padding:0px 5px 5px 0px; mso-padding-alt: 0px 2px 5px 0px;' align='left'&gt; &lt;span style='color:#ffffff; font-weight:normal;'&gt; &lt;a target='_blank' href='${LINKEDIN.link}'&gt;` +
+		`&lt;img alt='${LINKEDIN.alt}' style='vertical-align:top;' target='_blank' src='${LINKEDIN.logo}' vspace='0' hspace='0' border='0'&gt;&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class='rnb-social-center'&gt;&lt;table style='float:left; display: inline-block' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='padding:0px 5px 5px 0px; mso-padding-alt: 0px 2px 5px 0px;' align='left'&gt; &lt;span style='color:#ffffff; font-weight:normal;'&gt; &lt;a target='_blank' href='${INSTAGRAM.link}'&gt;` +
+		`&lt;img alt='${INSTAGRAM.alt}' style='vertical-align:top;' target='_blank' src='${INSTAGRAM.logo}' vspace='0' hspace='0' border='0'&gt;&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;div class='rnb-social-center'&gt;&lt;table style='float:left; display: inline-block' cellspacing='0' cellpadding='0' border='0' align='left'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style='padding:0px 5px 5px 0px; mso-padding-alt: 0px 2px 5px 0px;' align='left'&gt; &lt;span style='color:#ffffff; font-weight:normal;'&gt; &lt;a target='_blank' href='${YOUTUBE.link}'&gt;` +
+		`&lt;img alt='${YOUTUBE.alt}' style='vertical-align:top;' target='_blank' src='${YOUTUBE.logo}' vspace='0' hspace='0' border='0'&gt;&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='font-size:1px; line-height:0px; mso-hide: all;' height='20'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign='top' align='center'&gt;&lt;div style='background-color: rgb(249, 250, 252);'&gt;` +
+		'&lt;table class=\'rnb-del-min-width rnb-tmpl-width\' style=\'min-width:590px;\' name=\'Layout_3\' id=\'Layout_3\' width=\'100%\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\'&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-del-min-width\' style=\'min-width:590px; background-color: #f9fafc; text-align: center;\' valign=\'top\' bgcolor=\'#f9fafc\' align=\'center\'&gt;&lt;table class=\'rnb-container\' style=\'padding-right: 20px; padding-left: 20px; background-color: rgb(249, 250, 252);\' width=\'590\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\' bgcolor=\'#f9fafc\' align=\'center\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td style=\'font-size:1px; line-height:0px; mso-hide: all;\' height=\'10\'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign=\'top\' align=\'center\'&gt;&lt;div style=\'background-color: rgb(249, 250, 252);\'&gt;&lt;table class=\'rnb-del-min-width rnb-tmpl-width\' style=\'min-width:590px;\' name=\'Layout_4\' id=\'Layout_4\' width=\'100%\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\'&gt;' +
+		'&lt;tbody&gt;&lt;tr&gt;&lt;td class=\'rnb-del-min-width\' style=\'min-width:590px;\' valign=\'top\' align=\'center\'&gt;&lt;table style=\'padding-right: 20px; padding-left: 20px; background-color: rgb(249, 250, 252);\' width=\'100%\' cellspacing=\'0\' cellpadding=\'0\' border=\'0\' bgcolor=\'#f9fafc\' align=\'center\'&gt;' +
+		`&lt;tbody&gt;&lt;tr&gt;&lt;td style='font-size:1px; line-height:0px; mso-hide: all;' height='20'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='font-size: 14px;; color:#888888; font-weight:normal; text-align:center; font-family: 'Roboto', sans-serif;'&gt;&lt;div&gt;${copyright}&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style='font-size:1px; line-height:0px; mso-hide: all;' height='20'&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;`
+  )
+}
+&nbsp;
+module.exports.get = get
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+            </div>
+        </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

@@ -1,0 +1,26 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_route_adapter_1 = require("../adapters/express-route-adapter");
+const express_middleware_adapter_1 = require("../adapters/express-middleware-adapter");
+const auth_middleware_factory_1 = require("../factories/middlewares/auth-middleware-factory");
+const load_equip_by_menu_factory_1 = require("../factories/controllers/load-equipment-by-menu/load-equip-by-menu-factory");
+const load_equip_by_company_id_factory_1 = require("../factories/controllers/load-equip-by-company-id/load-equip-by-company-id-factory");
+const load_equip_by_id_factory_1 = require("../factories/controllers/load-equip-by-id/load-equip-by-id-factory");
+const add_equipment_controller_factory_1 = require("../factories/controllers/add-equipment/add-equipment-controller-factory");
+const update_equipment_controller_factory_1 = require("../factories/controllers/update-equipment/update-equipment-controller-factory");
+const delete_equipment_controller_factory_1 = require("../factories/controllers/delete-equipment/delete-equipment-controller-factory");
+const count_equipment_controller_factory_1 = require("../factories/controllers/count-equipment/count-equipment-controller-factory");
+const load_has_update_equip_factory_1 = require("../factories/controllers/load-has-update-equip/load-has-update-equip-factory");
+const load_equip_by_companyIdRemoteAccess_factory_1 = require("../factories/controllers/load-equip-by-companyIdRemoteAccess/load-equip-by-companyIdRemoteAccess-factory");
+exports.default = (router, pool) => {
+    const auth = (0, express_middleware_adapter_1.adptMiddleware)((0, auth_middleware_factory_1.makeAuthMiddleware)(pool));
+    router.get('/equipment/count', auth, (0, express_route_adapter_1.adptRoute)((0, count_equipment_controller_factory_1.makeCountEquipmentController)(pool)));
+    router.get('/equipment/SentMenu/:idMenu', auth, (0, express_route_adapter_1.adptRoute)((0, load_equip_by_menu_factory_1.makeLoadEquipByMenuController)(pool)));
+    router.get('/user/:userId/privilege/:userPrivilegeUser/equipment/:companyId/company', auth, (0, express_route_adapter_1.adptRoute)((0, load_equip_by_company_id_factory_1.makeLoadEquipByCompanyIdController)(pool)));
+    router.get('/equipment/:id', auth, (0, express_route_adapter_1.adptRoute)((0, load_equip_by_id_factory_1.makeLoadEquipByIdController)(pool)));
+    router.get('/linux-equipments/hasUpdate/:idEquip/:iokPin', (0, express_route_adapter_1.adptRoute)((0, load_has_update_equip_factory_1.makeLoadHasUpdateEquipController)(pool)));
+    router.post('/linux-equipments/create-new-linux/:pin', (0, express_route_adapter_1.adptRoute)((0, add_equipment_controller_factory_1.makeAddEquipmentController)(pool)));
+    router.put('/equipment/:id', (0, express_route_adapter_1.adptRoute)((0, update_equipment_controller_factory_1.makeUpdateEquipmentController)(pool)));
+    router.delete('/equipment/:id', auth, (0, express_route_adapter_1.adptRoute)((0, delete_equipment_controller_factory_1.makeDeleteEquipmentController)(pool)));
+    router.get('/equipment/companyIdRemoteAccess/:companyIdRemoteAccess', auth, (0, express_route_adapter_1.adptRoute)((0, load_equip_by_companyIdRemoteAccess_factory_1.makeLoadEquipByCompanyIdRemoteAccessController)(pool)));
+};
