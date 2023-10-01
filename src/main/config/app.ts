@@ -6,8 +6,7 @@ import setupSwagger from './config-swagger'
 import mysql from 'mysql'
 
 const app = express()
-const connection = mysql.createPool(env.db)
 setupSwagger(app)
 setUpMiddlewares(app)
-setUpRoutes(app, connection)
-export { app, connection }
+setUpRoutes(app)
+export { app }

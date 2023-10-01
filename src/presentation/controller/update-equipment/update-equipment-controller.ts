@@ -4,8 +4,6 @@ import { Controller, HttpRequest, HttpResponse, Validation } from '../../protoco
 import { badRequest } from './../../helpers/http-helper'
 import { MissingParamError, ServerError } from '../../errors'
 import { NoRowsAffected } from '../../errors/no-rows-affected-error'
-import { LoadEquipByPin } from '../../../domain/usecases/load-equip-by-pin'
-import { LoadEquipByPinError } from '../../errors/load-pin-error'
 
 export class UpdateEquipmentController implements Controller {
   private readonly paramsValidation: Validation

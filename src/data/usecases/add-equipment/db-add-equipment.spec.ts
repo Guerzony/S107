@@ -2,34 +2,25 @@ import { describe, test, expect, jest } from '@jest/globals'
 import { DbAddEquipment } from './db-add-equipment'
 import { AddEquipmentRepository } from '../../protocols/db/equipment/add-equipment-repository'
 import { mockAddEquipmentRequest, mockAddEquipmentResponse } from './../../../domain/mocks/equipment/index'
-import { CreateCodeRandom } from '../add-user/db-add-user-protocols'
 
 class AddEquipmentRepositoryStub implements AddEquipmentRepository {
-  async addEquipment (equipment: AddEquipmentRepository.Parameter): Promise<AddEquipmentRepository.Result> {
+  async addEquipment(equipment: AddEquipmentRepository.Parameter): Promise<AddEquipmentRepository.Result> {
     return mockAddEquipmentResponse()
-  }
-}
-
-class CodeRandomStub implements CreateCodeRandom {
-  async codeRandom (): Promise<string> {
-    return new Promise(resolve => resolve('iokPin'))
   }
 }
 
 type SutTypes = {
   sut: DbAddEquipment
   addEquipmentRepositoryStub: AddEquipmentRepositoryStub
-  codeRandomStub: CreateCodeRandom
 }
 
 const makeSut = (): SutTypes => {
   const addEquipmentRepositoryStub = new AddEquipmentRepositoryStub()
-  const codeRandomStub = new CodeRandomStub()
-  const sut = new DbAddEquipment(addEquipmentRepositoryStub, codeRandomStub)
+
+  const sut = new DbAddEquipment(addEquipmentRepositoryStub)
   return {
     sut,
-    addEquipmentRepositoryStub,
-    codeRandomStub
+    addEquipmentRepositoryStub
   }
 }
 

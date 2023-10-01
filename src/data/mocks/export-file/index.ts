@@ -1,5 +1,0 @@
-export * from './mock-db-export-speed-ovens-file'
-export * from './mock-db-export-tsi-file'
-export * from './mock-db-export-c-max-file'
-export * from './mock-db-export-forza-file'
-export * from './mock-db-export-speed-ovens-legacy-file'

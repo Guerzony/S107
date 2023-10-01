@@ -1,29 +1,22 @@
 import { describe, test, expect, jest, afterEach } from '@jest/globals'
 import { UpdateEquipmentController } from './Update-equipment-controller'
-import { UpdateEquipment } from '../../../domain/usecases/Update-equipment'
+import { UpdateEquipment } from '../../../domain/usecases/update-equipment'
 import { Validation } from '../../protocols'
 import { mockEquipModel, mockUpdateEquipmentRequest } from '../../../domain/mocks/equipment'
 import { badRequest, ok, serverError } from '../../helpers/http-helper'
 import { EquipModel, UpdateEquipModel } from './../../../domain/models/equipment'
 import { MissingParamError } from '../../errors'
 import { NoRowsAffected } from './../../errors/no-rows-affected-error'
-import { LoadEquipByPin } from '../../../domain/usecases/load-equip-by-pin'
 
 class ValidationStub implements Validation {
-  validate (input: any): Error | null {
+  validate(input: any): Error | null {
     return null
   }
 }
 
 class DbUpdateEquipmentStub implements UpdateEquipment {
-  async update (id: number, equipment: UpdateEquipModel): Promise<boolean> {
+  async update(id: number, equipment: UpdateEquipModel): Promise<boolean> {
     return true
-  }
-}
-
-class LoadEquipByPinStub implements LoadEquipByPin {
-  async load (IOKPin: String): Promise<EquipModel> {
-    return new Promise((resolve) => resolve(Object.assign(mockEquipModel(), { id: 1 })))
   }
 }
 
@@ -32,21 +25,18 @@ interface SutTypes {
   paramsValidationStub: Validation
   bodyValidationStub: Validation
   dbUpdateEquipmentStub: UpdateEquipment
-  loadEquipByPinStub: LoadEquipByPin;
 }
 
 const makeSut = (): SutTypes => {
   const paramsValidationStub = new ValidationStub()
   const bodyValidationStub = new ValidationStub()
   const dbUpdateEquipmentStub = new DbUpdateEquipmentStub()
-  const loadEquipByPinStub = new LoadEquipByPinStub()
-  const sut = new UpdateEquipmentController(paramsValidationStub, bodyValidationStub, dbUpdateEquipmentStub, loadEquipByPinStub)
+  const sut = new UpdateEquipmentController(paramsValidationStub, bodyValidationStub, dbUpdateEquipmentStub)
   return {
     sut,
     paramsValidationStub,
     bodyValidationStub,
-    dbUpdateEquipmentStub,
-    loadEquipByPinStub
+    dbUpdateEquipmentStub
   }
 }
 
