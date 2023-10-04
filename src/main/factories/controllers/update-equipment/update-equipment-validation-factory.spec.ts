@@ -2,17 +2,17 @@ import { describe, test, expect, jest } from '@jest/globals'
 import { RequiredFieldValidaton } from '../../../../presentation/helpers/validators/required-field-validation'
 import { ValidationComposite } from '../../../../presentation/helpers/validators/validator-composite'
 import { Validation } from '../../../../presentation/protocols'
-import { makeUpdateEquipmentBodyValidation } from './update-equipment-body-validation-factory'
-import { makeUpdateEquipmentParamsValidation } from './update-equipment-params-validation-factory'
+import { makeUpdateUserBodyValidation } from './update-user-body-validation-factory'
+import { makeUpdateUserParamsValidation } from './update-user-params-validation-factory'
 import { NumericFieldValidation } from '../../../../presentation/helpers/validators/numeric-fields-validation'
 import { RequiredUpdateFieldValidaton } from '../../../../presentation/helpers/validators/required-update-field-validation'
 
 jest.mock('../../../../presentation/helpers/validators/validator-composite')
 
-describe('UpdateEquipmentValidation Factory', () => {
+describe('UpdateUserValidation Factory', () => {
   describe('Params validation factory', () => {
     test('Should call ValidationComposite with all validations', () => {
-      makeUpdateEquipmentParamsValidation()
+      makeUpdateUserParamsValidation()
       const validations: Validation[] = []
       const fields = ['id']
       for (const field of fields) {
@@ -24,7 +24,7 @@ describe('UpdateEquipmentValidation Factory', () => {
   })
   describe('Body validation factory', () => {
     test('Should call ValidationComposite with all validations', () => {
-      makeUpdateEquipmentBodyValidation()
+      makeUpdateUserBodyValidation()
       const validations: Validation[] = []
       validations.push(new RequiredUpdateFieldValidaton())
       expect(ValidationComposite).toHaveBeenCalledWith(validations)

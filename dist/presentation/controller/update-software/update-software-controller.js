@@ -5,19 +5,19 @@ const errors_1 = require("../../errors");
 const load_pin_error_1 = require("../../errors/load-pin-error");
 const http_helper_1 = require("../../helpers/http-helper");
 class UpdateSoftwareController {
-    constructor(updateSoftware, validation, loadEquipByPin) {
+    constructor(updateSoftware, validation, loadUserByPin) {
         this.updateSoftware = updateSoftware;
         this.validation = validation;
-        this.loadEquipByPin = loadEquipByPin;
+        this.loadUserByPin = loadUserByPin;
     }
     async handle(httpRequest) {
         try {
             const validationError = this.validation.validate(httpRequest.params);
             if (validationError)
                 return (0, http_helper_1.badRequest)(validationError);
-            const equip = await this.loadEquipByPin.load(httpRequest.params.iokPin);
+            const equip = await this.loadUserByPin.load(httpRequest.params.iokPin);
             if (!equip) {
-                return (0, http_helper_1.forbidden)(new load_pin_error_1.LoadEquipByPinError());
+                return (0, http_helper_1.forbidden)(new load_pin_error_1.LoadUserByPinError());
             }
             const response = await this.updateSoftware.load(httpRequest.params.ovenModel, httpRequest.params.iokPin);
             if (!response)

@@ -1,14 +1,14 @@
-import { CreateEquipOvenModel, EquipOvenModel, EquipModel } from './../models/equipment'
+import { CreateUserOvenModel, UserOvenModel, UserModel } from './../models/user'
 
-export interface AddEquipment {
-  add(equipment: CreateEquipOvenModel): Promise<EquipModel>
+export interface AddUser {
+  add(user: CreateUserOvenModel): Promise<UserModel>
 }
 
 // eslint-disable-next-line no-redeclare
-export namespace AddEquipment {
-  export type Response = EquipOvenModel
+export namespace AddUser {
+  export type Response = UserOvenModel
   export type Request = {
-    body: CreateEquipOvenModel,
+    body: CreateUserOvenModel,
     params: {
       pin?: string
     }

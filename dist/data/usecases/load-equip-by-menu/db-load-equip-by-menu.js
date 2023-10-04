@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipByMenu = void 0;
-class DbLoadEquipByMenu {
-    constructor(loadEquipByMenuRepository) {
-        this.loadEquipByMenuRepository = loadEquipByMenuRepository;
+exports.DbLoadUserByMenu = void 0;
+class DbLoadUserByMenu {
+    constructor(loadUserByMenuRepository) {
+        this.loadUserByMenuRepository = loadUserByMenuRepository;
     }
-    async loadEquip(menuId) {
-        const equip = await this.loadEquipByMenuRepository.loadByEquipMenu(menuId);
+    async loadUser(menuId) {
+        const equip = await this.loadUserByMenuRepository.loadByUserMenu(menuId);
         if (equip.length !== 0) {
             return equip;
         }
         return null;
     }
 }
-exports.DbLoadEquipByMenu = DbLoadEquipByMenu;
+exports.DbLoadUserByMenu = DbLoadUserByMenu;

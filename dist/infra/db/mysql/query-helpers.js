@@ -1,89 +1,89 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loadStepsByMenuIdQuery = exports.loadRecipesByMenuIdQuery = exports.loadGroupsByMenuIdQuery = exports.loadMenuConfigsByMenuIdQuery = exports.loadCMaxStepsQuery = exports.loadCMaxRecipesQuery = exports.loadTsiStepsQuery = exports.loadTsiRecipesQuery = exports.loadTsiGroupsQuery = exports.loadTsiConfigsQuery = exports.loadSpeedOvensStepsQuery = exports.loadSpeedOvensRecipesQuery = exports.loadSpeedOvensGroupsQuery = exports.loadSpeedOvensConfigsQuery = exports.loadMenurByCorporateSQL = exports.loadUserByCorporateNameSQL = exports.loadEquipByUserIdSQL = exports.countEquipmentSQL = exports.loadEquipByIdSQL = exports.loadEquipByCompanyIdSQL = exports.loadEquipByCompanyIdRemoteAccessSQL = void 0;
-const loadEquipByCompanyIdRemoteAccessSQL = (companyIdRemoteAccess) => `SELECT 
-equipment.id as id,
-equipment.name as name,
-equipment.categoryId as categoryId,
-equipment.typeEquipment as typeEquipment,
-equipment.storeId as storeId,
-equipment.serialNumber as serialNumber,
-equipment.creationDate as creationDate,
-equipment.softwareVersion as softwareVersion,
-equipment.sentMenu as sentMenu,
-equipment.companyId as companyId,
-equipment.iokPin as iokPin,
-equipment.idUser as idUser,
-equipment.dataUpdate as dataUpdate,
-equipment.appUpdate as appUpdate,
-equipment.statusData as statusData,
-equipment.statusApp as statusApp,
-equipment.hashSw as hashSw,
-equipment.menuId as menuId,
-equipment.lastUpdate as lastUpdate,
-equipment.powerVersion as powerVersion,
+exports.loadStepsByMenuIdQuery = exports.loadRecipesByMenuIdQuery = exports.loadGroupsByMenuIdQuery = exports.loadMenuConfigsByMenuIdQuery = exports.loadCMaxStepsQuery = exports.loadCMaxRecipesQuery = exports.loadTsiStepsQuery = exports.loadTsiRecipesQuery = exports.loadTsiGroupsQuery = exports.loadTsiConfigsQuery = exports.loadSpeedOvensStepsQuery = exports.loadSpeedOvensRecipesQuery = exports.loadSpeedOvensGroupsQuery = exports.loadSpeedOvensConfigsQuery = exports.loadMenurByCorporateSQL = exports.loadUserByCorporateNameSQL = exports.loadUserByUserIdSQL = exports.countUserSQL = exports.loadUserByIdSQL = exports.loadUserByCompanyIdSQL = exports.loadUserByCompanyIdRemoteAccessSQL = void 0;
+const loadUserByCompanyIdRemoteAccessSQL = (companyIdRemoteAccess) => `SELECT 
+user.id as id,
+user.name as name,
+user.categoryId as categoryId,
+user.typeUser as typeUser,
+user.storeId as storeId,
+user.serialNumber as serialNumber,
+user.creationDate as creationDate,
+user.softwareVersion as softwareVersion,
+user.sentMenu as sentMenu,
+user.companyId as companyId,
+user.iokPin as iokPin,
+user.idUser as idUser,
+user.dataUpdate as dataUpdate,
+user.appUpdate as appUpdate,
+user.statusData as statusData,
+user.statusApp as statusApp,
+user.hashSw as hashSw,
+user.menuId as menuId,
+user.lastUpdate as lastUpdate,
+user.powerVersion as powerVersion,
 categoryType.category as categoryName,
 store.storeName as storeName,
 store.latitude as latitude,
 store.longitude as longitude
-FROM equipment 
-LEFT JOIN categoryType on equipment.categoryId = categoryType.id
-LEFT JOIN store on equipment.storeId = store.id
-WHERE equipment.companyIdRemoteAccess = ${companyIdRemoteAccess}`;
-exports.loadEquipByCompanyIdRemoteAccessSQL = loadEquipByCompanyIdRemoteAccessSQL;
-const loadEquipByCompanyIdSQL = (companyId) => `SELECT 
-equipment.id as id,
-equipment.name as name,
-equipment.categoryId as categoryId,
-equipment.typeEquipment as typeEquipment,
-equipment.storeId as storeId,
-equipment.serialNumber as serialNumber,
-equipment.creationDate as creationDate,
-equipment.softwareVersion as softwareVersion,
-equipment.sentMenu as sentMenu,
-equipment.companyId as companyId,
-equipment.iokPin as iokPin,
-equipment.idUser as idUser,
-equipment.dataUpdate as dataUpdate,
-equipment.appUpdate as appUpdate,
-equipment.statusData as statusData,
-equipment.statusApp as statusApp,
-equipment.hashSw as hashSw,
-equipment.menuId as menuId,
-equipment.lastUpdate as lastUpdate,
-equipment.companyIdRemoteAccess as companyIdRemoteAccess,
-equipment.powerVersion as powerVersion,
+FROM user 
+LEFT JOIN categoryType on user.categoryId = categoryType.id
+LEFT JOIN store on user.storeId = store.id
+WHERE user.companyIdRemoteAccess = ${companyIdRemoteAccess}`;
+exports.loadUserByCompanyIdRemoteAccessSQL = loadUserByCompanyIdRemoteAccessSQL;
+const loadUserByCompanyIdSQL = (companyId) => `SELECT 
+user.id as id,
+user.name as name,
+user.categoryId as categoryId,
+user.typeUser as typeUser,
+user.storeId as storeId,
+user.serialNumber as serialNumber,
+user.creationDate as creationDate,
+user.softwareVersion as softwareVersion,
+user.sentMenu as sentMenu,
+user.companyId as companyId,
+user.iokPin as iokPin,
+user.idUser as idUser,
+user.dataUpdate as dataUpdate,
+user.appUpdate as appUpdate,
+user.statusData as statusData,
+user.statusApp as statusApp,
+user.hashSw as hashSw,
+user.menuId as menuId,
+user.lastUpdate as lastUpdate,
+user.companyIdRemoteAccess as companyIdRemoteAccess,
+user.powerVersion as powerVersion,
 categoryType.category as categoryName,
 store.storeName as storeName,
 store.latitude as latitude,
 store.longitude as longitude
-FROM equipment 
-LEFT JOIN categoryType on equipment.categoryId = categoryType.id
-LEFT JOIN store on equipment.storeId = store.id
-WHERE equipment.companyId = ${companyId}`;
-exports.loadEquipByCompanyIdSQL = loadEquipByCompanyIdSQL;
-const loadEquipByIdSQL = (id) => `SELECT 
-equipment.id as id,
-equipment.name as name,
-equipment.categoryId as categoryId,
-equipment.typeEquipment as typeEquipment,
-equipment.storeId as storeId,
-equipment.serialNumber as serialNumber,
-equipment.creationDate as creationDate,
-equipment.softwareVersion as softwareVersion,
-equipment.sentMenu as sentMenu,
-equipment.companyId as companyId,
-equipment.iokPin as iokPin,
-equipment.idUser as idUser,
-equipment.dataUpdate as dataUpdate,
-equipment.appUpdate as appUpdate,
-equipment.statusData as statusData,
-equipment.statusApp as statusApp,
-equipment.hashSw as hashSw,
-equipment.menuId as menuId,
-equipment.lastUpdate as lastUpdate,
-equipment.companyIdRemoteAccess as companyIdRemoteAccess,
-equipment.powerVersion as powerVersion,
+FROM user 
+LEFT JOIN categoryType on user.categoryId = categoryType.id
+LEFT JOIN store on user.storeId = store.id
+WHERE user.companyId = ${companyId}`;
+exports.loadUserByCompanyIdSQL = loadUserByCompanyIdSQL;
+const loadUserByIdSQL = (id) => `SELECT 
+user.id as id,
+user.name as name,
+user.categoryId as categoryId,
+user.typeUser as typeUser,
+user.storeId as storeId,
+user.serialNumber as serialNumber,
+user.creationDate as creationDate,
+user.softwareVersion as softwareVersion,
+user.sentMenu as sentMenu,
+user.companyId as companyId,
+user.iokPin as iokPin,
+user.idUser as idUser,
+user.dataUpdate as dataUpdate,
+user.appUpdate as appUpdate,
+user.statusData as statusData,
+user.statusApp as statusApp,
+user.hashSw as hashSw,
+user.menuId as menuId,
+user.lastUpdate as lastUpdate,
+user.companyIdRemoteAccess as companyIdRemoteAccess,
+user.powerVersion as powerVersion,
 categoryType.category as categoryName,
 store.storeName as storeName,
 menu.menuName as menuName,
@@ -91,50 +91,50 @@ CONCAT(store.street, ', ', store.streetNumber, ' - ', store.neighborhood) as add
 store.city as city,
 store.state as state,
 store.zipCode as zipCode
-FROM equipment
-LEFT JOIN categoryType on equipment.categoryId = categoryType.id
-LEFT JOIN store on equipment.storeId = store.id
-LEFT JOIN menu on equipment.sentMenu = menu.id
-WHERE equipment.id = ${id}`;
-exports.loadEquipByIdSQL = loadEquipByIdSQL;
-const countEquipmentSQL = (where) => {
-    if (!where)
-        return 'SELECT COUNT(*) as count FROM equipment';
-    const key = Object.keys(where)[0];
-    return `SELECT COUNT(*) as count FROM equipment WHERE ${key} = ${isNaN(+where[key]) ? `'${where[key]}'` : where[key]}`;
+FROM user
+LEFT JOIN categoryType on user.categoryId = categoryType.id
+LEFT JOIN store on user.storeId = store.id
+LEFT JOIN menu on user.sentMenu = menu.id
+WHERE user.id = ${id}`;
+exports.loadUserByIdSQL = loadUserByIdSQL;
+const countUserSQL = (where) => {
+  if (!where)
+    return 'SELECT COUNT(*) as count FROM user';
+  const key = Object.keys(where)[0];
+  return `SELECT COUNT(*) as count FROM user WHERE ${key} = ${isNaN(+where[key]) ? `'${where[key]}'` : where[key]}`;
 };
-exports.countEquipmentSQL = countEquipmentSQL;
-const loadEquipByUserIdSQL = (userId) => `SELECT 
-equipment.id as id,
-equipment.name as name,
-equipment.categoryId as categoryId,
-equipment.typeEquipment as typeEquipment,
-equipment.storeId as storeId,
-equipment.serialNumber as serialNumber,
-equipment.creationDate as creationDate,
-equipment.softwareVersion as softwareVersion,
-equipment.sentMenu as sentMenu,
-equipment.companyId as companyId,
-equipment.iokPin as iokPin,
-equipment.idUser as idUser,
-equipment.dataUpdate as dataUpdate,
-equipment.appUpdate as appUpdate,
-equipment.statusData as statusData,
-equipment.statusApp as statusApp,
-equipment.hashSw as hashSw,
-equipment.menuId as menuId,
-equipment.lastUpdate as lastUpdate,
-equipment.companyIdRemoteAccess as companyIdRemoteAccess,
-equipment.powerVersion as powerVersion,
+exports.countUserSQL = countUserSQL;
+const loadUserByUserIdSQL = (userId) => `SELECT 
+user.id as id,
+user.name as name,
+user.categoryId as categoryId,
+user.typeUser as typeUser,
+user.storeId as storeId,
+user.serialNumber as serialNumber,
+user.creationDate as creationDate,
+user.softwareVersion as softwareVersion,
+user.sentMenu as sentMenu,
+user.companyId as companyId,
+user.iokPin as iokPin,
+user.idUser as idUser,
+user.dataUpdate as dataUpdate,
+user.appUpdate as appUpdate,
+user.statusData as statusData,
+user.statusApp as statusApp,
+user.hashSw as hashSw,
+user.menuId as menuId,
+user.lastUpdate as lastUpdate,
+user.companyIdRemoteAccess as companyIdRemoteAccess,
+user.powerVersion as powerVersion,
 categoryType.category as categoryName,
 store.storeName as storeName,
 store.latitude as latitude,
 store.longitude as longitude
-FROM equipment 
-LEFT JOIN categoryType on equipment.categoryId = categoryType.id
-LEFT JOIN store on equipment.storeId = store.id
+FROM user 
+LEFT JOIN categoryType on user.categoryId = categoryType.id
+LEFT JOIN store on user.storeId = store.id
 INNER JOIN UserBelongStore AS U ON (U.idStore = storeId) WHERE U.idUser = ${userId}`;
-exports.loadEquipByUserIdSQL = loadEquipByUserIdSQL;
+exports.loadUserByUserIdSQL = loadUserByUserIdSQL;
 const loadUserByCorporateNameSQL = (corporateName) => `SELECT u.*
 FROM User u
 JOIN company c ON u.companyId = c.id
@@ -151,7 +151,7 @@ const loadMenurByCorporateSQL = (companyId) => `SELECT m.*,
   END AS recipeCount,
   CASE
     WHEN m.equipTypeId = 4 THEN 0
-    ELSE (SELECT COUNT(*) FROM equipment WHERE sentMenu = m.id)
+    ELSE (SELECT COUNT(*) FROM user WHERE sentMenu = m.id)
   END AS equipCount
 FROM menu m
 WHERE m.companyId = ${companyId};`;

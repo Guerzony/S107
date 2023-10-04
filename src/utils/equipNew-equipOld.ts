@@ -1,4 +1,4 @@
-export const EquipmentModel = [
+export const UserModel = [
   { idNew: 1, idOld: 1, label: 'Copa Express' },
   { idNew: 1, idOld: 2, label: 'Rocket Express' },
   { idNew: 1, idOld: 3, label: 'Copa Single Mag' },

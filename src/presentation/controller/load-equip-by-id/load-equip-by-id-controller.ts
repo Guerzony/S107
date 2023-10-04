@@ -1,21 +1,21 @@
-import { LoadEquipById } from '../../../domain/usecases/load-equip-by-id'
+import { LoadUserById } from '../../../domain/usecases/load-equip-by-id'
 import { ServerError } from '../../errors'
 import { badRequest, noContent, ok, serverError } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
 
-export class LoadEquipByIdController implements Controller {
-  private readonly loadEquipById: LoadEquipById
+export class LoadUserByIdController implements Controller {
+  private readonly loadUserById: LoadUserById
   private readonly validation: Validation
-  constructor (loadEquipById: LoadEquipById, validation: Validation) {
-    this.loadEquipById = loadEquipById
+  constructor(loadUserById: LoadUserById, validation: Validation) {
+    this.loadUserById = loadUserById
     this.validation = validation
   }
 
-  async handle (httpRequest: HttpRequest<LoadEquipById.Request>): Promise<HttpResponse<LoadEquipById.Response>> {
+  async handle(httpRequest: HttpRequest<LoadUserById.Request>): Promise<HttpResponse<LoadUserById.Response>> {
     try {
       const validationError = this.validation.validate(httpRequest.params)
       if (validationError) return badRequest(validationError)
-      const response = await this.loadEquipById.load(httpRequest.params.id)
+      const response = await this.loadUserById.load(httpRequest.params.id)
       if (!response) return noContent()
       return ok(response)
     } catch (error) {

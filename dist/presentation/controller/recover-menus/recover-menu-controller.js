@@ -4,13 +4,13 @@ exports.RecoverMenusController = void 0;
 const templates_1 = require("../../../utils/factors/emailTemplate/templates");
 const http_helper_1 = require("../../helpers/http-helper");
 class RecoverMenusController {
-    constructor(bodyValidation, loadUserMenu, addRecoverMenus, loadUserByEmail, loadRecoverEquipByIdUser, addRecoverEquipment, mailService) {
+    constructor(bodyValidation, loadUserMenu, addRecoverMenus, loadUserByEmail, loadRecoverUserByIdUser, addRecoverUser, mailService) {
         this.bodyValidation = bodyValidation;
         this.loadUserMenu = loadUserMenu;
         this.addRecoverMenus = addRecoverMenus;
         this.loadUserByEmail = loadUserByEmail;
-        this.loadRecoverEquipByIdUser = loadRecoverEquipByIdUser;
-        this.addRecoverEquipment = addRecoverEquipment;
+        this.loadRecoverUserByIdUser = loadRecoverUserByIdUser;
+        this.addRecoverUser = addRecoverUser;
         this.mailService = mailService;
     }
     async handle(httpRequest) {
@@ -32,8 +32,8 @@ class RecoverMenusController {
                 return (0, http_helper_1.noContent)();
             const menu = await this.loadUserMenu.loadMenu(response.id);
             await this.addRecoverMenus.createMenu(menu, user);
-            const equip = await this.loadRecoverEquipByIdUser.loadEquip(response.id);
-            await this.addRecoverEquipment.createEquipment(equip, user);
+            const equip = await this.loadRecoverUserByIdUser.loadUser(response.id);
+            await this.addRecoverUser.createUser(equip, user);
             return (0, http_helper_1.created)({
                 response: 'create success menus'
             });

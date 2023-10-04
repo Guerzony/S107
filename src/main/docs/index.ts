@@ -19,8 +19,8 @@ export default {
     name: 'Configs',
     description: ''
   }, {
-    name: 'Equipment',
-    description: 'Endpoints for equipment'
+    name: 'User',
+    description: 'Endpoints for user'
   }, {
     name: 'LoadMenuConfigs',
     description: ''

@@ -47,9 +47,9 @@
         <line num="14" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="data.usecases.add-equipment">
+    <package name="data.usecases.add-user">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="db-add-equipment.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\add-equipment\db-add-equipment.ts">
+      <file name="db-add-user.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\add-user\db-add-user.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="6" count="42" type="stmt"/>
         <line num="10" count="67" type="stmt"/>
@@ -216,9 +216,9 @@
         <line num="17" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="data.usecases.count-equipment">
+    <package name="data.usecases.count-user">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="db-count-equipment.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\count-equipment\db-count-equipment.ts">
+      <file name="db-count-user.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\count-user\db-count-user.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="42" type="stmt"/>
         <line num="7" count="69" type="stmt"/>
@@ -242,9 +242,9 @@
         <line num="28" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="data.usecases.delete-equipment">
+    <package name="data.usecases.delete-user">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="db-delete-equipment.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\delete-equipment\db-delete-equipment.ts">
+      <file name="db-delete-user.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\delete-user\db-delete-user.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="42" type="stmt"/>
         <line num="7" count="68" type="stmt"/>
@@ -700,9 +700,9 @@
         <line num="12" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="data.usecases.update-equipment">
+    <package name="data.usecases.update-user">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="db-update-equipment.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\update-equipment\db-update-equipment.ts">
+      <file name="db-update-user.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\data\usecases\update-user\db-update-user.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="42" type="stmt"/>
         <line num="8" count="68" type="stmt"/>
@@ -891,9 +891,9 @@
         <line num="106" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="domain.mocks.equipment">
+    <package name="domain.mocks.user">
       <metrics statements="29" coveredstatements="29" conditionals="2" coveredconditionals="2" methods="16" coveredmethods="16"/>
-      <file name="index.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\domain\mocks\equipment\index.ts">
+      <file name="index.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\domain\mocks\user\index.ts">
         <metrics statements="29" coveredstatements="29" conditionals="2" coveredconditionals="2" methods="16" coveredmethods="16"/>
         <line num="9" count="20" type="stmt"/>
         <line num="10" count="20" type="stmt"/>
@@ -1532,9 +1532,9 @@
         <line num="40" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="infra.db.mysql.equipment">
+    <package name="infra.db.mysql.user">
       <metrics statements="33" coveredstatements="31" conditionals="5" coveredconditionals="5" methods="13" coveredmethods="12"/>
-      <file name="equip-mysql-repository.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\infra\db\mysql\equipment\equip-mysql-repository.ts">
+      <file name="equip-mysql-repository.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\infra\db\mysql\user\equip-mysql-repository.ts">
         <metrics statements="33" coveredstatements="31" conditionals="5" coveredconditionals="5" methods="13" coveredmethods="12"/>
         <line num="9" count="41" type="stmt"/>
         <line num="10" count="41" type="stmt"/>
@@ -1948,9 +1948,9 @@
         <line num="25" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.controller.add-equipment">
+    <package name="presentation.controller.add-user">
       <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <file name="add-equipment-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\add-equipment\add-equipment-controller.ts">
+      <file name="add-user-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\add-user\add-user-controller.ts">
         <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="2" count="42" type="stmt"/>
         <line num="4" count="42" type="stmt"/>
@@ -2210,9 +2210,9 @@
         <line num="33" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.controller.count-equipment">
+    <package name="presentation.controller.count-user">
       <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <file name="count-equipment-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\count-equipment\count-equipment-controller.ts">
+      <file name="count-user-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\count-user\count-user-controller.ts">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="42" type="stmt"/>
         <line num="4" count="42" type="stmt"/>
@@ -2250,9 +2250,9 @@
         <line num="28" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.controller.delete-equipment">
+    <package name="presentation.controller.delete-user">
       <metrics statements="14" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <file name="delete-equipment-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\delete-equipment\delete-equipment-controller.ts">
+      <file name="delete-user-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\delete-user\delete-user-controller.ts">
         <metrics statements="14" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="3" count="42" type="stmt"/>
         <line num="4" count="42" type="stmt"/>
@@ -2965,9 +2965,9 @@
         <line num="30" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.controller.update-equipment">
+    <package name="presentation.controller.update-user">
       <metrics statements="24" coveredstatements="23" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
-      <file name="update-equipment-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\update-equipment\update-equipment-controller.ts">
+      <file name="update-user-controller.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\controller\update-user\update-user-controller.ts">
         <metrics statements="24" coveredstatements="23" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="42" type="stmt"/>
         <line num="4" count="42" type="stmt"/>
@@ -3308,19 +3308,19 @@
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
-      <file name="equipment-creation-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\equipment-creation-error.ts">
+      <file name="user-creation-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\user-creation-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="42" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="equipment-not-belong-user-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\equipment-not-belong-user-error.ts">
+      <file name="user-not-belong-user-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\user-not-belong-user-error.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
       </file>
-      <file name="equipment-not-found-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\equipment-not-found-error.ts">
+      <file name="user-not-found-error.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\presentation\errors\user-not-found-error.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -3626,7 +3626,7 @@
         <line num="4" count="47" type="stmt"/>
         <line num="6" count="8" type="stmt"/>
       </file>
-      <file name="formatEquipOven.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\utils\formatEquipOven.ts">
+      <file name="formatUserOven.ts" path="C:\Users\joao.santos\workSpace\Projeto-iok-new\ioknewplat-back\src\utils\formatUserOven.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="43" type="stmt"/>
         <line num="4" count="16" type="stmt"/>

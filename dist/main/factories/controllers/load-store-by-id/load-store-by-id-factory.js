@@ -8,7 +8,7 @@ const db_load_store_by_id_factory_1 = require("../../usecases/load-store-by-id/d
 const load_store_by_id_validation_factory_1 = require("./load-store-by-id-validation-factory");
 const makeLoadStoreByIdController = (pool) => {
     const logMysqlRepository = new log_mysql_repository_1.LogMysqlRepository(pool);
-    const loadEquipByIdController = new load_store_by_id_controller_1.LoadStoreByIdController((0, db_load_store_by_id_factory_1.makeDbLoadStoreById)(pool), (0, load_store_by_id_validation_factory_1.makeLoadStoreByIdValidation)());
-    return new log_controller_decorator_1.LogControllerDecorator(loadEquipByIdController, logMysqlRepository);
+    const loadUserByIdController = new load_store_by_id_controller_1.LoadStoreByIdController((0, db_load_store_by_id_factory_1.makeDbLoadStoreById)(pool), (0, load_store_by_id_validation_factory_1.makeLoadStoreByIdValidation)());
+    return new log_controller_decorator_1.LogControllerDecorator(loadUserByIdController, logMysqlRepository);
 };
 exports.makeLoadStoreByIdController = makeLoadStoreByIdController;

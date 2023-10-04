@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeLoadEquipByMenuValidation = void 0;
+exports.makeLoadUserByMenuValidation = void 0;
 const validator_composite_1 = require("../../../../presentation/helpers/validators/validator-composite");
 const required_field_validation_1 = require("../../../../presentation/helpers/validators/required-field-validation");
-const makeLoadEquipByMenuValidation = () => {
+const makeLoadUserByMenuValidation = () => {
     const validations = [];
     const fields = ['idMenu'];
     for (const field of fields) {
@@ -11,4 +11,4 @@ const makeLoadEquipByMenuValidation = () => {
     }
     return new validator_composite_1.ValidationComposite(validations);
 };
-exports.makeLoadEquipByMenuValidation = makeLoadEquipByMenuValidation;
+exports.makeLoadUserByMenuValidation = makeLoadUserByMenuValidation;

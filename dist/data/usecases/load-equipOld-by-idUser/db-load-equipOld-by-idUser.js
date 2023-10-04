@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipmentOldByidUser = void 0;
-class DbLoadEquipmentOldByidUser {
-    constructor(recoverLoadEquipRepository) {
-        this.recoverLoadEquipRepository = recoverLoadEquipRepository;
+exports.DbLoadUserOldByidUser = void 0;
+class DbLoadUserOldByidUser {
+    constructor(recoverLoadUserRepository) {
+        this.recoverLoadUserRepository = recoverLoadUserRepository;
     }
-    loadEquip(id) {
-        return this.recoverLoadEquipRepository.loadEquipment(id);
+    loadUser(id) {
+        return this.recoverLoadUserRepository.loadUser(id);
     }
 }
-exports.DbLoadEquipmentOldByidUser = DbLoadEquipmentOldByidUser;
+exports.DbLoadUserOldByidUser = DbLoadUserOldByidUser;

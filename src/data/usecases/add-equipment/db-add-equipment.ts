@@ -1,15 +1,15 @@
-import { CreateEquipOvenModel, EquipModel } from '../../../domain/models/equipment'
-import { AddEquipment } from '../../../domain/usecases/add-equipment'
-import { AddEquipmentRepository } from '../../protocols/db/equipment/add-equipment-repository'
+import { CreateUserOvenModel, UserModel } from '../../../domain/models/user'
+import { AddUser } from '../../../domain/usecases/add-user'
+import { AddUserRepository } from '../../protocols/db/user/add-user-repository'
 
-export class DbAddEquipment implements AddEquipment {
-  private readonly repository: AddEquipmentRepository
-  constructor(repository: AddEquipmentRepository) {
+export class DbAddUser implements AddUser {
+  private readonly repository: AddUserRepository
+  constructor(repository: AddUserRepository) {
     this.repository = repository
   }
 
-  async add(equipment: CreateEquipOvenModel): Promise<EquipModel> {
-    const equipmentResponse = await this.repository.addEquipment(equipment)
-    return equipmentResponse
+  async add(user: CreateUserOvenModel): Promise<UserModel> {
+    const userResponse = await this.repository.addUser(user)
+    return userResponse
   }
 }

@@ -1,27 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteEquipment = void 0;
-exports.deleteEquipment = {
+exports.deleteUser = void 0;
+exports.deleteUser = {
     delete: {
         security: [{
-                apiKeyAuth: []
-            }],
-        tags: ['Equipment'],
-        summary: 'Delete an equipment',
+            apiKeyAuth: []
+        }],
+        tags: ['User'],
+        summary: 'Delete an user',
         parameters: [{
-                name: 'id',
-                in: 'path',
-                required: true,
-                description: 'Id of the equipment',
-                schema: {
-                    type: 'integer',
-                    format: 'int64',
-                    minimum: 1
-                }
-            }],
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'Id of the user',
+            schema: {
+                type: 'integer',
+                format: 'int64',
+                minimum: 1
+            }
+        }],
         responses: {
             200: {
-                description: 'Equipment created successfully',
+                description: 'User created successfully',
                 content: {
                     'application/json': {
                         schema: {}

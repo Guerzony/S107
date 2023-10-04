@@ -1,6 +1,6 @@
-export class EquipmentNotFoundError extends Error {
-  constructor () {
-    super('Equipment not found')
-    this.name = 'EquipmentNotFoundError'
+export class UserNotFoundError extends Error {
+  constructor() {
+    super('User not found')
+    this.name = 'UserNotFoundError'
   }
 }

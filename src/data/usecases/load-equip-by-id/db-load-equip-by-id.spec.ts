@@ -1,56 +1,56 @@
 import { describe, test, expect, jest } from '@jest/globals'
-import { LoadEquipByIdRepository } from '../../protocols/db/equipment/load-equip-by-id-repository'
-import { mockLoadEquipByIdResponse } from '../../../domain/mocks/equipment'
-import { DbLoadEquipById } from './db-load-equip-by-id'
+import { LoadUserByIdRepository } from '../../protocols/db/user/load-equip-by-id-repository'
+import { mockLoadUserByIdResponse } from '../../../domain/mocks/user'
+import { DbLoadUserById } from './db-load-equip-by-id'
 
-class LoadEquipByIdRepositoryStub implements LoadEquipByIdRepository {
-  async loadEquipById (id: number): Promise<LoadEquipByIdRepository.Result> {
-    return mockLoadEquipByIdResponse()
+class LoadUserByIdRepositoryStub implements LoadUserByIdRepository {
+  async loadUserById(id: number): Promise<LoadUserByIdRepository.Result> {
+    return mockLoadUserByIdResponse()
   }
 }
 
 type SutTypes = {
-  sut: DbLoadEquipById
-  loadEquipByIdRepositoryStub: LoadEquipByIdRepositoryStub
+  sut: DbLoadUserById
+  loadUserByIdRepositoryStub: LoadUserByIdRepositoryStub
 }
 
 const makeSut = (): SutTypes => {
-  const loadEquipByIdRepositoryStub = new LoadEquipByIdRepositoryStub()
-  const sut = new DbLoadEquipById(loadEquipByIdRepositoryStub)
+  const loadUserByIdRepositoryStub = new LoadUserByIdRepositoryStub()
+  const sut = new DbLoadUserById(loadUserByIdRepositoryStub)
   return {
     sut,
-    loadEquipByIdRepositoryStub
+    loadUserByIdRepositoryStub
   }
 }
 
-describe('Testing the LoadEquipById class', () => {
-  describe('Dependency with LoadEquipByIdRepository class', () => {
-    test('should call the loadEquipById method only once', async () => {
-      const { sut, loadEquipByIdRepositoryStub } = makeSut()
-      const loadEquipByIdRepositorySpy = jest.spyOn(loadEquipByIdRepositoryStub, 'loadEquipById')
+describe('Testing the LoadUserById class', () => {
+  describe('Dependency with LoadUserByIdRepository class', () => {
+    test('should call the loadUserById method only once', async () => {
+      const { sut, loadUserByIdRepositoryStub } = makeSut()
+      const loadUserByIdRepositorySpy = jest.spyOn(loadUserByIdRepositoryStub, 'loadUserById')
       await sut.load(1)
-      expect(loadEquipByIdRepositorySpy).toHaveBeenCalledTimes(1)
+      expect(loadUserByIdRepositorySpy).toHaveBeenCalledTimes(1)
     })
-    test('should call the loadEquipById method with the correct parameter', async () => {
-      const { sut, loadEquipByIdRepositoryStub } = makeSut()
-      const loadEquipByIdRepositorySpy = jest.spyOn(loadEquipByIdRepositoryStub, 'loadEquipById')
+    test('should call the loadUserById method with the correct parameter', async () => {
+      const { sut, loadUserByIdRepositoryStub } = makeSut()
+      const loadUserByIdRepositorySpy = jest.spyOn(loadUserByIdRepositoryStub, 'loadUserById')
       await sut.load(1)
-      expect(loadEquipByIdRepositorySpy).toHaveBeenCalledWith(1)
+      expect(loadUserByIdRepositorySpy).toHaveBeenCalledWith(1)
     })
-    test('should return a equipment in case of success', async () => {
+    test('should return a user in case of success', async () => {
       const { sut } = makeSut()
-      const equipment = await sut.load(1)
-      expect(equipment).toEqual(mockLoadEquipByIdResponse())
+      const user = await sut.load(1)
+      expect(user).toEqual(mockLoadUserByIdResponse())
     })
-    test('should return null if it cannot find the equipment', async () => {
-      const { sut, loadEquipByIdRepositoryStub } = makeSut()
-      jest.spyOn(loadEquipByIdRepositoryStub, 'loadEquipById').mockResolvedValue(null)
-      const equipment = await sut.load(1)
-      expect(equipment).toEqual(null)
+    test('should return null if it cannot find the user', async () => {
+      const { sut, loadUserByIdRepositoryStub } = makeSut()
+      jest.spyOn(loadUserByIdRepositoryStub, 'loadUserById').mockResolvedValue(null)
+      const user = await sut.load(1)
+      expect(user).toEqual(null)
     })
-    test('should throw an exception if the loadEquipById method fails', async () => {
-      const { sut, loadEquipByIdRepositoryStub } = makeSut()
-      jest.spyOn(loadEquipByIdRepositoryStub, 'loadEquipById').mockRejectedValue(new Error())
+    test('should throw an exception if the loadUserById method fails', async () => {
+      const { sut, loadUserByIdRepositoryStub } = makeSut()
+      jest.spyOn(loadUserByIdRepositoryStub, 'loadUserById').mockRejectedValue(new Error())
       await expect(sut.load(1)).rejects.toThrow()
     })
   })

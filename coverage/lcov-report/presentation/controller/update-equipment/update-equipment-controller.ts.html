@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for presentation/controller/update-equipment/update-equipment-controller.ts</title>
+    <title>Code coverage report for presentation/controller/update-user/update-user-controller.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -15,48 +14,50 @@
         }
     </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/update-equipment</a> update-equipment-controller.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">96.55% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>28/29</span>
+    <div class='wrapper'>
+        <div class='pad1'>
+            <h1><a href="../../../index.html">All files</a> / <a
+                    href="index.html">presentation/controller/update-user</a> update-user-controller.ts</h1>
+            <div class='clearfix'>
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">96.55% </span>
+                    <span class="quiet">Statements</span>
+                    <span class='fraction'>28/29</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">83.33% </span>
+                    <span class="quiet">Branches</span>
+                    <span class='fraction'>5/6</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Functions</span>
+                    <span class='fraction'>2/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">95.83% </span>
+                    <span class="quiet">Lines</span>
+                    <span class='fraction'>23/24</span>
+                </div>
+
+
             </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>5/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">95.83% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>23/24</span>
-            </div>
-        
-            
+            <p class="quiet">
+                Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em>
+                for the previous block.
+            </p>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+        <div class='status-line high'></div>
+        <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -140,39 +141,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { forbidden, ok, serverError } from '../../helpers/http-helper'
-import { UpdateEquipment } from '../../../domain/usecases/Update-equipment'
+import { UpdateUser } from '../../../domain/usecases/Update-user'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
 import { badRequest } from './../../helpers/http-helper'
 import { MissingParamError, ServerError } from '../../errors'
 import { NoRowsAffected } from '../../errors/no-rows-affected-error'
-import { LoadEquipByPin } from '../../../domain/usecases/load-equip-by-pin'
-import { LoadEquipByPinError } from '../../errors/load-pin-error'
+import { LoadUserByPin } from '../../../domain/usecases/load-equip-by-pin'
+import { LoadUserByPinError } from '../../errors/load-pin-error'
 &nbsp;
-export class UpdateEquipmentController implements Controller {
+export class UpdateUserController implements Controller {
   private readonly paramsValidation: Validation
   private readonly bodyValidation: Validation
-  private readonly dbUpdateEquipment: UpdateEquipment
-  private readonly loadEquipByPin: LoadEquipByPin
-  constructor (paramsValidation: Validation, bodyValidation: Validation, dbUpdateEquipment: UpdateEquipment, loadEquipByPin: LoadEquipByPin) {
+  private readonly dbUpdateUser: UpdateUser
+  private readonly loadUserByPin: LoadUserByPin
+  constructor (paramsValidation: Validation, bodyValidation: Validation, dbUpdateUser: UpdateUser, loadUserByPin: LoadUserByPin) {
     this.paramsValidation = paramsValidation
     this.bodyValidation = bodyValidation
-    this.dbUpdateEquipment = dbUpdateEquipment
-    this.loadEquipByPin = loadEquipByPin
+    this.dbUpdateUser = dbUpdateUser
+    this.loadUserByPin = loadUserByPin
   }
 &nbsp;
-  async handle (httpRequest: HttpRequest&lt;UpdateEquipment.Request&gt;): Promise&lt;HttpResponse&gt; {
+  async handle (httpRequest: HttpRequest&lt;UpdateUser.Request&gt;): Promise&lt;HttpResponse&gt; {
     try {
-      if (!httpRequest.body.equipment) return badRequest(new MissingParamError('equipment'))
+      if (!httpRequest.body.user) return badRequest(new MissingParamError('user'))
       if (!httpRequest.params.id) return badRequest(new MissingParamError('id'))
       const validationParamsError = this.paramsValidation.validate(httpRequest.params)
-      const validationBodyError = this.bodyValidation.validate(httpRequest.body.equipment)
+      const validationBodyError = this.bodyValidation.validate(httpRequest.body.user)
       if (validationParamsError) return badRequest(validationParamsError)
       if (validationBodyError) return badRequest(validationBodyError)
-      const equip = await this.loadEquipByPin.load(httpRequest.body.equipment.iokPin)
+      const equip = await this.loadUserByPin.load(httpRequest.body.user.iokPin)
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!equip) {
-<span class="cstat-no" title="statement not covered" >        return forbidden(new LoadEquipByPinError())</span>
+<span class="cstat-no" title="statement not covered" >        return forbidden(new LoadUserByPinError())</span>
       }
-      const result = await this.dbUpdateEquipment.update(equip.id, httpRequest.body.equipment)
+      const result = await this.dbUpdateUser.update(equip.id, httpRequest.body.user)
       if (!result) return badRequest(new NoRowsAffected(httpRequest.params.id))
       return ok({})
     } catch (error) {
@@ -180,24 +181,28 @@ export class UpdateEquipmentController implements Controller {
     }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+        </td>
+        </tr>
+        </table>
+        </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+        <div class='push'></div><!-- for sticky footer -->
+    </div><!-- /wrapper -->
+    <div class='footer quiet pad2 space-top1 center small'>
+        Code coverage generated by
+        <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+        at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+    </div>
+    </div>
+    <script src="../../../prettify.js"></script>
+    <script>
+        window.onload = function () {
+            prettyPrint();
+        };
+    </script>
+    <script src="../../../sorter.js"></script>
+    <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

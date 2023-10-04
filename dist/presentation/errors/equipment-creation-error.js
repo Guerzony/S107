@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentCreationError = void 0;
-class EquipmentCreationError extends Error {
+exports.UserCreationError = void 0;
+class UserCreationError extends Error {
     constructor() {
-        super('Equipment creation error.');
-        this.name = 'EquipmentCreationError';
+        super('User creation error.');
+        this.name = 'UserCreationError';
     }
 }
-exports.EquipmentCreationError = EquipmentCreationError;
+exports.UserCreationError = UserCreationError;

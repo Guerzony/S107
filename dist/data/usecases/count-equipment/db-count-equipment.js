@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbCountEquipment = void 0;
-class DbCountEquipment {
+exports.DbCountUser = void 0;
+class DbCountUser {
     constructor(repository) {
         this.repository = repository;
     }
     async count(where) {
-        return this.repository.countEquipment(where);
+        return this.repository.countUser(where);
     }
 }
-exports.DbCountEquipment = DbCountEquipment;
+exports.DbCountUser = DbCountUser;

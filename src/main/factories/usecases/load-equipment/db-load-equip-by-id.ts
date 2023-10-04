@@ -1,7 +1,7 @@
-import { EquipMySqlRepository } from '../../../../infra/equipment/equip-mysql-repository'
-import { DbLoadEquipById } from '../../../../data/usecases/load-equip-by-id/db-load-equip-by-id'
+import { UserMySqlRepository } from '../../../../infra/user/equip-mysql-repository'
+import { DbLoadUserById } from '../../../../data/usecases/load-equip-by-id/db-load-equip-by-id'
 
-export const makeDbLoadEquipById = (): DbLoadEquipById => {
-  const loadEquipByRepository = new EquipMySqlRepository()
-  return new DbLoadEquipById(loadEquipByRepository)
+export const makeDbLoadUserById = (): DbLoadUserById => {
+  const loadUserByRepository = new UserMySqlRepository()
+  return new DbLoadUserById(loadUserByRepository)
 }

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -15,48 +14,50 @@
         }
     </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">data/usecases/load-equip-by-company-id</a> db-load-equip-by-company-id.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>5/6</span>
+    <div class='wrapper'>
+        <div class='pad1'>
+            <h1><a href="../../../index.html">All files</a> / <a
+                    href="index.html">data/usecases/load-equip-by-company-id</a> db-load-equip-by-company-id.ts</h1>
+            <div class='clearfix'>
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">83.33% </span>
+                    <span class="quiet">Statements</span>
+                    <span class='fraction'>5/6</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">50% </span>
+                    <span class="quiet">Branches</span>
+                    <span class='fraction'>1/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Functions</span>
+                    <span class='fraction'>2/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">83.33% </span>
+                    <span class="quiet">Lines</span>
+                    <span class='fraction'>5/6</span>
+                </div>
+
+
             </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>5/6</span>
-            </div>
-        
-            
+            <p class="quiet">
+                Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em>
+                for the previous block.
+            </p>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+        <div class='status-line high'></div>
+        <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -97,44 +98,48 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LoadEquipByCompanyId } from '../../../domain/usecases/load-equip-by-company-id'
-import { LoadEquipByCompanyIdRepository } from '../../protocols/db/equipment/load-equip-by-company-id-repository'
-import { LoadEquipByUserIdRepository } from '../../protocols/db/equipment/load-equip-by-user-id-repository'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LoadUserByCompanyId } from '../../../domain/usecases/load-equip-by-company-id'
+import { LoadUserByCompanyIdRepository } from '../../protocols/db/user/load-equip-by-company-id-repository'
+import { LoadUserByUserIdRepository } from '../../protocols/db/user/load-equip-by-user-id-repository'
 &nbsp;
-export class DbLoadEquipByCompanyId implements LoadEquipByCompanyId {
-  private readonly repository: LoadEquipByCompanyIdRepository
-  private readonly loadEquipByUserIdRepository: LoadEquipByUserIdRepository
-  constructor (repository: LoadEquipByCompanyIdRepository, loadEquipByUserIdRepository: LoadEquipByUserIdRepository) {
+export class DbLoadUserByCompanyId implements LoadUserByCompanyId {
+  private readonly repository: LoadUserByCompanyIdRepository
+  private readonly loadUserByUserIdRepository: LoadUserByUserIdRepository
+  constructor (repository: LoadUserByCompanyIdRepository, loadUserByUserIdRepository: LoadUserByUserIdRepository) {
     this.repository = repository
-    this.loadEquipByUserIdRepository = loadEquipByUserIdRepository
+    this.loadUserByUserIdRepository = loadUserByUserIdRepository
   }
 &nbsp;
-  async load (companyId: number, userId: number, userPrivilegeUser: string): Promise&lt;LoadEquipByCompanyIdRepository.Result&gt; {
+  async load (companyId: number, userId: number, userPrivilegeUser: string): Promise&lt;LoadUserByCompanyIdRepository.Result&gt; {
     if (userPrivilegeUser === 'admCli') {
-      return this.repository.loadEquipByCompanyId(companyId)
+      return this.repository.loadUserByCompanyId(companyId)
     } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >      return this.loadEquipByUserIdRepository.loadEquipByUserId(userId)</span>
+<span class="cstat-no" title="statement not covered" >      return this.loadUserByUserIdRepository.loadUserByUserId(userId)</span>
     }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+        </td>
+        </tr>
+        </table>
+        </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+        <div class='push'></div><!-- for sticky footer -->
+    </div><!-- /wrapper -->
+    <div class='footer quiet pad2 space-top1 center small'>
+        Code coverage generated by
+        <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+        at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+    </div>
+    </div>
+    <script src="../../../prettify.js"></script>
+    <script>
+        window.onload = function () {
+            prettyPrint();
+        };
+    </script>
+    <script src="../../../sorter.js"></script>
+    <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

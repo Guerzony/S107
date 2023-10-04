@@ -1,92 +1,92 @@
 import { describe, test, expect, jest } from '@jest/globals'
-import { AddEquipmentController } from './add-equipment-controller'
-import { CreateEquipOvenModel, EquipModel } from '../../../domain/models/equipment'
-import { AddEquipment } from '../../../domain/usecases/add-equipment'
+import { AddUserController } from './add-user-controller'
+import { CreateUserOvenModel, UserModel } from '../../../domain/models/user'
+import { AddUser } from '../../../domain/usecases/add-user'
 import { Validation } from '../../protocols'
 import { badRequest, created, serverError } from '../../helpers/http-helper'
-import { mockAddEquipmentRequest, mockAddEquipmentResponse } from '../../../domain/mocks/equipment/'
+import { mockAddUserRequest, mockAddUserResponse } from '../../../domain/mocks/user/'
 
 class ValidationStub implements Validation {
-  validate (input: any): Error | null {
+  validate(input: any): Error | null {
     return null
   }
 }
 
-class DbAddEquipmentStub implements AddEquipment {
-  async add (equipment: CreateEquipOvenModel): Promise<EquipModel> {
-    return mockAddEquipmentResponse()
+class DbAddUserStub implements AddUser {
+  async add(user: CreateUserOvenModel): Promise<UserModel> {
+    return mockAddUserResponse()
   }
 }
 
 interface SutTypes {
-  sut: AddEquipmentController
+  sut: AddUserController
   validationStub: Validation
-  dbAddEquipmentStub: AddEquipment
+  dbAddUserStub: AddUser
 }
 
 const makeSut = (): SutTypes => {
   const validationStub = new ValidationStub()
-  const dbAddEquipmentStub = new DbAddEquipmentStub()
-  const sut = new AddEquipmentController(validationStub, dbAddEquipmentStub)
+  const dbAddUserStub = new DbAddUserStub()
+  const sut = new AddUserController(validationStub, dbAddUserStub)
   return {
     sut,
     validationStub,
-    dbAddEquipmentStub
+    dbAddUserStub
   }
 }
 
-describe('Testing the AddEquipmentController class', () => {
+describe('Testing the AddUserController class', () => {
   describe('Dependency with Validator class', () => {
     test('should call the validate method only once', async () => {
       const { sut, validationStub } = makeSut()
       const validateSpy = jest.spyOn(validationStub, 'validate')
-      const httpRequest = mockAddEquipmentRequest()
+      const httpRequest = mockAddUserRequest()
       await sut.handle(httpRequest)
       expect(validateSpy).toHaveBeenCalledTimes(1)
     })
     test('should call the validate method with the correct parameter', async () => {
       const { sut, validationStub } = makeSut()
       const validateSpy = jest.spyOn(validationStub, 'validate')
-      const httpRequest = mockAddEquipmentRequest()
+      const httpRequest = mockAddUserRequest()
       await sut.handle(httpRequest)
       expect(validateSpy).toHaveBeenCalledWith(httpRequest.body)
     })
     test('should return 201 if the validate method returns null', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle(mockAddEquipmentRequest())
-      expect(httpResponse).toEqual(created<AddEquipment.Response>(httpResponse.body))
+      const httpResponse = await sut.handle(mockAddUserRequest())
+      expect(httpResponse).toEqual(created<AddUser.Response>(httpResponse.body))
     })
     test('should return 400 if the validate returns error', async () => {
       const { sut, validationStub } = makeSut()
       jest.spyOn(validationStub, 'validate').mockReturnValue(new Error())
-      const httpResponse = await sut.handle(mockAddEquipmentRequest())
+      const httpResponse = await sut.handle(mockAddUserRequest())
       expect(httpResponse).toEqual(badRequest(new Error()))
     })
   })
-  describe('Dependency with DbAddEquipment class', () => {
+  describe('Dependency with DbAddUser class', () => {
     test('should call the add method only once', async () => {
-      const { sut, dbAddEquipmentStub } = makeSut()
-      const dbAddEquipmentSpy = jest.spyOn(dbAddEquipmentStub, 'add')
-      const httpRequest = mockAddEquipmentRequest()
+      const { sut, dbAddUserStub } = makeSut()
+      const dbAddUserSpy = jest.spyOn(dbAddUserStub, 'add')
+      const httpRequest = mockAddUserRequest()
       await sut.handle(httpRequest)
-      expect(dbAddEquipmentSpy).toHaveBeenCalledTimes(1)
+      expect(dbAddUserSpy).toHaveBeenCalledTimes(1)
     })
     test('should call the add method with the correct parameter', async () => {
-      const { sut, dbAddEquipmentStub } = makeSut()
-      const dbAddEquipmentSpy = jest.spyOn(dbAddEquipmentStub, 'add')
-      const httpRequest = mockAddEquipmentRequest()
+      const { sut, dbAddUserStub } = makeSut()
+      const dbAddUserSpy = jest.spyOn(dbAddUserStub, 'add')
+      const httpRequest = mockAddUserRequest()
       await sut.handle(httpRequest)
-      expect(dbAddEquipmentSpy).toHaveBeenCalledWith(httpRequest.body)
+      expect(dbAddUserSpy).toHaveBeenCalledWith(httpRequest.body)
     })
     test('should return 201 if the add method returns an object ', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle(mockAddEquipmentRequest())
+      const httpResponse = await sut.handle(mockAddUserRequest())
       expect(httpResponse).toEqual(created(httpResponse.body))
     })
     test('should return 500 if the add method throws', async () => {
-      const { sut, dbAddEquipmentStub } = makeSut()
-      jest.spyOn(dbAddEquipmentStub, 'add').mockRejectedValue(new Error())
-      const httpResponse = await sut.handle(mockAddEquipmentRequest())
+      const { sut, dbAddUserStub } = makeSut()
+      jest.spyOn(dbAddUserStub, 'add').mockRejectedValue(new Error())
+      const httpResponse = await sut.handle(mockAddUserRequest())
       expect(httpResponse).toEqual(serverError(new Error()))
     })
   })

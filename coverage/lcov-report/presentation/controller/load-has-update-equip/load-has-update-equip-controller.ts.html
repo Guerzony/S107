@@ -1,9 +1,9 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for presentation/controller/load-has-update-equip/load-has-update-equip-controller.ts</title>
+    <title>Code coverage report for presentation/controller/load-has-update-equip/load-has-update-equip-controller.ts
+    </title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -15,48 +15,51 @@
         }
     </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/load-has-update-equip</a> load-has-update-equip-controller.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>17/18</span>
+    <div class='wrapper'>
+        <div class='pad1'>
+            <h1><a href="../../../index.html">All files</a> / <a
+                    href="index.html">presentation/controller/load-has-update-equip</a>
+                load-has-update-equip-controller.ts</h1>
+            <div class='clearfix'>
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">94.44% </span>
+                    <span class="quiet">Statements</span>
+                    <span class='fraction'>17/18</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">80% </span>
+                    <span class="quiet">Branches</span>
+                    <span class='fraction'>4/5</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Functions</span>
+                    <span class='fraction'>2/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Lines</span>
+                    <span class='fraction'>15/15</span>
+                </div>
+
+
             </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>4/5</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
-            </div>
-        
-            
+            <p class="quiet">
+                Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em>
+                for the previous block.
+            </p>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+        <div class='status-line high'></div>
+        <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -113,52 +116,56 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LoadEquipById, LoadHasUpdateEquip } from '../../../domain/usecases/load-equip-by-id'
-import { formatEquipOven } from '../../../utils/formatEquipOven'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { LoadUserById, LoadHasUpdateUser } from '../../../domain/usecases/load-equip-by-id'
+import { formatUserOven } from '../../../utils/formatUserOven'
 import { ServerError } from '../../errors'
-import { LoadEquipByPinError } from '../../errors/load-pin-error'
+import { LoadUserByPinError } from '../../errors/load-pin-error'
 import { badRequest, forbidden, noContent, ok, serverError } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
 &nbsp;
-export class LoadHasUpdateEquipController implements Controller {
-  private readonly loadEquipById: LoadEquipById
+export class LoadHasUpdateUserController implements Controller {
+  private readonly loadUserById: LoadUserById
   private readonly validation: Validation
-  constructor (loadEquipById: LoadEquipById, validation: Validation) {
-    this.loadEquipById = loadEquipById
+  constructor (loadUserById: LoadUserById, validation: Validation) {
+    this.loadUserById = loadUserById
     this.validation = validation
   }
 &nbsp;
-  async handle (httpRequest: HttpRequest&lt;LoadHasUpdateEquip.Request&gt;): Promise&lt;HttpResponse&lt;LoadHasUpdateEquip.Response&gt;&gt; {
+  async handle (httpRequest: HttpRequest&lt;LoadHasUpdateUser.Request&gt;): Promise&lt;HttpResponse&lt;LoadHasUpdateUser.Response&gt;&gt; {
     try {
       const validationError = this.validation.validate(httpRequest.params)
       if (validationError) return badRequest(validationError)
-      const response = await this.loadEquipById.load(httpRequest.params.idEquip)
+      const response = await this.loadUserById.load(httpRequest.params.idUser)
       if (!response) return noContent()
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!(response.iokPin === httpRequest.params.iokPin || httpRequest.params.iokPin === 'DE@Prat1c@BR2021')) <span class="cstat-no" title="statement not covered" >return forbidden(new LoadEquipByPinError())</span>
-      return ok(formatEquipOven(response))
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!(response.iokPin === httpRequest.params.iokPin || httpRequest.params.iokPin === 'DE@Prat1c@BR2021')) <span class="cstat-no" title="statement not covered" >return forbidden(new LoadUserByPinError())</span>
+      return ok(formatUserOven(response))
     } catch (error) {
       return serverError(new ServerError(error.stack))
     }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+        </td>
+        </tr>
+        </table>
+        </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+        <div class='push'></div><!-- for sticky footer -->
+    </div><!-- /wrapper -->
+    <div class='footer quiet pad2 space-top1 center small'>
+        Code coverage generated by
+        <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+        at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+    </div>
+    </div>
+    <script src="../../../prettify.js"></script>
+    <script>
+        window.onload = function () {
+            prettyPrint();
+        };
+    </script>
+    <script src="../../../sorter.js"></script>
+    <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

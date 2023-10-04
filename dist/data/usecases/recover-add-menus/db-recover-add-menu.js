@@ -17,7 +17,7 @@ class DbRecoverAddMenu {
         for (const menusItem of menu) {
             try {
                 const menu = await this.addMenuRepository.add({
-                    equipTypeId: equipNew_equipOld_1.EquipmentModel.find(equip => equip.idOld === menusItem.id_equipamento).idNew,
+                    equipTypeId: equipNew_equipOld_1.UserModel.find(equip => equip.idOld === menusItem.id_equipamento).idNew,
                     companyId: user.companyId,
                     menuName: menusItem.nome_minhas_receitas,
                     creationDate: new Date().toISOString(),

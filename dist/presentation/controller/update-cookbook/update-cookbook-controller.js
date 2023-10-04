@@ -13,7 +13,7 @@ class UpdateCookbookController {
     async handle(httpRequest) {
         try {
             if (!httpRequest.body.cookbook)
-                return (0, http_helper_1.badRequest)(new errors_1.MissingParamError('equipment'));
+                return (0, http_helper_1.badRequest)(new errors_1.MissingParamError('user'));
             if (!httpRequest.params.id)
                 return (0, http_helper_1.badRequest)(new errors_1.MissingParamError('id'));
             const validationParamsError = this.paramsValidation.validate(httpRequest.params);

@@ -1,12 +1,12 @@
-import { EquipOvenModel, EquipModel } from '../models/equipment'
+import { UserOvenModel, UserModel } from '../models/user'
 
-export interface LoadEquipById {
-  load(id: number): Promise<LoadEquipById.Response>;
+export interface LoadUserById {
+  load(id: number): Promise<LoadUserById.Response>;
 }
 
 // eslint-disable-next-line no-redeclare
-export namespace LoadEquipById {
-  export type Response = EquipModel & {
+export namespace LoadUserById {
+  export type Response = UserModel & {
     modelName: string
     categoryName: string
     storeName: string
@@ -22,11 +22,11 @@ export namespace LoadEquipById {
   }
 }
 
-export namespace LoadHasUpdateEquip {
-  export type Response = EquipOvenModel | null
+export namespace LoadHasUpdateUser {
+  export type Response = UserOvenModel | null
   export type Request = {
     params: {
-      idEquip: number,
+      idUser: number,
       iokPin: string
     }
   }

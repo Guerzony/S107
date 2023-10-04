@@ -1,11 +1,11 @@
 import { Controller } from '../../../../presentation/protocols'
-import { makeUpdateEquipmentBodyValidation } from './update-equipment-body-validation-factory'
-import { makeUpdateEquipmentParamsValidation } from './update-equipment-params-validation-factory'
-import { makeDbUpdateEquipment } from '../../usecases/update-equipment/db-update-equipment-factory'
-import { UpdateEquipmentController } from '../../../../presentation/controller/update-equipment/update-equipment-controller'
+import { makeUpdateUserBodyValidation } from './update-user-body-validation-factory'
+import { makeUpdateUserParamsValidation } from './update-user-params-validation-factory'
+import { makeDbUpdateUser } from '../../usecases/update-user/db-update-user-factory'
+import { UpdateUserController } from '../../../../presentation/controller/update-user/update-user-controller'
 import { ControllerDecorator } from '../../../decorators/log-controller-decorator'
 
-export const makeUpdateEquipmentController = (): Controller => {
-  const updateEquipmentController = new UpdateEquipmentController(makeUpdateEquipmentParamsValidation(), makeUpdateEquipmentBodyValidation(), makeDbUpdateEquipment())
-  return new ControllerDecorator(updateEquipmentController)
+export const makeUpdateUserController = (): Controller => {
+  const updateUserController = new UpdateUserController(makeUpdateUserParamsValidation(), makeUpdateUserBodyValidation(), makeDbUpdateUser())
+  return new ControllerDecorator(updateUserController)
 }

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentNotBelongUser = void 0;
-class EquipmentNotBelongUser extends Error {
+exports.UserNotBelongUser = void 0;
+class UserNotBelongUser extends Error {
     constructor() {
-        super('Equipment does not belong to the user');
-        this.name = 'EquipmentNotBelongUser';
+        super('User does not belong to the user');
+        this.name = 'UserNotBelongUser';
     }
 }
-exports.EquipmentNotBelongUser = EquipmentNotBelongUser;
+exports.UserNotBelongUser = UserNotBelongUser;

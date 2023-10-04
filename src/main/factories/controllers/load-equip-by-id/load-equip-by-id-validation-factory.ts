@@ -3,7 +3,7 @@ import { RequiredFieldValidaton } from '../../../../presentation/helpers/validat
 import { ValidationComposite } from '../../../../presentation/helpers/validators/validator-composite'
 import { Validation } from '../../../../presentation/protocols/validation'
 
-export const makeLoadEquipByIdValidation = (): ValidationComposite => {
+export const makeLoadUserByIdValidation = (): ValidationComposite => {
   const validations: Validation[] = []
   const fields = ['id']
   for (const field of fields) {

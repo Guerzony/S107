@@ -9,25 +9,25 @@ exports.ExportSpeedOvensFile = {
         tags: ['ExportFile'],
         summary: 'Retorna um arquivo BRAVO.zip para download conforme o modelo',
         parameters: [{
-                name: 'equipmentModel',
-                in: 'path',
-                description: 'Modelo do equipamento',
-                required: true,
-                schema: {
-                    type: 'string',
-                    enum: ['COPA', 'ROCKET', 'FIT', 'FORZA', 'COPA SM']
-                }
-            }, {
-                name: 'menuId',
-                in: 'path',
-                required: true,
-                description: 'ID do menu',
-                schema: {
-                    type: 'integer',
-                    format: 'int64',
-                    minimum: 1
-                }
-            }],
+            name: 'userModel',
+            in: 'path',
+            description: 'Modelo do equipamento',
+            required: true,
+            schema: {
+                type: 'string',
+                enum: ['COPA', 'ROCKET', 'FIT', 'FORZA', 'COPA SM']
+            }
+        }, {
+            name: 'menuId',
+            in: 'path',
+            required: true,
+            description: 'ID do menu',
+            schema: {
+                type: 'integer',
+                format: 'int64',
+                minimum: 1
+            }
+        }],
         responses: {
             200: {
                 description: 'Arquivo baixado com sucesso',

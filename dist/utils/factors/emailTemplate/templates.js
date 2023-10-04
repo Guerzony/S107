@@ -16,7 +16,7 @@ function userInvitationTemplate(name, email, id, code, lang) {
         `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/resetPassword?email=${email}&code=${code}&id=${id}">${(0, language_1.translate)('Clique aqui', lang)}</a></strong></span>${(0, language_1.translate)('para concluir seu cadastro na plataforma.', lang)}<div>&nbsp;</div></div>` +
         `<div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Ativação de conta', lang));
 }
 exports.userInvitationTemplate = userInvitationTemplate;
@@ -31,7 +31,7 @@ function recoverPasswordTemplate(name, email, id, code, lang) {
         `<div>${(0, language_1.translate)('Caso você não tenha solicitado tal alteração, desconsidere este e-mail.', lang)}</div><div>&nbsp;</div>` +
         `<div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Redefinição de senha', lang));
 }
 exports.recoverPasswordTemplate = recoverPasswordTemplate;
@@ -51,7 +51,7 @@ function userAcceptanceByAdmTemplate(admName, userName, companyName, userEmail, 
         `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/recuse/user?id=${userId}&userName=${userName}&companyName=${companyName}&email=${userEmail}">${(0, language_1.translate)('clique aqui para reportá-lo.', lang)}</a></strong>` +
         `<div>&nbsp;</div><div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Solicitação de acesso IOK', lang));
 }
 exports.userAcceptanceByAdmTemplate = userAcceptanceByAdmTemplate;
@@ -69,7 +69,7 @@ function admRecoverAccountTemplate(name, companyName, email, id, idCompany, code
         `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/activate/recover/user?email=${email}&code=${code}&id=${id}&idCompany=${idCompany}&companyName=${companyName}&userName=${name}&typeUser=${'adm'}">${(0, language_1.translate)('Clique aqui', lang)}</a></strong></span>${(0, language_1.translate)('para ativar sua conta de administrador na plataforma IOK.', lang)}<div>&nbsp;</div></div>` +
         `<div>&nbsp;</div><div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Ativação de conta', lang));
 }
 exports.admRecoverAccountTemplate = admRecoverAccountTemplate;
@@ -84,7 +84,7 @@ function userNotificationTemplate(companyName, userName, lang) {
         `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/login">${(0, language_1.translate)('Clique aqui', lang)}</a></strong></span>${(0, language_1.translate)('e faça seu login.', lang)}<div>&nbsp;</div></div>` +
         `<div>&nbsp;</div><div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Notificação de aceitação na companhia', lang));
 }
 exports.userNotificationTemplate = userNotificationTemplate;
@@ -102,7 +102,7 @@ function admAccountActivationTemplate(name, email, id, code, lang) {
         `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/activate?email=${email}&code=${code}&id=${id}">${(0, language_1.translate)('Clique aqui', lang)}</a></strong></span>${(0, language_1.translate)('para ativar sua conta de administrador na plataforma IOK.', lang)}<div>&nbsp;</div></div>` +
         `<div>&nbsp;</div><div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Ativação de conta', lang));
 }
 exports.admAccountActivationTemplate = admAccountActivationTemplate;
@@ -121,7 +121,7 @@ function userRecuserTemplate(name, companyName, lang) {
         `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/login">${(0, language_1.translate)('Clique aqui', lang)}</a></strong></span>${(0, language_1.translate)('para criar sua conta novamente e certifique-se de que o nome da rede seja informado corretamente.', lang)}<div>&nbsp;</div></div>` +
         `<div>&nbsp;</div><div>${(0, language_1.translate)('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
         `<div>&nbsp;</div><div>&nbsp;</div><div>${(0, language_1.translate)('Atenciosamente,', lang)}</div>` +
-        `<div>${(0, language_1.translate)('Equipe Prática', lang)}</div></div></div>`;
+        `<div>${(0, language_1.translate)('Usere Prática', lang)}</div></div></div>`;
     return baseTemplate.get(contentHtml, (0, language_1.translate)('Notificação de recusa', lang));
 }
 exports.userRecuserTemplate = userRecuserTemplate;

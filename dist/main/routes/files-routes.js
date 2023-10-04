@@ -9,7 +9,7 @@ const export_speed_ovens_legacy_file_1 = require("../factories/controllers/expor
 exports.default = (router, pool) => {
     // const auth = adptMiddleware(makeAuthMiddleware(pool))
     // TODO: Adicionar autenticação na rota
-    router.get('/speed-ovens-file/export/:equipmentModel/:menuId', (0, express_route_adapter_1.adptRoute)((0, controllers_1.makeExportSpeedOvensFileControllerFactory)(pool)));
+    router.get('/speed-ovens-file/export/:userModel/:menuId', (0, express_route_adapter_1.adptRoute)((0, controllers_1.makeExportSpeedOvensFileControllerFactory)(pool)));
     router.get('/tsi-file/export/:menuId', (0, express_route_adapter_1.adptRoute)((0, controllers_1.makeExportTsiFileControllerFactory)(pool)));
     router.get('/c-max-file/export/:menuId', (0, express_route_adapter_1.adptRoute)((0, export_c_max_file_1.makeExportCMaxFileControllerFactory)(pool)));
     router.get('/forza-file/export/:menuId', (0, express_route_adapter_1.adptRoute)((0, controllers_1.makeExportForzaFileControllerFactory)(pool)));

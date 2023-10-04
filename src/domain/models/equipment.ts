@@ -1,7 +1,7 @@
-export interface EquipModel {
+export interface UserModel {
   id?: number,
   idUser: number,
-  typeEquipment: string,
+  typeUser: string,
   storeId: number,
   serialNumber: string,
   creationDate: string,
@@ -23,10 +23,10 @@ export interface EquipModel {
   forcedUpdate?: number
 }
 
-export interface EquipOvenModel {
-  idEquipment?: number,
+export interface UserOvenModel {
+  idUser?: number,
   name: string,
-  typeEquipment: string,
+  typeUser: string,
   idUser: number,
   dataUpdate: boolean,
   statusData: string,
@@ -48,9 +48,9 @@ export interface EquipOvenModel {
   powerVersion?: string
 }
 
-export interface CreateEquipOvenModel {
-  idEquipment?: number,
-  typeEquipment: string,
+export interface CreateUserOvenModel {
+  idUser?: number,
+  typeUser: string,
   dataUpdate: boolean,
   appUpdate: boolean,
   serialNumber: string,
@@ -59,10 +59,10 @@ export interface CreateEquipOvenModel {
   powerVersion?: string
 }
 
-export interface UpdateEquipModel {
+export interface UpdateUserModel {
   id?: number,
   idUser: number,
-  typeEquipment?: string,
+  typeUser?: string,
   storeId?: number,
   serialNumber?: string,
   creationDate?: string,

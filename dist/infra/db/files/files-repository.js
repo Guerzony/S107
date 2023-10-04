@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilesRepositoryEquipment = exports.FilesRepository = void 0;
+exports.FilesRepositoryUser = exports.FilesRepository = void 0;
 const path_1 = __importDefault(require("path"));
 class FilesRepository {
     async downloadUpdate(ovenModel) {
@@ -23,7 +23,7 @@ class FilesRepository {
     }
 }
 exports.FilesRepository = FilesRepository;
-class FilesRepositoryEquipment {
+class FilesRepositoryUser {
     async updateSoftware(ovenModel, iokPin) {
         const filePath = path_1.default.resolve(__dirname, '../../../../public/update/');
         switch (ovenModel) {
@@ -40,4 +40,4 @@ class FilesRepositoryEquipment {
         }
     }
 }
-exports.FilesRepositoryEquipment = FilesRepositoryEquipment;
+exports.FilesRepositoryUser = FilesRepositoryUser;

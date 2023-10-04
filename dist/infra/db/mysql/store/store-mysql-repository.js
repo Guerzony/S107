@@ -10,8 +10,8 @@ class StoreMySqlRepository {
     async loadStoresByUser(idUser) {
         const result = await (0, mysql_helper_1.customGet)(this.connectionPool, `SELECT * FROM store AS S INNER JOIN UserBelongStore AS U ON (U.idStore = S.id) WHERE U.idUser = ${idUser}`);
         for (let i = 0; i < result.length; i++) {
-            const equipCount = await (0, mysql_helper_1.customGet)(this.connectionPool, `SELECT COUNT(*) as count FROM equipment WHERE storeId = ${result[i].id}`);
-            const temp = { equipmentCount: equipCount[0].count };
+            const equipCount = await (0, mysql_helper_1.customGet)(this.connectionPool, `SELECT COUNT(*) as count FROM user WHERE storeId = ${result[i].id}`);
+            const temp = { userCount: equipCount[0].count };
             Object.assign(result[i], temp);
         }
         return result;
@@ -31,8 +31,8 @@ class StoreMySqlRepository {
     async loadStoresByCompanyId(idCompany) {
         const result = await (0, mysql_helper_1.getOne)(this.connectionPool, 'store', 'companyId', idCompany);
         for (let i = 0; i < result.length; i++) {
-            const equipCount = await (0, mysql_helper_1.customGet)(this.connectionPool, `SELECT COUNT(*) as count FROM equipment WHERE storeId = ${result[i].id}`);
-            const temp = { equipmentCount: equipCount[0].count };
+            const equipCount = await (0, mysql_helper_1.customGet)(this.connectionPool, `SELECT COUNT(*) as count FROM user WHERE storeId = ${result[i].id}`);
+            const temp = { userCount: equipCount[0].count };
             Object.assign(result[i], temp);
         }
         console.log(result);

@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipByCompanyIdRemoteAccess = void 0;
-class DbLoadEquipByCompanyIdRemoteAccess {
+exports.DbLoadUserByCompanyIdRemoteAccess = void 0;
+class DbLoadUserByCompanyIdRemoteAccess {
     constructor(repository) {
         this.repository = repository;
     }
     async load(companyIdRemoteAccess) {
-        return this.repository.loadEquipByCompanyIdRemoteAccess(companyIdRemoteAccess);
+        return this.repository.loadUserByCompanyIdRemoteAccess(companyIdRemoteAccess);
     }
 }
-exports.DbLoadEquipByCompanyIdRemoteAccess = DbLoadEquipByCompanyIdRemoteAccess;
+exports.DbLoadUserByCompanyIdRemoteAccess = DbLoadUserByCompanyIdRemoteAccess;

@@ -1,13 +1,13 @@
-import { LoadEquipById } from '../../../domain/usecases/load-equip-by-id'
-import { LoadEquipByIdRepository } from '../../protocols/db/equipment/load-equip-by-id-repository'
+import { LoadUserById } from '../../../domain/usecases/load-equip-by-id'
+import { LoadUserByIdRepository } from '../../protocols/db/user/load-equip-by-id-repository'
 
-export class DbLoadEquipById implements LoadEquipById {
-  private readonly repository: LoadEquipByIdRepository
-  constructor (repository: LoadEquipByIdRepository) {
+export class DbLoadUserById implements LoadUserById {
+  private readonly repository: LoadUserByIdRepository
+  constructor(repository: LoadUserByIdRepository) {
     this.repository = repository
   }
 
-  async load (id: number): Promise<LoadEquipByIdRepository.Result> {
-    return this.repository.loadEquipById(id)
+  async load(id: number): Promise<LoadUserByIdRepository.Result> {
+    return this.repository.loadUserById(id)
   }
 }

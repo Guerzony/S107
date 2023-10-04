@@ -1,5 +1,5 @@
-import { EquipModel } from '../../../../domain/models/equipment'
+import { UserModel } from '../../../../domain/models/user'
 
-export interface LoadEquipByMenuRepository {
-    loadByEquipMenu (menuId: number): Promise<EquipModel[]>
+export interface LoadUserByMenuRepository {
+    loadByUserMenu(menuId: number): Promise<UserModel[]>
 }

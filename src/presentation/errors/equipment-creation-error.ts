@@ -1,6 +1,6 @@
-export class EquipmentCreationError extends Error {
-  constructor () {
-    super('Equipment creation error.')
-    this.name = 'EquipmentCreationError'
+export class UserCreationError extends Error {
+  constructor() {
+    super('User creation error.')
+    this.name = 'UserCreationError'
   }
 }

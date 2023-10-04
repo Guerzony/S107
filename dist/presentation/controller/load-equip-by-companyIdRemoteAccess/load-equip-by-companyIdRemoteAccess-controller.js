@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadEquipByCompanyIdRemoteAccessController = void 0;
+exports.LoadUserByCompanyIdRemoteAccessController = void 0;
 const errors_1 = require("../../errors");
 const http_helper_1 = require("../../helpers/http-helper");
-class LoadEquipByCompanyIdRemoteAccessController {
-    constructor(loadEquipByCompanyId, validation) {
-        this.loadEquipByCompanyId = loadEquipByCompanyId;
+class LoadUserByCompanyIdRemoteAccessController {
+    constructor(loadUserByCompanyId, validation) {
+        this.loadUserByCompanyId = loadUserByCompanyId;
         this.validation = validation;
     }
     async handle(httpRequest) {
@@ -14,7 +14,7 @@ class LoadEquipByCompanyIdRemoteAccessController {
             if (validationError)
                 return (0, http_helper_1.badRequest)(validationError);
             const { companyIdRemoteAccess } = httpRequest.params;
-            const response = await this.loadEquipByCompanyId.load(companyIdRemoteAccess);
+            const response = await this.loadUserByCompanyId.load(companyIdRemoteAccess);
             if (response.length === 0)
                 return (0, http_helper_1.noContent)();
             return (0, http_helper_1.ok)(response);
@@ -24,4 +24,4 @@ class LoadEquipByCompanyIdRemoteAccessController {
         }
     }
 }
-exports.LoadEquipByCompanyIdRemoteAccessController = LoadEquipByCompanyIdRemoteAccessController;
+exports.LoadUserByCompanyIdRemoteAccessController = LoadUserByCompanyIdRemoteAccessController;

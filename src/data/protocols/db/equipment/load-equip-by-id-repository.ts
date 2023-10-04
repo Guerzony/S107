@@ -1,10 +1,10 @@
-import { LoadEquipById } from '../../../../domain/usecases/load-equip-by-id'
+import { LoadUserById } from '../../../../domain/usecases/load-equip-by-id'
 
-export interface LoadEquipByIdRepository {
-  loadEquipById: (Id: number) => Promise<LoadEquipByIdRepository.Result>
+export interface LoadUserByIdRepository {
+  loadUserById: (Id: number) => Promise<LoadUserByIdRepository.Result>
 }
 
 // eslint-disable-next-line no-redeclare
-export namespace LoadEquipByIdRepository {
-  export type Result = LoadEquipById.Response
+export namespace LoadUserByIdRepository {
+  export type Result = LoadUserById.Response
 }

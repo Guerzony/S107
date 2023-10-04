@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.equipmentSchema = void 0;
-exports.equipmentSchema = {
+exports.userSchema = void 0;
+exports.userSchema = {
     type: 'object',
     properties: {
         id: {
@@ -52,7 +52,7 @@ exports.equipmentSchema = {
         categoryId: {
             type: 'integer'
         },
-        typeEquipment: {
+        typeUser: {
             type: 'string'
         },
         dataUpdate: {
@@ -78,7 +78,7 @@ exports.equipmentSchema = {
     required: [
         'id',
         'idUser',
-        'typeEquipment',
+        'typeUser',
         'storeId',
         'serialNumber',
         'creationDate',

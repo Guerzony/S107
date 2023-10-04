@@ -11,9 +11,9 @@ class RecoverUserMySqlRepository {
     constructor() {
         this.connectionPool = mysql_1.default.createPool(env_1.default.previousDb);
     }
-    async loadEquipment(idUser) {
+    async loadUser(idUser) {
         const test = mysql_1.default.createPool(env_1.default.previousDb);
-        const result = await (0, mysql_helper_1.getOne)(test, 'equipments_linux', 'id_user', idUser);
+        const result = await (0, mysql_helper_1.getOne)(test, 'users_linux', 'id_user', idUser);
         test.end();
         return result;
     }

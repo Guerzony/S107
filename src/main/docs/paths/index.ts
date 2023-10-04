@@ -1,5 +1,5 @@
 export * from './store-path'
-export * from './equipment'
+export * from './user'
 export * from './menu'
 export * from './group'
 export * from './recipe'

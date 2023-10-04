@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadEquipByPinError = void 0;
-class LoadEquipByPinError extends Error {
+exports.LoadUserByPinError = void 0;
+class LoadUserByPinError extends Error {
     constructor() {
         super('Pin not found');
-        this.name = 'LoadEquipByPinError';
+        this.name = 'LoadUserByPinError';
     }
 }
-exports.LoadEquipByPinError = LoadEquipByPinError;
+exports.LoadUserByPinError = LoadUserByPinError;

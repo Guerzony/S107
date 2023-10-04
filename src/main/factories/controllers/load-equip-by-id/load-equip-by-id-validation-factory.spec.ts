@@ -3,13 +3,13 @@ import { NumericFieldValidation } from '../../../../presentation/helpers/validat
 import { RequiredFieldValidaton } from '../../../../presentation/helpers/validators/required-field-validation'
 import { ValidationComposite } from '../../../../presentation/helpers/validators/validator-composite'
 import { Validation } from '../../../../presentation/protocols'
-import { makeLoadEquipByIdValidation } from './load-equip-by-id-validation-factory'
+import { makeLoadUserByIdValidation } from './load-equip-by-id-validation-factory'
 
 jest.mock('../../../../presentation/helpers/validators/validator-composite')
 
-describe('LoadEquipByValidationFactory', () => {
+describe('LoadUserByValidationFactory', () => {
   test('should call ValidationComposite with all validations', () => {
-    makeLoadEquipByIdValidation()
+    makeLoadUserByIdValidation()
     const validations: Validation[] = []
     const fields = ['id']
     for (const field of fields) {

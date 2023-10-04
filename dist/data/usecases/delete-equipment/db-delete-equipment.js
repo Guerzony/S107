@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbDeleteEquipment = void 0;
-class DbDeleteEquipment {
+exports.DbDeleteUser = void 0;
+class DbDeleteUser {
     constructor(repository) {
         this.repository = repository;
     }
     async delete(id) {
-        return await this.repository.deleteEquipment(id);
+        return await this.repository.deleteUser(id);
     }
 }
-exports.DbDeleteEquipment = DbDeleteEquipment;
+exports.DbDeleteUser = DbDeleteUser;

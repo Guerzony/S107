@@ -1,15 +1,15 @@
-export const loadEquipmentById = {
+export const loadUserById = {
   get: {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Equipment'],
-    summary: 'Retrieve a equipment by its id',
+    tags: ['User'],
+    summary: 'Retrieve a user by its id',
     parameters: [{
       name: 'id',
       in: 'path',
       required: true,
-      description: 'Id of the equipment',
+      description: 'Id of the user',
       schema: {
         type: 'integer',
         format: 'int64',
@@ -20,11 +20,11 @@ export const loadEquipmentById = {
       200: {
         description: 'OK',
         content: {
-          'application/json' : {
+          'application/json': {
             schema: {
               allOf: [
                 {
-                  $ref: '#/schemas/equipment',
+                  $ref: '#/schemas/user',
                 },
                 {
                   type: 'object',
@@ -53,9 +53,9 @@ export const loadEquipmentById = {
 
                   }
                 }
-              ]              
-            }               
-          }             
+              ]
+            }
+          }
         }
       },
       204: {

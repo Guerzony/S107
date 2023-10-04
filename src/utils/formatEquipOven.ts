@@ -1,23 +1,23 @@
-import { EquipModel } from '../domain/models/equipment'
+import { UserModel } from '../domain/models/user'
 
-export const formatEquipOven = (equipmentResponse: EquipModel) => {
+export const formatUserOven = (userResponse: UserModel) => {
   return {
-    idEquipment: equipmentResponse.id,
-    name: equipmentResponse.name,
-    typeEquipment: equipmentResponse.typeEquipment,
-    idUser: equipmentResponse.idUser,
-    dataUpdate: equipmentResponse.dataUpdate,
-    statusData: equipmentResponse.statusData,
-    appUpdate: equipmentResponse.appUpdate,
-    statusApp: equipmentResponse.statusApp,
-    serialNumber: equipmentResponse.serialNumber,
-    menuId: equipmentResponse.menuId,
-    sentMenu: equipmentResponse.sentMenu,
-    iokPin: equipmentResponse.iokPin,
-    creationDate: equipmentResponse.creationDate,
+    idUser: userResponse.id,
+    name: userResponse.name,
+    typeUser: userResponse.typeUser,
+    idUser: userResponse.idUser,
+    dataUpdate: userResponse.dataUpdate,
+    statusData: userResponse.statusData,
+    appUpdate: userResponse.appUpdate,
+    statusApp: userResponse.statusApp,
+    serialNumber: userResponse.serialNumber,
+    menuId: userResponse.menuId,
+    sentMenu: userResponse.sentMenu,
+    iokPin: userResponse.iokPin,
+    creationDate: userResponse.creationDate,
     sendConfig: true,
-    softwareVersion: equipmentResponse.softwareVersion,
-    hashSw: equipmentResponse.hashSw,
-    powerVersion: equipmentResponse.powerVersion
+    softwareVersion: userResponse.softwareVersion,
+    hashSw: userResponse.hashSw,
+    powerVersion: userResponse.powerVersion
   }
 }

@@ -1,15 +1,15 @@
-export const updateEquipment = {
+export const updateUser = {
   put: {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Equipment'],
-    summary: 'Update an equipment',
+    tags: ['User'],
+    summary: 'Update an user',
     parameters: [{
       name: 'id',
       in: 'path',
       required: true,
-      description: 'Id of the equipment',
+      description: 'Id of the user',
       schema: {
         type: 'integer',
         format: 'int64',
@@ -23,8 +23,8 @@ export const updateEquipment = {
           schema: {
             type: 'object',
             properties: {
-              equipment: {
-                $ref: '#/schemas/equipment'
+              user: {
+                $ref: '#/schemas/user'
               }
             }
           }
@@ -33,7 +33,7 @@ export const updateEquipment = {
     },
     responses: {
       200: {
-        description: 'Equipment created successfully',
+        description: 'User created successfully',
         content: {
           'application/json': {
             schema: {}

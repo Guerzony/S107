@@ -1,10 +1,10 @@
-import { CountEquipment } from '../../../../domain/usecases/count-equipment'
+import { CountUser } from '../../../../domain/usecases/count-user'
 
-export interface CountEquipmentRepository {
-  countEquipment: (where?: CountEquipmentRepository.Parameter) => Promise<CountEquipmentRepository.Result>
+export interface CountUserRepository {
+  countUser: (where?: CountUserRepository.Parameter) => Promise<CountUserRepository.Result>
 }
 // eslint-disable-next-line no-redeclare
-export namespace CountEquipmentRepository {
-  export type Parameter = CountEquipment.Parameter
-  export type Result = CountEquipment.Response
+export namespace CountUserRepository {
+  export type Parameter = CountUser.Parameter
+  export type Result = CountUser.Response
 }

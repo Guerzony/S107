@@ -7,12 +7,12 @@ class DbExportSpeedOvensFile {
         this.fileManager = fileManager;
         this.hasher = hasher;
     }
-    async export(menu, equipmentModel) {
+    async export(menu, userModel) {
         const jsonMenu = JSON.stringify(menu, null, 4);
         const hash = await this.hasher.hash(`${jsonMenu}\n`);
         const data = JSON.stringify({ ...menu, hash }, null, 4);
         let fileName;
-        switch (equipmentModel) {
+        switch (userModel) {
             case 'COPA, ROCKET, COPA SM':
                 fileName = 'CopaRocketExportfile';
                 break;
@@ -23,7 +23,7 @@ class DbExportSpeedOvensFile {
                 fileName = 'FITExportfile';
                 break;
             default:
-                throw new Error('Invalid equipment model');
+                throw new Error('Invalid user model');
         }
         return await this.fileManager.save(fileName, data);
     }

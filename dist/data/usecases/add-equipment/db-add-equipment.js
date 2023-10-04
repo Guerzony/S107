@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbAddEquipment = void 0;
-class DbAddEquipment {
+exports.DbAddUser = void 0;
+class DbAddUser {
     constructor(repository, codeRandomRepository) {
         this.repository = repository;
         this.codeRandomRepository = codeRandomRepository;
     }
-    async add(equipment) {
+    async add(user) {
         const pin = await this.codeRandomRepository.codeRandom();
-        Object.assign(equipment, { iokPin: pin });
-        delete equipment.idEquipment;
-        const equipmentResponse = await this.repository.addEquipment(equipment);
-        return equipmentResponse;
+        Object.assign(user, { iokPin: pin });
+        delete user.idUser;
+        const userResponse = await this.repository.addUser(user);
+        return userResponse;
     }
 }
-exports.DbAddEquipment = DbAddEquipment;
+exports.DbAddUser = DbAddUser;

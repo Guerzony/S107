@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipByCompanyId = void 0;
-class DbLoadEquipByCompanyId {
-    constructor(repository, loadEquipByUserIdRepository) {
+exports.DbLoadUserByCompanyId = void 0;
+class DbLoadUserByCompanyId {
+    constructor(repository, loadUserByUserIdRepository) {
         this.repository = repository;
-        this.loadEquipByUserIdRepository = loadEquipByUserIdRepository;
+        this.loadUserByUserIdRepository = loadUserByUserIdRepository;
     }
     async load(companyId, userId, userPrivilegeUser) {
         if (userPrivilegeUser === '1') {
-            return this.repository.loadEquipByCompanyId(companyId);
+            return this.repository.loadUserByCompanyId(companyId);
         }
         else {
-            return this.loadEquipByUserIdRepository.loadEquipByUserId(userId);
+            return this.loadUserByUserIdRepository.loadUserByUserId(userId);
         }
     }
 }
-exports.DbLoadEquipByCompanyId = DbLoadEquipByCompanyId;
+exports.DbLoadUserByCompanyId = DbLoadUserByCompanyId;

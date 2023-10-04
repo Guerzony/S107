@@ -1,59 +1,60 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for infra/db/mysql/store/store-mysql-repository.ts</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type='text/css'>
-        .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
-        }
-    </style>
+  <title>Code coverage report for infra/db/mysql/store/store-mysql-repository.ts</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../../../prettify.css" />
+  <link rel="stylesheet" href="../../../../base.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type='text/css'>
+    .coverage-summary .sorter {
+      background-image: url(../../../../sort-arrow-sprite.png);
+    }
+  </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
+  <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">infra/db/mysql/store</a> store-mysql-repository.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">74.19% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>23/31</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>21/28</span>
-            </div>
-        
-            
+      <h1><a href="../../../../index.html">All files</a> / <a href="index.html">infra/db/mysql/store</a>
+        store-mysql-repository.ts</h1>
+      <div class='clearfix'>
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">74.19% </span>
+          <span class="quiet">Statements</span>
+          <span class='fraction'>23/31</span>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">50% </span>
+          <span class="quiet">Branches</span>
+          <span class='fraction'>1/2</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">85.71% </span>
+          <span class="quiet">Functions</span>
+          <span class='fraction'>6/7</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">75% </span>
+          <span class="quiet">Lines</span>
+          <span class='fraction'>21/28</span>
+        </div>
+
+
+      </div>
+      <p class="quiet">
+        Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the
+        previous block.
+      </p>
     </div>
     <div class='status-line medium'></div>
     <pre><table class="coverage">
@@ -227,8 +228,8 @@ export class StoreMySqlRepository implements AddStoreRepository, DeleteStoreRepo
 <span class="fstat-no" title="function not covered" >  async </span>loadStoresByUser (idUser: number): Promise&lt;StoreModel[]&gt; {
     const result = <span class="cstat-no" title="statement not covered" >await customGet(this.connectionPool, `SELECT * FROM store AS S INNER JOIN UserBelongStore AS U ON (U.idStore = S.id) WHERE U.idUser = ${idUser}`)</span>
 <span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; result.length; i++) {</span>
-      const equipCount = <span class="cstat-no" title="statement not covered" >await customGet(this.connectionPool, `SELECT COUNT(*) as count FROM equipment WHERE storeId = ${result[i].id}`)</span>
-      const temp = <span class="cstat-no" title="statement not covered" >{ equipmentCount: equipCount[0].count }</span>
+      const equipCount = <span class="cstat-no" title="statement not covered" >await customGet(this.connectionPool, `SELECT COUNT(*) as count FROM user WHERE storeId = ${result[i].id}`)</span>
+      const temp = <span class="cstat-no" title="statement not covered" >{ userCount: equipCount[0].count }</span>
 <span class="cstat-no" title="statement not covered" >      Object.assign(result[i], temp)</span>
     }
 <span class="cstat-no" title="statement not covered" >    return result</span>
@@ -251,8 +252,8 @@ export class StoreMySqlRepository implements AddStoreRepository, DeleteStoreRepo
   async loadStoresByCompanyId (idCompany: number): Promise&lt;StoreModel[]&gt; {
     const result = await getOne(this.connectionPool, 'store', 'companyId', idCompany)
     for (let i = 0; i &lt; result.length; i++) {
-      const equipCount = await customGet(this.connectionPool, `SELECT COUNT(*) as count FROM equipment WHERE storeId = ${result[i].id}`)
-      const temp = { equipmentCount: equipCount[0].count }
+      const equipCount = await customGet(this.connectionPool, `SELECT COUNT(*) as count FROM user WHERE storeId = ${result[i].id}`)
+      const temp = { userCount: equipCount[0].count }
       Object.assign(result[i], temp)
     }
     console.log(result)
@@ -282,24 +283,28 @@ export class StoreMySqlRepository implements AddStoreRepository, DeleteStoreRepo
     return { ...storeData, id: id }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+    </td>
+    </tr>
+    </table>
+    </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
-    </body>
+    <div class='push'></div><!-- for sticky footer -->
+  </div><!-- /wrapper -->
+  <div class='footer quiet pad2 space-top1 center small'>
+    Code coverage generated by
+    <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+    at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+  </div>
+  </div>
+  <script src="../../../../prettify.js"></script>
+  <script>
+    window.onload = function () {
+      prettyPrint();
+    };
+  </script>
+  <script src="../../../../sorter.js"></script>
+  <script src="../../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

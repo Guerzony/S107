@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addEquipmentResponseSchema = exports.addEquipmentRequestSchema = void 0;
-exports.addEquipmentRequestSchema = {
+exports.addUserResponseSchema = exports.addUserRequestSchema = void 0;
+exports.addUserRequestSchema = {
     type: 'object',
     properties: {
-        idEquipment: {
+        idUser: {
             type: 'integer'
         },
-        typeEquipment: {
+        typeUser: {
             type: 'string'
         },
         dataUpdate: {
@@ -30,12 +30,12 @@ exports.addEquipmentRequestSchema = {
             type: 'string'
         }
     },
-    required: ['idEquipment', 'typeEquipment', 'dataUpdate', 'appUpdate', 'serialNumber', 'creationDate', 'softwareVersion', 'powerVersion']
+    required: ['idUser', 'typeUser', 'dataUpdate', 'appUpdate', 'serialNumber', 'creationDate', 'softwareVersion', 'powerVersion']
 };
-exports.addEquipmentResponseSchema = {
+exports.addUserResponseSchema = {
     type: 'object',
     properties: {
-        idEquipment: {
+        idUser: {
             type: 'integer'
         },
         name: {
@@ -47,7 +47,7 @@ exports.addEquipmentResponseSchema = {
         iokPin: {
             type: 'string'
         },
-        typeEquipment: {
+        typeUser: {
             type: 'string'
         },
         dataUpdate: {
@@ -100,9 +100,9 @@ exports.addEquipmentResponseSchema = {
         }
     },
     required: [
-        'idEquipment',
         'idUser',
-        'typeEquipment',
+        'idUser',
+        'typeUser',
         'storeId',
         'serialNumber',
         'creationDate',

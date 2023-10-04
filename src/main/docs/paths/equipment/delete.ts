@@ -1,15 +1,15 @@
-export const deleteEquipment = {
+export const deleteUser = {
   delete: {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Equipment'],
-    summary: 'Delete an equipment',
+    tags: ['User'],
+    summary: 'Delete an user',
     parameters: [{
       name: 'id',
       in: 'path',
       required: true,
-      description: 'Id of the equipment',
+      description: 'Id of the user',
       schema: {
         type: 'integer',
         format: 'int64',
@@ -18,11 +18,11 @@ export const deleteEquipment = {
     }],
     responses: {
       200: {
-        description: 'Equipment created successfully',
+        description: 'User created successfully',
         content: {
-          'application/json' : {
-            schema: { }               
-          }             
+          'application/json': {
+            schema: {}
+          }
         }
       },
       400: {

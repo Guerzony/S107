@@ -2,11 +2,11 @@ import {
   storePath,
   storeByCompanyIdPath,
   storeByIdPath,
-  addEquipment,
-  loadEquipmentByCompanyId,
-  loadEquipmentById,
-  updateEquipment,
-  deleteEquipment,
+  addUser,
+  loadUserByCompanyId,
+  loadUserById,
+  updateUser,
+  deleteUser,
   addMenu,
   loadMenuByCompanyId,
   updateMenu,
@@ -39,7 +39,7 @@ import {
   addStepCombiOvenCMAX,
   deleteStepCombiOvenCMAX,
   updateStepCombiOvenCMAX,
-  countEquipment,
+  countUser,
   ExportCMaxFile,
   ExportForzaFile,
   ExportSpeedOvensFile,
@@ -47,14 +47,14 @@ import {
   ExportSpeedOvensLegacyFile
 } from './paths/'
 
-const equipmentPaths = {
-  '/linux-equipments/create-new-linux/{pin}': addEquipment,
-  '/equipment/count': countEquipment,
-  '/equipment/{companyId}/company': loadEquipmentByCompanyId,
-  '/equipment/{id}': {
-    ...loadEquipmentById,
-    ...updateEquipment,
-    ...deleteEquipment
+const userPaths = {
+  '/linux-users/create-new-linux/{pin}': addUser,
+  '/user/count': countUser,
+  '/user/{companyId}/company': loadUserByCompanyId,
+  '/user/{id}': {
+    ...loadUserById,
+    ...updateUser,
+    ...deleteUser
   }
 }
 
@@ -128,7 +128,7 @@ const exportFilePaths = {
   '/c-max-file/export/{menuId}': ExportCMaxFile,
   '/forza-file/export/{menuId}': ExportForzaFile,
   '/tsi-file/export/{menuId}': ExportTsiFile,
-  '/speed-ovens-file/export/{equipmentModel}/{menuId}': ExportSpeedOvensFile,
+  '/speed-ovens-file/export/{userModel}/{menuId}': ExportSpeedOvensFile,
   '/speed-ovens-legacy/export/{generation}/{menuId}': ExportSpeedOvensLegacyFile,
 }
 
@@ -136,7 +136,7 @@ export default {
   '/store': storePath,
   '/company/{companyId}/stores': storeByCompanyIdPath,
   '/store/{id}': storeByIdPath,
-  ...equipmentPaths,
+  ...userPaths,
   ...menuPaths,
   ...groupPaths,
   ...recipePaths,

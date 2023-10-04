@@ -20,14 +20,14 @@ This documentation refers only to the database used for the **PraticaUi** projec
 > - store - stores data about the physical location of a store.
 > - user - stores data about the users registered to the platform.
 > - userConfigs - stores general configs about the users preferences when using the platform.
-> - equipmentType - stores the types of equipment currently supported by the platform.
-> - equipment - stores data about the individual equipments owned by stores.
+> - userType - stores the types of user currently supported by the platform.
+> - user - stores data about the individual users owned by stores.
 > - swVersion - stores data about all software versions that have been released.
 > - images - stores the name of all images provided by the platform as well as the corresponding images for 1st generation exporting.
-> - menu - stores information about the menus created by users or imported from equipments.
+> - menu - stores information about the menus created by users or imported from users.
 > - menuConfigs - stores data about the menu configs.
-> - group - stores data the groups created by users or imported from equipments.
-> - recipe - stores information about the individual recipes created by users for all equipments except C-MAX.
+> - group - stores data the groups created by users or imported from users.
+> - recipe - stores information about the individual recipes created by users for all users except C-MAX.
 > - cmaxRecipe - stores information about the recipes created specifically for the C-MAX oven.
 > - cookbookRecipe - stores information about the recipes created by our chefs available to be downloaded in the Cookbook.
 > - stepSpeedOven - stores the recipe steps for all the speed ovens supported by the platform.
@@ -65,14 +65,14 @@ Stores general configs about the users preferences when using the platform.
 
 ---
 
-#### equipmentType
+#### userType
 
-Stores the types of equipment currently supported by the platform.
+Stores the types of user currently supported by the platform.
 
 ---
-#### equipment
+#### user
 
-Stores data about the individual equipments owned by stores.
+Stores data about the individual users owned by stores.
 
 ---
 
@@ -90,7 +90,7 @@ Stores the name of all images provided by the platform as well as the correspond
 
 #### menu
 
-Stores information about the menus created by users or imported from equipments.
+Stores information about the menus created by users or imported from users.
 
 ---
 
@@ -102,13 +102,13 @@ Stores data about the menu configs.
 
 #### group 
 
-Stores data the groups created by users or imported from equipments.
+Stores data the groups created by users or imported from users.
 
 ---
 
 #### recipe 
 
-Stores information about the individual recipes created by users for all equipments except C-MAX.
+Stores information about the individual recipes created by users for all users except C-MAX.
 
 ---
 

@@ -1,13 +1,13 @@
-import { UpdateEquipment } from '../../../domain/usecases/update-equipment'
-import { UpdateEquipmentRepository } from '../../protocols/db/equipment/update-equipment-repository'
+import { UpdateUser } from '../../../domain/usecases/update-user'
+import { UpdateUserRepository } from '../../protocols/db/user/update-user-repository'
 
-export class DbUpdateEquipment implements UpdateEquipment {
-  private readonly repository: UpdateEquipmentRepository
-  constructor(repository: UpdateEquipmentRepository) {
+export class DbUpdateUser implements UpdateUser {
+  private readonly repository: UpdateUserRepository
+  constructor(repository: UpdateUserRepository) {
     this.repository = repository
   }
 
-  async update(id: number, equipment: any): Promise<boolean> {
-    return await this.repository.updateEquipment(id, equipment)
+  async update(id: number, user: any): Promise<boolean> {
+    return await this.repository.updateUser(id, user)
   }
 }

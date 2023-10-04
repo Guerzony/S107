@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeUpdateEquipByCompany = void 0;
-const equip_mysql_repository_1 = require("../../../../infra/db/mysql/equipment/equip-mysql-repository");
+exports.makeUpdateUserByCompany = void 0;
+const equip_mysql_repository_1 = require("../../../../infra/db/mysql/user/equip-mysql-repository");
 const db_Update_equip_by_company_1 = require("../../../../data/usecases/update-equip-by-company/db-Update-equip-by-company");
-const makeUpdateEquipByCompany = (pool) => {
-    const equipMySqlRepository = new equip_mysql_repository_1.EquipMySqlRepository(pool);
-    return new db_Update_equip_by_company_1.DbUpdateEquipByCompany(equipMySqlRepository);
+const makeUpdateUserByCompany = (pool) => {
+    const equipMySqlRepository = new equip_mysql_repository_1.UserMySqlRepository(pool);
+    return new db_Update_equip_by_company_1.DbUpdateUserByCompany(equipMySqlRepository);
 };
-exports.makeUpdateEquipByCompany = makeUpdateEquipByCompany;
+exports.makeUpdateUserByCompany = makeUpdateUserByCompany;

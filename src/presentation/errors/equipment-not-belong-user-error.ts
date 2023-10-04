@@ -1,6 +1,6 @@
-export class EquipmentNotBelongUser extends Error {
-  constructor () {
-    super('Equipment does not belong to the user')
-    this.name = 'EquipmentNotBelongUser'
+export class UserNotBelongUser extends Error {
+  constructor() {
+    super('User does not belong to the user')
+    this.name = 'UserNotBelongUser'
   }
 }

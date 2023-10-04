@@ -3,7 +3,7 @@ import { ValidationComposite } from '../../../../presentation/helpers/validators
 import { RequiredFieldValidaton } from '../../../../presentation/helpers/validators/required-field-validation'
 import { NumericFieldValidation } from '../../../../presentation/helpers/validators/numeric-fields-validation'
 
-export const makeUpdateEquipmentParamsValidation = (): ValidationComposite => {
+export const makeUpdateUserParamsValidation = (): ValidationComposite => {
   const validations: Validation[] = []
   const fields = ['id']
   for (const field of fields) {

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mockExportSpeedOvensFileHttpRequest = void 0;
-const mockExportSpeedOvensFileHttpRequest = (menuId, equipmentModel) => ({
+const mockExportSpeedOvensFileHttpRequest = (menuId, userModel) => ({
     params: {
         menuId: menuId !== null && menuId !== void 0 ? menuId : 1,
-        equipmentModel: equipmentModel !== null && equipmentModel !== void 0 ? equipmentModel : 'COPA, ROCKET, COPA SM'
+        userModel: userModel !== null && userModel !== void 0 ? userModel : 'COPA, ROCKET, COPA SM'
     }
 });
 exports.mockExportSpeedOvensFileHttpRequest = mockExportSpeedOvensFileHttpRequest;

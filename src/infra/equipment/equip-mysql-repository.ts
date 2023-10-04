@@ -1,105 +1,105 @@
 import { Pool } from 'mysql'
-import { LoadEquipByPinRepository } from '../../data/protocols/db/equipment/load-equip-by-pin-repository'
-import { RegisterEquipRepository } from '../../data/protocols/db/equipment/register-equip-repository'
-import { LoadEquipByMenuRepository } from '../../data/protocols/db/equipment/load-equip-by-menu-repository'
-import { LoadEquipByCompanyIdRepository } from '../../data/protocols/db/equipment/load-equip-by-company-id-repository'
-import { LoadEquipByIdRepository } from '../../data/protocols/db/equipment/load-equip-by-id-repository'
-import { AddEquipmentRepository } from '../../data/protocols/db/equipment/add-equipment-repository'
-import { EquipModel, EquipOvenModel, UpdateEquipModel } from '../../domain/models/equipment'
+import { LoadUserByPinRepository } from '../../data/protocols/db/user/load-equip-by-pin-repository'
+import { RegisterUserRepository } from '../../data/protocols/db/user/register-equip-repository'
+import { LoadUserByMenuRepository } from '../../data/protocols/db/user/load-equip-by-menu-repository'
+import { LoadUserByCompanyIdRepository } from '../../data/protocols/db/user/load-equip-by-company-id-repository'
+import { LoadUserByIdRepository } from '../../data/protocols/db/user/load-equip-by-id-repository'
+import { AddUserRepository } from '../../data/protocols/db/user/add-user-repository'
+import { UserModel, UserOvenModel, UpdateUserModel } from '../../domain/models/user'
 import { customGet, deleteById, getOne, insertOne, updateAll, updateById } from '../mysql-helper'
-import { countEquipmentSQL, loadEquipByCompanyIdRemoteAccessSQL, loadEquipByCompanyIdSQL, loadEquipByIdSQL, loadEquipByUserIdSQL } from '../query-helpers'
-import { UpdateEquipmentRepository } from '../../data/protocols/db/equipment/update-equipment-repository'
-import { DeleteEquipmentRepository } from '../../data/protocols/db/equipment/delete-equipment-repository'
-import { CountEquipmentRepository } from '../../data/protocols/db/equipment/count-equipment-repository'
-import { LoadEquipByUserIdRepository } from '../../data/protocols/db/equipment/load-equip-by-user-id-repository'
-import { AddRecoverEquipmentRepository } from '../../data/protocols/db/equipment/add-recover-equipment-repository'
-import { LoadEquipByCompanyIdRemoteAccessRepository } from '../../data/protocols/db/equipment/load-equip-by-companyIdRemoteAccess-repository'
+import { countUserSQL, loadUserByCompanyIdRemoteAccessSQL, loadUserByCompanyIdSQL, loadUserByIdSQL, loadUserByUserIdSQL } from '../query-helpers'
+import { UpdateUserRepository } from '../../data/protocols/db/user/update-user-repository'
+import { DeleteUserRepository } from '../../data/protocols/db/user/delete-user-repository'
+import { CountUserRepository } from '../../data/protocols/db/user/count-user-repository'
+import { LoadUserByUserIdRepository } from '../../data/protocols/db/user/load-equip-by-user-id-repository'
+import { AddRecoverUserRepository } from '../../data/protocols/db/user/add-recover-user-repository'
+import { LoadUserByCompanyIdRemoteAccessRepository } from '../../data/protocols/db/user/load-equip-by-companyIdRemoteAccess-repository'
 
-export class EquipMySqlRepository implements
-  LoadEquipByPinRepository,
-  RegisterEquipRepository,
-  LoadEquipByMenuRepository,
-  LoadEquipByCompanyIdRepository,
-  LoadEquipByIdRepository,
-  AddEquipmentRepository,
-  UpdateEquipmentRepository,
-  DeleteEquipmentRepository,
-  CountEquipmentRepository,
-  LoadEquipByUserIdRepository,
-  AddRecoverEquipmentRepository,
-  LoadEquipByCompanyIdRemoteAccessRepository {
+export class UserMySqlRepository implements
+  LoadUserByPinRepository,
+  RegisterUserRepository,
+  LoadUserByMenuRepository,
+  LoadUserByCompanyIdRepository,
+  LoadUserByIdRepository,
+  AddUserRepository,
+  UpdateUserRepository,
+  DeleteUserRepository,
+  CountUserRepository,
+  LoadUserByUserIdRepository,
+  AddRecoverUserRepository,
+  LoadUserByCompanyIdRemoteAccessRepository {
   private readonly connectionPool: Pool
 
-  async loadEquipByCompanyIdRemoteAccess(companyIdRemoteAccess: number): Promise<LoadEquipByCompanyIdRemoteAccessRepository.Result> {
-    const sql = loadEquipByCompanyIdRemoteAccessSQL(companyIdRemoteAccess)
-    return await customGet<LoadEquipByCompanyIdRepository.Result>(this.connectionPool, sql)
+  async loadUserByCompanyIdRemoteAccess(companyIdRemoteAccess: number): Promise<LoadUserByCompanyIdRemoteAccessRepository.Result> {
+    const sql = loadUserByCompanyIdRemoteAccessSQL(companyIdRemoteAccess)
+    return await customGet<LoadUserByCompanyIdRepository.Result>(this.connectionPool, sql)
   }
 
-  async addRecoverEquipment(equipment: EquipOvenModel): Promise<EquipModel> {
-    const result = await insertOne(this.connectionPool, 'equipment', equipment)
-    const equipmentResponse = await getOne(this.connectionPool, 'equipment', 'id', result.insertId)
-    return equipmentResponse[0]
+  async addRecoverUser(user: UserOvenModel): Promise<UserModel> {
+    const result = await insertOne(this.connectionPool, 'user', user)
+    const userResponse = await getOne(this.connectionPool, 'user', 'id', result.insertId)
+    return userResponse[0]
   }
 
-  async loadEquipByUserId(userId: number): Promise<LoadEquipByUserIdRepository.Result> {
-    const sql = loadEquipByUserIdSQL(userId)
-    return await customGet<LoadEquipByUserIdRepository.Result>(this.connectionPool, sql)
+  async loadUserByUserId(userId: number): Promise<LoadUserByUserIdRepository.Result> {
+    const sql = loadUserByUserIdSQL(userId)
+    return await customGet<LoadUserByUserIdRepository.Result>(this.connectionPool, sql)
   }
 
-  async loadEquipBySerialNumber(serialNumber: string): Promise<EquipModel> {
-    const result = await getOne(this.connectionPool, 'equipment', 'serialNumber', serialNumber)
+  async loadUserBySerialNumber(serialNumber: string): Promise<UserModel> {
+    const result = await getOne(this.connectionPool, 'user', 'serialNumber', serialNumber)
     return result[0]
   }
 
-  async addEquipment(equipment: AddEquipmentRepository.Parameter): Promise<AddEquipmentRepository.Result> {
-    const result = await insertOne(this.connectionPool, 'equipment', equipment)
-    const equipmentResponse = await getOne(this.connectionPool, 'equipment', 'id', result.insertId)
-    return equipmentResponse[0]
+  async addUser(user: AddUserRepository.Parameter): Promise<AddUserRepository.Result> {
+    const result = await insertOne(this.connectionPool, 'user', user)
+    const userResponse = await getOne(this.connectionPool, 'user', 'id', result.insertId)
+    return userResponse[0]
   }
 
-  async loadByEquipMenu(menuId: number): Promise<EquipModel[]> {
-    const result = await getOne(this.connectionPool, 'equipment', 'sentMenu', menuId)
+  async loadByUserMenu(menuId: number): Promise<UserModel[]> {
+    const result = await getOne(this.connectionPool, 'user', 'sentMenu', menuId)
     return result
   }
 
-  async loadByEquipPin(IOKPin: string): Promise<EquipModel> {
-    const result = await getOne(this.connectionPool, 'equipment', 'iokPin', IOKPin)
+  async loadByUserPin(IOKPin: string): Promise<UserModel> {
+    const result = await getOne(this.connectionPool, 'user', 'iokPin', IOKPin)
     return result[0]
   }
 
-  async registerEquip(idEquip: number, idCompany: number): Promise<void> {
-    await updateById(this.connectionPool, 'equipment', 'companyId', idEquip, idCompany)
+  async registerUser(idUser: number, idCompany: number): Promise<void> {
+    await updateById(this.connectionPool, 'user', 'companyId', idUser, idCompany)
   }
 
-  async loadEquipByCompanyId(companyId: number): Promise<LoadEquipByCompanyIdRepository.Result> {
-    const sql = loadEquipByCompanyIdSQL(companyId)
-    return await customGet<LoadEquipByCompanyIdRepository.Result>(this.connectionPool, sql)
+  async loadUserByCompanyId(companyId: number): Promise<LoadUserByCompanyIdRepository.Result> {
+    const sql = loadUserByCompanyIdSQL(companyId)
+    return await customGet<LoadUserByCompanyIdRepository.Result>(this.connectionPool, sql)
   }
 
-  async loadEquipById(id: number): Promise<LoadEquipByIdRepository.Result> {
-    const sql = loadEquipByIdSQL(id)
-    const result = await customGet<LoadEquipByIdRepository.Result[]>(this.connectionPool, sql)
+  async loadUserById(id: number): Promise<LoadUserByIdRepository.Result> {
+    const sql = loadUserByIdSQL(id)
+    const result = await customGet<LoadUserByIdRepository.Result[]>(this.connectionPool, sql)
     if (result.length === 0) return null
     return result[0]
   }
 
-  async updateEquipment(id: number, equipment: UpdateEquipModel): Promise<boolean> {
-    const setFields = Object.entries(equipment)
+  async updateUser(id: number, user: UpdateUserModel): Promise<boolean> {
+    const setFields = Object.entries(user)
       .map(value => `${value[0]} = ${isNaN(value[1]) ? `"${value[1]}"` : value[1]}`)
       .join(', ')
-    const result = await updateAll(this.connectionPool, 'equipment', setFields, id)
+    const result = await updateAll(this.connectionPool, 'user', setFields, id)
     if (result.affectedRows === 0) return false
     return true
   }
 
-  async deleteEquipment(id: number): Promise<boolean> {
-    const result = await deleteById(this.connectionPool, 'equipment', 'id', id)
+  async deleteUser(id: number): Promise<boolean> {
+    const result = await deleteById(this.connectionPool, 'user', 'id', id)
     if (result.affectedRows === 0) return false
     return true
   }
 
-  async countEquipment(where?: CountEquipmentRepository.Parameter): Promise<CountEquipmentRepository.Result> {
-    const sql = countEquipmentSQL(where)
+  async countUser(where?: CountUserRepository.Parameter): Promise<CountUserRepository.Result> {
+    const sql = countUserSQL(where)
     const result = await customGet(this.connectionPool, sql)
     return result[0]
   }

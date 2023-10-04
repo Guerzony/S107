@@ -1,13 +1,13 @@
-import { DeleteEquipment } from '../../../domain/usecases/delete-equipment'
-import { DeleteEquipmentRepository } from '../../protocols/db/equipment/delete-equipment-repository'
+import { DeleteUser } from '../../../domain/usecases/delete-user'
+import { DeleteUserRepository } from '../../protocols/db/user/delete-user-repository'
 
-export class DbDeleteEquipment implements DeleteEquipment {
-  private readonly repository: DeleteEquipmentRepository
-  constructor (repository: DeleteEquipmentRepository) {
+export class DbDeleteUser implements DeleteUser {
+  private readonly repository: DeleteUserRepository
+  constructor(repository: DeleteUserRepository) {
     this.repository = repository
   }
 
-  async delete (id: number): Promise<boolean> {
-    return await this.repository.deleteEquipment(id)
+  async delete(id: number): Promise<boolean> {
+    return await this.repository.deleteUser(id)
   }
 }

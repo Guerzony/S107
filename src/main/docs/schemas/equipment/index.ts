@@ -1,4 +1,4 @@
-export const equipmentSchema = {
+export const userSchema = {
   type: 'object',
   properties: {
     id: {
@@ -49,7 +49,7 @@ export const equipmentSchema = {
     categoryId: {
       type: 'integer'
     },
-    typeEquipment: {
+    typeUser: {
       type: 'string'
     },
     dataUpdate: {
@@ -75,7 +75,7 @@ export const equipmentSchema = {
   required: [
     'id',
     'idUser',
-    'typeEquipment',
+    'typeUser',
     'storeId',
     'serialNumber',
     'creationDate',

@@ -2,7 +2,7 @@ import {
   errorSchema,
   addStoreParamsSchema,
   storeParamsSchema,
-  equipmentSchema,
+  userSchema,
   menuSchema,
   menuConfigsSchema,
   addMenuSchema,
@@ -20,17 +20,17 @@ import {
   addStepSpeedOvenParamsSchema,
   addStepCombiOvenTSIParamsSchema,
   addStepCombiOvenCMAXParamsSchema,
-  addEquipmentRequestSchema,
-  addEquipmentResponseSchema
+  addUserRequestSchema,
+  addUserResponseSchema
 } from './schemas/'
 
 export default {
   error: errorSchema,
   addStore: addStoreParamsSchema,
   store: storeParamsSchema,
-  equipment: equipmentSchema,
-  addEquipmentRequest: addEquipmentRequestSchema,
-  addEquipmentResponse: addEquipmentResponseSchema,
+  user: userSchema,
+  addUserRequest: addUserRequestSchema,
+  addUserResponse: addUserResponseSchema,
   addMenu: addMenuSchema,
   addMenuConfigs: addMenuConfigsSchema,
   addGroup: addGroupSchema,

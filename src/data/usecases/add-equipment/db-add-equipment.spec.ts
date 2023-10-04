@@ -1,56 +1,56 @@
 import { describe, test, expect, jest } from '@jest/globals'
-import { DbAddEquipment } from './db-add-equipment'
-import { AddEquipmentRepository } from '../../protocols/db/equipment/add-equipment-repository'
-import { mockAddEquipmentRequest, mockAddEquipmentResponse } from './../../../domain/mocks/equipment/index'
+import { DbAddUser } from './db-add-user'
+import { AddUserRepository } from '../../protocols/db/user/add-user-repository'
+import { mockAddUserRequest, mockAddUserResponse } from './../../../domain/mocks/user/index'
 
-class AddEquipmentRepositoryStub implements AddEquipmentRepository {
-  async addEquipment(equipment: AddEquipmentRepository.Parameter): Promise<AddEquipmentRepository.Result> {
-    return mockAddEquipmentResponse()
+class AddUserRepositoryStub implements AddUserRepository {
+  async addUser(user: AddUserRepository.Parameter): Promise<AddUserRepository.Result> {
+    return mockAddUserResponse()
   }
 }
 
 type SutTypes = {
-  sut: DbAddEquipment
-  addEquipmentRepositoryStub: AddEquipmentRepositoryStub
+  sut: DbAddUser
+  addUserRepositoryStub: AddUserRepositoryStub
 }
 
 const makeSut = (): SutTypes => {
-  const addEquipmentRepositoryStub = new AddEquipmentRepositoryStub()
+  const addUserRepositoryStub = new AddUserRepositoryStub()
 
-  const sut = new DbAddEquipment(addEquipmentRepositoryStub)
+  const sut = new DbAddUser(addUserRepositoryStub)
   return {
     sut,
-    addEquipmentRepositoryStub
+    addUserRepositoryStub
   }
 }
 
-describe('Testing the DbAddEquipment class', () => {
-  describe('Dependency with AddEquipmentRepository class', () => {
-    test('should call the addEquipment method only once', async () => {
-      const { sut, addEquipmentRepositoryStub } = makeSut()
-      const addEquipmentRepositorySpy = jest.spyOn(addEquipmentRepositoryStub, 'addEquipment')
-      const equipment = mockAddEquipmentRequest()
-      await sut.add(equipment.body)
-      expect(addEquipmentRepositorySpy).toHaveBeenCalledTimes(1)
+describe('Testing the DbAddUser class', () => {
+  describe('Dependency with AddUserRepository class', () => {
+    test('should call the addUser method only once', async () => {
+      const { sut, addUserRepositoryStub } = makeSut()
+      const addUserRepositorySpy = jest.spyOn(addUserRepositoryStub, 'addUser')
+      const user = mockAddUserRequest()
+      await sut.add(user.body)
+      expect(addUserRepositorySpy).toHaveBeenCalledTimes(1)
     })
-    test('should call the addEquipment method with the correct parameter', async () => {
-      const { sut, addEquipmentRepositoryStub } = makeSut()
-      const addEquipmentRepositorySpy = jest.spyOn(addEquipmentRepositoryStub, 'addEquipment')
-      const equipment = mockAddEquipmentRequest()
-      await sut.add(equipment.body)
-      expect(addEquipmentRepositorySpy).toHaveBeenCalledWith(equipment.body)
+    test('should call the addUser method with the correct parameter', async () => {
+      const { sut, addUserRepositoryStub } = makeSut()
+      const addUserRepositorySpy = jest.spyOn(addUserRepositoryStub, 'addUser')
+      const user = mockAddUserRequest()
+      await sut.add(user.body)
+      expect(addUserRepositorySpy).toHaveBeenCalledWith(user.body)
     })
-    test('should return a new equipment in case of success', async () => {
+    test('should return a new user in case of success', async () => {
       const { sut } = makeSut()
-      const equipment = mockAddEquipmentRequest()
-      const equipmentResponse = await sut.add(equipment.body)
-      expect(equipmentResponse).toEqual(mockAddEquipmentResponse())
+      const user = mockAddUserRequest()
+      const userResponse = await sut.add(user.body)
+      expect(userResponse).toEqual(mockAddUserResponse())
     })
-    test('should throw an exception if the addEquipment method fails', async () => {
-      const { sut, addEquipmentRepositoryStub } = makeSut()
-      jest.spyOn(addEquipmentRepositoryStub, 'addEquipment').mockRejectedValue(new Error())
-      const equipment = mockAddEquipmentRequest()
-      await expect(sut.add(equipment.body)).rejects.toThrow()
+    test('should throw an exception if the addUser method fails', async () => {
+      const { sut, addUserRepositoryStub } = makeSut()
+      jest.spyOn(addUserRepositoryStub, 'addUser').mockRejectedValue(new Error())
+      const user = mockAddUserRequest()
+      await expect(sut.add(user.body)).rejects.toThrow()
     })
   })
 })

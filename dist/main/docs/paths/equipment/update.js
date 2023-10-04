@@ -1,24 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateEquipment = void 0;
-exports.updateEquipment = {
+exports.updateUser = void 0;
+exports.updateUser = {
     put: {
         security: [{
-                apiKeyAuth: []
-            }],
-        tags: ['Equipment'],
-        summary: 'Update an equipment',
+            apiKeyAuth: []
+        }],
+        tags: ['User'],
+        summary: 'Update an user',
         parameters: [{
-                name: 'id',
-                in: 'path',
-                required: true,
-                description: 'Id of the equipment',
-                schema: {
-                    type: 'integer',
-                    format: 'int64',
-                    minimum: 1
-                }
-            }],
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'Id of the user',
+            schema: {
+                type: 'integer',
+                format: 'int64',
+                minimum: 1
+            }
+        }],
         requestBody: {
             required: true,
             content: {
@@ -26,8 +26,8 @@ exports.updateEquipment = {
                     schema: {
                         type: 'object',
                         properties: {
-                            equipment: {
-                                $ref: '#/schemas/equipment'
+                            user: {
+                                $ref: '#/schemas/user'
                             }
                         }
                     }
@@ -36,7 +36,7 @@ exports.updateEquipment = {
         },
         responses: {
             200: {
-                description: 'Equipment created successfully',
+                description: 'User created successfully',
                 content: {
                     'application/json': {
                         schema: {}

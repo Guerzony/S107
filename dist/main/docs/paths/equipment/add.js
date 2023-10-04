@@ -1,36 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addEquipment = void 0;
-exports.addEquipment = {
+exports.addUser = void 0;
+exports.addUser = {
     post: {
-        tags: ['Equipment'],
-        summary: 'Create an equipment(oven)',
+        tags: ['User'],
+        summary: 'Create an user(oven)',
         parameters: [{
-                name: 'pin',
-                in: 'path',
-                required: true,
-                description: 'Pin security',
-                schema: {
-                    type: 'string'
-                }
-            }],
+            name: 'pin',
+            in: 'path',
+            required: true,
+            description: 'Pin security',
+            schema: {
+                type: 'string'
+            }
+        }],
         requestBody: {
             required: true,
             content: {
                 'application/json': {
                     schema: {
-                        $ref: '#/schemas/addEquipmentRequest'
+                        $ref: '#/schemas/addUserRequest'
                     }
                 }
             }
         },
         responses: {
             201: {
-                description: 'Equipment created successfully',
+                description: 'User created successfully',
                 content: {
                     'application/json': {
                         schema: {
-                            $ref: '#/schemas/addEquipmentResponse'
+                            $ref: '#/schemas/addUserResponse'
                         }
                     }
                 }

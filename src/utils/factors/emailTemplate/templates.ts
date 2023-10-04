@@ -16,7 +16,7 @@ export function userInvitationTemplate(name: string, email: string, id: number, 
     `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/resetPassword?email=${email}&code=${code}&id=${id}">${translate('Clique aqui', lang)}</a></strong></span>${translate('para concluir seu cadastro na plataforma.', lang)}<div>&nbsp;</div></div>` +
     `<div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Ativação de conta', lang))
 }
@@ -33,7 +33,7 @@ export function recoverPasswordTemplate(name: string, email: string, id: number,
     `<div>${translate('Caso você não tenha solicitado tal alteração, desconsidere este e-mail.', lang)}</div><div>&nbsp;</div>` +
     `<div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Redefinição de senha', lang))
 }
@@ -55,7 +55,7 @@ export function userAcceptanceByAdmTemplate(admName: string, userName: string, c
     `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/recuse/user?id=${userId}&userName=${userName}&companyName=${companyName}&email=${userEmail}">${translate('clique aqui para reportá-lo.', lang)}</a></strong>` +
     `<div>&nbsp;</div><div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Solicitação de acesso IOK', lang))
 }
@@ -75,7 +75,7 @@ export function admRecoverAccountTemplate(name: string, companyName: string, ema
     `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/activate/recover/user?email=${email}&code=${code}&id=${id}&idCompany=${idCompany}&companyName=${companyName}&userName=${name}&typeUser=${'adm'}">${translate('Clique aqui', lang)}</a></strong></span>${translate('para ativar sua conta de administrador na plataforma IOK.', lang)}<div>&nbsp;</div></div>` +
     `<div>&nbsp;</div><div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Ativação de conta', lang))
 }
@@ -92,7 +92,7 @@ export function userNotificationTemplate(companyName: string, userName: string, 
     `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/login">${translate('Clique aqui', lang)}</a></strong></span>${translate('e faça seu login.', lang)}<div>&nbsp;</div></div>` +
     `<div>&nbsp;</div><div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Notificação de aceitação na companhia', lang))
 }
@@ -112,7 +112,7 @@ export function admAccountActivationTemplate(name: string, email: string, id: nu
     `<strong><a target='_blank' style='color: #004992; text-decoration: none;' href="${process.env.LINK_PSW}/activate?email=${email}&code=${code}&id=${id}">${translate('Clique aqui', lang)}</a></strong></span>${translate('para ativar sua conta de administrador na plataforma IOK.', lang)}<div>&nbsp;</div></div>` +
     `<div>&nbsp;</div><div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Ativação de conta', lang))
 }
@@ -133,7 +133,7 @@ export function userRecuserTemplate(name: string, companyName: string, lang: str
     `<strong><a target='_blank' style='color: #3c4858; text-decoration: none;' href="${process.env.LINK_PSW}/login">${translate('Clique aqui', lang)}</a></strong></span>${translate('para criar sua conta novamente e certifique-se de que o nome da rede seja informado corretamente.', lang)}<div>&nbsp;</div></div>` +
     `<div>&nbsp;</div><div>${translate('Caso haja alguma dúvida, você pode responder este e-mail ou nos contatar através do telefone (35) 3449-1200, de segunda a sexta-feira em horário comercial.', lang)}</div><div>&nbsp;</div>` +
     `<div>&nbsp;</div><div>&nbsp;</div><div>${translate('Atenciosamente,', lang)}</div>` +
-    `<div>${translate('Equipe Prática', lang)}</div></div></div>`
+    `<div>${translate('Usere Prática', lang)}</div></div></div>`
 
   return baseTemplate.get(contentHtml, translate('Notificação de recusa', lang))
 }

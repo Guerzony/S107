@@ -1,19 +1,19 @@
 /* eslint-disable no-undef */
-import { AddEquipment } from './../../usecases/add-equipment'
+import { AddUser } from './../../usecases/add-user'
 
-import { LoadEquipById, LoadHasUpdateEquip } from '../../usecases/load-equip-by-id'
-import { EquipModel, UpdateEquipModel } from '../../models/equipment'
-import { UpdateEquipment } from '../../usecases/update-equipment'
-import { DeleteEquipment } from '../../usecases/delete-equipment'
+import { LoadUserById, LoadHasUpdateUser } from '../../usecases/load-equip-by-id'
+import { UserModel, UpdateUserModel } from '../../models/user'
+import { UpdateUser } from '../../usecases/update-user'
+import { DeleteUser } from '../../usecases/delete-user'
 
-export const mockLoadEquipByIdRequest = (): LoadEquipById.Request => ({ params: { id: 1 } })
+export const mockLoadUserByIdRequest = (): LoadUserById.Request => ({ params: { id: 1 } })
 
-export const mockLoadHasUpdateEquipRequest = (): LoadHasUpdateEquip.Request => ({ params: { idEquip: 1, iokPin: 'DE@Prat1c@BR2021' } })
+export const mockLoadHasUpdateUserRequest = (): LoadHasUpdateUser.Request => ({ params: { idUser: 1, iokPin: 'DE@Prat1c@BR2021' } })
 
-export const mockLoadEquipByIdResponse = (): LoadEquipById.Response => ({
+export const mockLoadUserByIdResponse = (): LoadUserById.Response => ({
   id: 1,
   idUser: 0,
-  typeEquipment: 'typeEquipment',
+  typeUser: 'typeUser',
   storeId: 0,
   serialNumber: 'serialNumber',
   creationDate: 'creationDate',
@@ -39,11 +39,11 @@ export const mockLoadEquipByIdResponse = (): LoadEquipById.Response => ({
   zipCode: 'valid_code'
 })
 
-export const mockLoadEquipBySerialNumberResponse = (): EquipModel => (
+export const mockLoadUserBySerialNumberResponse = (): UserModel => (
   {
     id: 1,
     idUser: 0,
-    typeEquipment: 'typeEquipment',
+    typeUser: 'typeUser',
     storeId: 0,
     serialNumber: 'serialNumber',
     creationDate: 'creationDate',
@@ -63,11 +63,11 @@ export const mockLoadEquipBySerialNumberResponse = (): EquipModel => (
   }
 )
 
-export const mockAddEquipmentRequest = (): AddEquipment.Request => (
+export const mockAddUserRequest = (): AddUser.Request => (
   {
     body: {
-      idEquipment: 1,
-      typeEquipment: 'typeEquipment',
+      idUser: 1,
+      typeUser: 'typeUser',
       dataUpdate: true,
       appUpdate: true,
       creationDate: 'creationDate',
@@ -80,10 +80,10 @@ export const mockAddEquipmentRequest = (): AddEquipment.Request => (
   }
 )
 
-export const mockUpdateEquipment = (): UpdateEquipModel => (
+export const mockUpdateUser = (): UpdateUserModel => (
   {
     idUser: 0,
-    typeEquipment: 'typeEquipment',
+    typeUser: 'typeUser',
     storeId: 0,
     serialNumber: 'serialNumber',
     creationDate: 'creationDate',
@@ -103,10 +103,10 @@ export const mockUpdateEquipment = (): UpdateEquipModel => (
   }
 )
 
-export const mockEquipModel = (): EquipModel => (
+export const mockUserModel = (): UserModel => (
   {
     idUser: 0,
-    typeEquipment: 'typeEquipment',
+    typeUser: 'typeUser',
     storeId: 0,
     serialNumber: 'serialNumber',
     creationDate: 'creationDate',
@@ -126,10 +126,10 @@ export const mockEquipModel = (): EquipModel => (
   }
 )
 
-export const mockUpdateEquipmentRequest = (updateId: number): UpdateEquipment.Request => (
+export const mockUpdateUserRequest = (updateId: number): UpdateUser.Request => (
   {
     body: {
-      equipment: { id: updateId, ...mockUpdateEquipment() }
+      user: { id: updateId, ...mockUpdateUser() }
     },
     params: {
       id: 1
@@ -137,10 +137,10 @@ export const mockUpdateEquipmentRequest = (updateId: number): UpdateEquipment.Re
   }
 )
 
-export const mockAddEquipmentResponse = (): EquipModel => Object.assign(mockEquipModel(), { id: 1 })
+export const mockAddUserResponse = (): UserModel => Object.assign(mockUserModel(), { id: 1 })
 
-export const mockDeleteEquipmentRequest = (id: number): DeleteEquipment.Request => ({ params: { id } })
+export const mockDeleteUserRequest = (id: number): DeleteUser.Request => ({ params: { id } })
 
-export const mockInsertEquip = async (): Promise<{ idEquip: number }> => {
-  return { idEquip: 1 }
+export const mockInsertUser = async (): Promise<{ idUser: number }> => {
+  return { idUser: 1 }
 }

@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for data/usecases/update-equipment/db-update-equipment.ts</title>
+    <title>Code coverage report for data/usecases/update-user/db-update-user.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -15,48 +14,50 @@
         }
     </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">data/usecases/update-equipment</a> db-update-equipment.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+    <div class='wrapper'>
+        <div class='pad1'>
+            <h1><a href="../../../index.html">All files</a> / <a href="index.html">data/usecases/update-user</a>
+                db-update-user.ts</h1>
+            <div class='clearfix'>
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Statements</span>
+                    <span class='fraction'>3/3</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Branches</span>
+                    <span class='fraction'>0/0</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Functions</span>
+                    <span class='fraction'>2/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Lines</span>
+                    <span class='fraction'>3/3</span>
+                </div>
+
+
             </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
-            </div>
-        
-            
+            <p class="quiet">
+                Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em>
+                for the previous block.
+            </p>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+        <div class='status-line high'></div>
+        <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -85,38 +86,42 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { UpdateEquipment } from '../../../domain/usecases/update-equipment'
-import { UpdateEquipmentRepository } from '../../protocols/db/equipment/update-equipment-repository'
-import { UpdateEquipModel } from '../load-equip-by-menu/db-load-equip-by-menu-protocols'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { UpdateUser } from '../../../domain/usecases/update-user'
+import { UpdateUserRepository } from '../../protocols/db/user/update-user-repository'
+import { UpdateUserModel } from '../load-equip-by-menu/db-load-equip-by-menu-protocols'
 &nbsp;
-export class DbUpdateEquipment implements UpdateEquipment {
-  private readonly repository: UpdateEquipmentRepository
-  constructor (repository: UpdateEquipmentRepository) {
+export class DbUpdateUser implements UpdateUser {
+  private readonly repository: UpdateUserRepository
+  constructor (repository: UpdateUserRepository) {
     this.repository = repository
   }
 &nbsp;
-  async update (id: number, equipment: UpdateEquipModel): Promise&lt;boolean&gt; {
-    return await this.repository.updateEquipment(id, equipment)
+  async update (id: number, user: UpdateUserModel): Promise&lt;boolean&gt; {
+    return await this.repository.updateUser(id, user)
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+        </td>
+        </tr>
+        </table>
+        </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+        <div class='push'></div><!-- for sticky footer -->
+    </div><!-- /wrapper -->
+    <div class='footer quiet pad2 space-top1 center small'>
+        Code coverage generated by
+        <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+        at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+    </div>
+    </div>
+    <script src="../../../prettify.js"></script>
+    <script>
+        window.onload = function () {
+            prettyPrint();
+        };
+    </script>
+    <script src="../../../sorter.js"></script>
+    <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

@@ -74,7 +74,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\data\usecases\add-equipment\db-add-equipment.ts
+SF:src\data\usecases\add-user\db-add-user.ts
 FN:9,(anonymous_0)
 FN:14,(anonymous_1)
 FNF:2
@@ -347,7 +347,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\data\usecases\count-equipment\db-count-equipment.ts
+SF:src\data\usecases\count-user\db-count-user.ts
 FN:6,(anonymous_0)
 FN:10,(anonymous_1)
 FNF:2
@@ -391,7 +391,7 @@ BRF:4
 BRH:2
 end_of_record
 TN:
-SF:src\data\usecases\delete-equipment\db-delete-equipment.ts
+SF:src\data\usecases\delete-user\db-delete-user.ts
 FN:6,(anonymous_0)
 FN:10,(anonymous_1)
 FNF:2
@@ -1151,7 +1151,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\data\usecases\update-equipment\db-update-equipment.ts
+SF:src\data\usecases\update-user\db-update-user.ts
 FN:7,(anonymous_0)
 FN:11,(anonymous_1)
 FNF:2
@@ -1467,7 +1467,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\domain\mocks\equipment\index.ts
+SF:src\domain\mocks\user\index.ts
 FN:13,(anonymous_1)
 FN:19,(anonymous_2)
 FN:21,(anonymous_3)
@@ -2566,7 +2566,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:src\infra\db\mysql\equipment\equip-mysql-repository.ts
+SF:src\infra\db\mysql\user\equip-mysql-repository.ts
 FN:29,(anonymous_0)
 FN:33,(anonymous_1)
 FN:38,(anonymous_2)
@@ -3341,7 +3341,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\presentation\controller\add-equipment\add-equipment-controller.ts
+SF:src\presentation\controller\add-user\add-user-controller.ts
 FN:12,(anonymous_0)
 FN:17,(anonymous_1)
 FNF:2
@@ -3713,7 +3713,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\presentation\controller\count-equipment\count-equipment-controller.ts
+SF:src\presentation\controller\count-user\count-user-controller.ts
 FN:10,(anonymous_0)
 FN:15,(anonymous_1)
 FNF:2
@@ -3771,7 +3771,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\presentation\controller\delete-equipment\delete-equipment-controller.ts
+SF:src\presentation\controller\delete-user\delete-user-controller.ts
 FN:11,(anonymous_0)
 FN:16,(anonymous_1)
 FNF:2
@@ -4811,7 +4811,7 @@ BRF:5
 BRH:5
 end_of_record
 TN:
-SF:src\presentation\controller\update-equipment\update-equipment-controller.ts
+SF:src\presentation\controller\update-user\update-user-controller.ts
 FN:15,(anonymous_0)
 FN:22,(anonymous_1)
 FNF:2
@@ -5389,7 +5389,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\presentation\errors\equipment-creation-error.ts
+SF:src\presentation\errors\user-creation-error.ts
 FN:2,(anonymous_0)
 FNF:1
 FNH:1
@@ -5403,7 +5403,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\presentation\errors\equipment-not-belong-user-error.ts
+SF:src\presentation\errors\user-not-belong-user-error.ts
 FN:2,(anonymous_0)
 FNF:1
 FNH:0
@@ -5417,7 +5417,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\presentation\errors\equipment-not-found-error.ts
+SF:src\presentation\errors\user-not-found-error.ts
 FN:2,(anonymous_0)
 FNF:1
 FNH:0
@@ -6077,7 +6077,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\utils\formatEquipOven.ts
+SF:src\utils\formatUserOven.ts
 FN:3,(anonymous_0)
 FNF:1
 FNH:1

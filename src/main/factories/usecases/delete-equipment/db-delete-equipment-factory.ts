@@ -1,8 +1,8 @@
-import { DbDeleteEquipment } from '../../../../data/usecases/delete-equipment/db-delete-equipment'
-import { DeleteEquipment } from '../../../../domain/usecases/delete-equipment'
-import { EquipMySqlRepository } from '../../../../infra/equipment/equip-mysql-repository'
+import { DbDeleteUser } from '../../../../data/usecases/delete-user/db-delete-user'
+import { DeleteUser } from '../../../../domain/usecases/delete-user'
+import { UserMySqlRepository } from '../../../../infra/user/equip-mysql-repository'
 
-export const makeDbDeleteEquipment = (): DeleteEquipment => {
-  const repository = new EquipMySqlRepository()
-  return new DbDeleteEquipment(repository)
+export const makeDbDeleteUser = (): DeleteUser => {
+  const repository = new UserMySqlRepository()
+  return new DbDeleteUser(repository)
 }

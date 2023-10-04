@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const paths_1 = require("./paths/");
-const equipmentPaths = {
-    '/linux-equipments/create-new-linux/{pin}': paths_1.addEquipment,
-    '/equipment/count': paths_1.countEquipment,
-    '/equipment/{companyId}/company': paths_1.loadEquipmentByCompanyId,
-    '/equipment/{id}': {
-        ...paths_1.loadEquipmentById,
-        ...paths_1.updateEquipment,
-        ...paths_1.deleteEquipment
+const userPaths = {
+    '/linux-users/create-new-linux/{pin}': paths_1.addUser,
+    '/user/count': paths_1.countUser,
+    '/user/{companyId}/company': paths_1.loadUserByCompanyId,
+    '/user/{id}': {
+        ...paths_1.loadUserById,
+        ...paths_1.updateUser,
+        ...paths_1.deleteUser
     }
 };
 const menuPaths = {
@@ -73,14 +73,14 @@ const exportFilePaths = {
     '/c-max-file/export/{menuId}': paths_1.ExportCMaxFile,
     '/forza-file/export/{menuId}': paths_1.ExportForzaFile,
     '/tsi-file/export/{menuId}': paths_1.ExportTsiFile,
-    '/speed-ovens-file/export/{equipmentModel}/{menuId}': paths_1.ExportSpeedOvensFile,
+    '/speed-ovens-file/export/{userModel}/{menuId}': paths_1.ExportSpeedOvensFile,
     '/speed-ovens-legacy/export/{generation}/{menuId}': paths_1.ExportSpeedOvensLegacyFile,
 };
 exports.default = {
     '/store': paths_1.storePath,
     '/company/{companyId}/stores': paths_1.storeByCompanyIdPath,
     '/store/{id}': paths_1.storeByIdPath,
-    ...equipmentPaths,
+    ...userPaths,
     ...menuPaths,
     ...groupPaths,
     ...recipePaths,

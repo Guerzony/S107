@@ -1,35 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateEquipmentController = void 0;
+exports.UpdateUserController = void 0;
 const http_helper_1 = require("../../helpers/http-helper");
 const http_helper_2 = require("./../../helpers/http-helper");
 const errors_1 = require("../../errors");
 const no_rows_affected_error_1 = require("../../errors/no-rows-affected-error");
 const load_pin_error_1 = require("../../errors/load-pin-error");
-class UpdateEquipmentController {
-    constructor(paramsValidation, bodyValidation, dbUpdateEquipment, loadEquipByPin) {
+class UpdateUserController {
+    constructor(paramsValidation, bodyValidation, dbUpdateUser, loadUserByPin) {
         this.paramsValidation = paramsValidation;
         this.bodyValidation = bodyValidation;
-        this.dbUpdateEquipment = dbUpdateEquipment;
-        this.loadEquipByPin = loadEquipByPin;
+        this.dbUpdateUser = dbUpdateUser;
+        this.loadUserByPin = loadUserByPin;
     }
     async handle(httpRequest) {
         try {
-            if (!httpRequest.body.equipment)
-                return (0, http_helper_2.badRequest)(new errors_1.MissingParamError('equipment'));
+            if (!httpRequest.body.user)
+                return (0, http_helper_2.badRequest)(new errors_1.MissingParamError('user'));
             if (!httpRequest.params.id)
                 return (0, http_helper_2.badRequest)(new errors_1.MissingParamError('id'));
             const validationParamsError = this.paramsValidation.validate(httpRequest.params);
-            const validationBodyError = this.bodyValidation.validate(httpRequest.body.equipment);
+            const validationBodyError = this.bodyValidation.validate(httpRequest.body.user);
             if (validationParamsError)
                 return (0, http_helper_2.badRequest)(validationParamsError);
             if (validationBodyError)
                 return (0, http_helper_2.badRequest)(validationBodyError);
-            const equip = await this.loadEquipByPin.load(httpRequest.body.equipment.iokPin);
+            const equip = await this.loadUserByPin.load(httpRequest.body.user.iokPin);
             if (!equip) {
-                return (0, http_helper_1.forbidden)(new load_pin_error_1.LoadEquipByPinError());
+                return (0, http_helper_1.forbidden)(new load_pin_error_1.LoadUserByPinError());
             }
-            const result = await this.dbUpdateEquipment.update(httpRequest.params.id, httpRequest.body.equipment);
+            const result = await this.dbUpdateUser.update(httpRequest.params.id, httpRequest.body.user);
             if (!result)
                 return (0, http_helper_2.badRequest)(new no_rows_affected_error_1.NoRowsAffected(httpRequest.params.id));
             return (0, http_helper_1.ok)({});
@@ -39,4 +39,4 @@ class UpdateEquipmentController {
         }
     }
 }
-exports.UpdateEquipmentController = UpdateEquipmentController;
+exports.UpdateUserController = UpdateUserController;

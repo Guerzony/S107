@@ -43,7 +43,7 @@ exports.storeParamsSchema = {
                 longitude: {
                     type: 'number'
                 },
-                equipmentCount: {
+                userCount: {
                     type: 'number'
                 }
             }

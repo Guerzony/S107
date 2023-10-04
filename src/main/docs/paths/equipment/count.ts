@@ -1,10 +1,10 @@
-export const countEquipment = {
+export const countUser = {
   get: {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Equipment'],
-    summary: 'Returns equipment count based on sent condition',
+    tags: ['User'],
+    summary: 'Returns user count based on sent condition',
     parameters: [{
       name: 'condition',
       in: 'query',
@@ -23,12 +23,12 @@ export const countEquipment = {
         }
       }
     }],
-    
+
     responses: {
       200: {
-        description: 'Equipment created successfully',
+        description: 'User created successfully',
         content: {
-          'application/json' : {
+          'application/json': {
             schema: {
               type: 'object',
               properties: {
@@ -36,8 +36,8 @@ export const countEquipment = {
                   type: 'integer'
                 }
               }
-            }               
-          }             
+            }
+          }
         }
       },
       400: {

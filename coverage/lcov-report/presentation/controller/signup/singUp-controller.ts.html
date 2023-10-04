@@ -1,59 +1,60 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for presentation/controller/signup/singUp-controller.ts</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type='text/css'>
-        .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
-        }
-    </style>
+  <title>Code coverage report for presentation/controller/signup/singUp-controller.ts</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../../prettify.css" />
+  <link rel="stylesheet" href="../../../base.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type='text/css'>
+    .coverage-summary .sorter {
+      background-image: url(../../../sort-arrow-sprite.png);
+    }
+  </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
+  <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/signup</a> singUp-controller.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">92.68% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>38/41</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">92.68% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>38/41</span>
-            </div>
-        
-            
+      <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/signup</a>
+        singUp-controller.ts</h1>
+      <div class='clearfix'>
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">92.68% </span>
+          <span class="quiet">Statements</span>
+          <span class='fraction'>38/41</span>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">50% </span>
+          <span class="quiet">Branches</span>
+          <span class='fraction'>3/6</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">100% </span>
+          <span class="quiet">Functions</span>
+          <span class='fraction'>2/2</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">92.68% </span>
+          <span class="quiet">Lines</span>
+          <span class='fraction'>38/41</span>
+        </div>
+
+
+      </div>
+      <p class="quiet">
+        Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the
+        previous block.
+      </p>
     </div>
     <div class='status-line high'></div>
     <pre><table class="coverage">
@@ -357,8 +358,8 @@
   Validation,
   AddCompany,
   MailService,
-  LoadEquipByPin,
-  UpdateEquipByCompany
+  LoadUserByPin,
+  UpdateUserByCompany
 } from './signup-controller-protocols'
 import {
   badRequest,
@@ -368,7 +369,7 @@ import {
 } from '../../helpers/http-helper'
 import { EmailInUseError } from '../../errors'
 import { CompanyExistsError } from '../../errors/company-already- exists-error'
-import { LoadEquipByPinError } from '../../errors/load-pin-error'
+import { LoadUserByPinError } from '../../errors/load-pin-error'
 import { SendEmailError } from '../../errors/send-email-error'
 import { getAccountActivationTemplate } from '../../../utils/factors/emailTemplate/templates'
 import { AddConfigs } from '../../../domain/usecases/add-configs'
@@ -379,8 +380,8 @@ export class SignUpController implements Controller {
   private readonly userValidation: Validation;
   private readonly companyValidation: Validation;
   private readonly mailService: MailService;
-  private readonly loadEquipByPin: LoadEquipByPin;
-  private readonly updateEquipByCompany: UpdateEquipByCompany;
+  private readonly loadUserByPin: LoadUserByPin;
+  private readonly updateUserByCompany: UpdateUserByCompany;
   private readonly addConfigs: AddConfigs;
 &nbsp;
   constructor (
@@ -390,16 +391,16 @@ export class SignUpController implements Controller {
     userValidation: Validation,
     companyValidation: Validation,
     mailService: MailService,
-    loadEquipByPin: LoadEquipByPin,
-    updateEquipByCompany: UpdateEquipByCompany
+    loadUserByPin: LoadUserByPin,
+    updateUserByCompany: UpdateUserByCompany
   ) {
     this.addUser = addUser
     this.addCompany = addCompany
     this.userValidation = userValidation
     this.companyValidation = companyValidation
     this.mailService = mailService
-    this.loadEquipByPin = loadEquipByPin
-    this.updateEquipByCompany = updateEquipByCompany
+    this.loadUserByPin = loadUserByPin
+    this.updateUserByCompany = updateUserByCompany
     this.addConfigs = addConfigs
   }
 &nbsp;
@@ -418,9 +419,9 @@ export class SignUpController implements Controller {
       }
 &nbsp;
       const { pin } = httpRequest.body
-      const equip = await this.loadEquipByPin.load(pin)
+      const equip = await this.loadUserByPin.load(pin)
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!equip) {
-<span class="cstat-no" title="statement not covered" >        return forbidden(new LoadEquipByPinError())</span>
+<span class="cstat-no" title="statement not covered" >        return forbidden(new LoadUserByPinError())</span>
       }
 &nbsp;
       const {
@@ -442,7 +443,7 @@ export class SignUpController implements Controller {
         return forbidden(new CompanyExistsError())
       }
 &nbsp;
-      await this.updateEquipByCompany.update(equip.id, company.id)
+      await this.updateUserByCompany.update(equip.id, company.id)
 &nbsp;
       const { userName, email, phone, password, creationDate, language } =
         httpRequest.body.user
@@ -495,24 +496,28 @@ export class SignUpController implements Controller {
     }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+    </td>
+    </tr>
+    </table>
+    </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+    <div class='push'></div><!-- for sticky footer -->
+  </div><!-- /wrapper -->
+  <div class='footer quiet pad2 space-top1 center small'>
+    Code coverage generated by
+    <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+    at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+  </div>
+  </div>
+  <script src="../../../prettify.js"></script>
+  <script>
+    window.onload = function () {
+      prettyPrint();
+    };
+  </script>
+  <script src="../../../sorter.js"></script>
+  <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

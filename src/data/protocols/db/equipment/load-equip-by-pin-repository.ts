@@ -1,5 +1,5 @@
-import { EquipModel } from '../../../../domain/models/equipment'
+import { UserModel } from '../../../../domain/models/user'
 
-export interface LoadEquipByPinRepository {
-    loadByEquipPin (IOKPin: String): Promise<EquipModel | null>
+export interface LoadUserByPinRepository {
+    loadByUserPin(IOKPin: String): Promise<UserModel | null>
 }

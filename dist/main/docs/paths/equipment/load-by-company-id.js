@@ -1,24 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loadEquipmentByCompanyId = void 0;
-exports.loadEquipmentByCompanyId = {
+exports.loadUserByCompanyId = void 0;
+exports.loadUserByCompanyId = {
     get: {
         security: [{
-                apiKeyAuth: []
-            }],
-        tags: ['Equipment'],
-        summary: 'Retrieve a list of equipment from a given company',
+            apiKeyAuth: []
+        }],
+        tags: ['User'],
+        summary: 'Retrieve a list of user from a given company',
         parameters: [{
-                name: 'companyId',
-                in: 'path',
-                required: true,
-                description: 'Id of the company that owns the equipment',
-                schema: {
-                    type: 'integer',
-                    format: 'int64',
-                    minimum: 1
-                }
-            }],
+            name: 'companyId',
+            in: 'path',
+            required: true,
+            description: 'Id of the company that owns the user',
+            schema: {
+                type: 'integer',
+                format: 'int64',
+                minimum: 1
+            }
+        }],
         responses: {
             200: {
                 description: 'OK',
@@ -29,7 +29,7 @@ exports.loadEquipmentByCompanyId = {
                             items: {
                                 allOf: [
                                     {
-                                        $ref: '#/schemas/equipment',
+                                        $ref: '#/schemas/user',
                                     },
                                     {
                                         type: 'object',

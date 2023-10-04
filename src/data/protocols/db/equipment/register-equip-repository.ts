@@ -1,3 +1,3 @@
-export interface RegisterEquipRepository {
-    registerEquip (idEquip: number, idCompany: number): Promise<void>
+export interface RegisterUserRepository {
+    registerUser(idUser: number, idCompany: number): Promise<void>
 }

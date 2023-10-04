@@ -1,9 +1,8 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for presentation/controller/add-equipment/add-equipment-controller.ts</title>
+    <title>Code coverage report for presentation/controller/add-user/add-user-controller.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -15,48 +14,50 @@
         }
     </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
-    <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/add-equipment</a> add-equipment-controller.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>18/20</span>
+    <div class='wrapper'>
+        <div class='pad1'>
+            <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/controller/add-user</a>
+                add-user-controller.ts</h1>
+            <div class='clearfix'>
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">90% </span>
+                    <span class="quiet">Statements</span>
+                    <span class='fraction'>18/20</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">33.33% </span>
+                    <span class="quiet">Branches</span>
+                    <span class='fraction'>1/3</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Functions</span>
+                    <span class='fraction'>2/2</span>
+                </div>
+
+
+                <div class='fl pad1y space-right2'>
+                    <span class="strong">100% </span>
+                    <span class="quiet">Lines</span>
+                    <span class='fraction'>17/17</span>
+                </div>
+
+
             </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/3</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
-            </div>
-        
-            
+            <p class="quiet">
+                Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em>
+                for the previous block.
+            </p>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
-    </div>
-    <div class='status-line high'></div>
-    <pre><table class="coverage">
+        <div class='status-line high'></div>
+        <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -119,55 +120,59 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AddEquipment } from '../../../domain/usecases/add-equipment'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AddUser } from '../../../domain/usecases/add-user'
 import { badRequest, serverError, created, forbidden } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
-import { EquipmentCreationError } from '../../errors/equipment-creation-error'
-import { LoadEquipByPinError } from '../../errors/load-pin-error'
-import { formatEquipOven } from '../../../utils/formatEquipOven'
+import { UserCreationError } from '../../errors/user-creation-error'
+import { LoadUserByPinError } from '../../errors/load-pin-error'
+import { formatUserOven } from '../../../utils/formatUserOven'
 &nbsp;
-export class AddEquipmentController implements Controller {
+export class AddUserController implements Controller {
   private readonly validation: Validation
-  private readonly addEquipment: AddEquipment
+  private readonly addUser: AddUser
 &nbsp;
-  constructor (validation: Validation, addEquipment: AddEquipment) {
+  constructor (validation: Validation, addUser: AddUser) {
     this.validation = validation
-    this.addEquipment = addEquipment
+    this.addUser = addUser
   }
 &nbsp;
-  async handle (httpRequest: HttpRequest&lt;AddEquipment.Request&gt;): Promise&lt;HttpResponse&lt;AddEquipment.Response&gt;&gt; {
+  async handle (httpRequest: HttpRequest&lt;AddUser.Request&gt;): Promise&lt;HttpResponse&lt;AddUser.Response&gt;&gt; {
     try {
       const { pin } = httpRequest.params
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (pin !== 'DE@Prat1c@BR2021') <span class="cstat-no" title="statement not covered" >return forbidden(new LoadEquipByPinError())</span>
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (pin !== 'DE@Prat1c@BR2021') <span class="cstat-no" title="statement not covered" >return forbidden(new LoadUserByPinError())</span>
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!httpRequest.body) <span class="cstat-no" title="statement not covered" >return badRequest(new Error())</span>
-      const requestEquipment = httpRequest.body
-      const validationError = this.validation.validate(requestEquipment)
+      const requestUser = httpRequest.body
+      const validationError = this.validation.validate(requestUser)
       if (validationError) return badRequest(validationError)
-      const equipment = await this.addEquipment.add(requestEquipment)
-      return created&lt;AddEquipment.Response&gt;(formatEquipOven(equipment))
+      const user = await this.addUser.add(requestUser)
+      return created&lt;AddUser.Response&gt;(formatUserOven(user))
     } catch (error) {
-      return serverError(new EquipmentCreationError())
+      return serverError(new UserCreationError())
     }
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+        </td>
+        </tr>
+        </table>
+        </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
-    </body>
+        <div class='push'></div><!-- for sticky footer -->
+    </div><!-- /wrapper -->
+    <div class='footer quiet pad2 space-top1 center small'>
+        Code coverage generated by
+        <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+        at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+    </div>
+    </div>
+    <script src="../../../prettify.js"></script>
+    <script>
+        window.onload = function () {
+            prettyPrint();
+        };
+    </script>
+    <script src="../../../sorter.js"></script>
+    <script src="../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

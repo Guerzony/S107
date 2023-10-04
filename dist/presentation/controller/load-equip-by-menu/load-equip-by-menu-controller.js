@@ -1,22 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoadEquipByMenuController = void 0;
+exports.LoadUserByMenuController = void 0;
 const http_helper_1 = require("../../helpers/http-helper");
-class LoadEquipByMenuController {
-    constructor(loadUserMenuValidation, loadEquipByMenu) {
-        this.loadEquipByMenuValidation = loadUserMenuValidation;
-        this.loadEquipByMenu = loadEquipByMenu;
+class LoadUserByMenuController {
+    constructor(loadUserMenuValidation, loadUserByMenu) {
+        this.loadUserByMenuValidation = loadUserMenuValidation;
+        this.loadUserByMenu = loadUserByMenu;
     }
     async handle(httpRequest) {
         try {
-            const Error = this.loadEquipByMenuValidation.validate(httpRequest.params);
+            const Error = this.loadUserByMenuValidation.validate(httpRequest.params);
             if (Error) {
                 return (0, http_helper_1.badRequest)(Error);
             }
             const { idMenu } = httpRequest.params;
-            const equip = await this.loadEquipByMenu.loadEquip(idMenu);
+            const equip = await this.loadUserByMenu.loadUser(idMenu);
             return (0, http_helper_1.ok)({
-                equipment: equip
+                user: equip
             });
         }
         catch (error) {
@@ -24,4 +24,4 @@ class LoadEquipByMenuController {
         }
     }
 }
-exports.LoadEquipByMenuController = LoadEquipByMenuController;
+exports.LoadUserByMenuController = LoadUserByMenuController;

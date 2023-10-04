@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mockEquipmentOldModel = exports.mockPassosCmaxOldModel = exports.mockRecipeCmaxOldModel = exports.mockStepTSIOldModel = exports.mockStepOldModel = exports.mockRecipeOldModel = exports.mockMenuGroupsOldModel = exports.mockMenuConfigsOldModel = exports.makeFakeRequestGetMenuByIdUser = exports.mockReturnMenuOld = exports.mockMenuOldModel = exports.makeFakeRequestGetUserByEmail = exports.mockReturnUserOld = exports.mockInsertUserOld = exports.mockUserOldModel = void 0;
+exports.mockUserOldModel = exports.mockPassosCmaxOldModel = exports.mockRecipeCmaxOldModel = exports.mockStepTSIOldModel = exports.mockStepOldModel = exports.mockRecipeOldModel = exports.mockMenuGroupsOldModel = exports.mockMenuConfigsOldModel = exports.makeFakeRequestGetMenuByIdUser = exports.mockReturnMenuOld = exports.mockMenuOldModel = exports.makeFakeRequestGetUserByEmail = exports.mockReturnUserOld = exports.mockInsertUserOld = exports.mockUserOldModel = void 0;
 /* eslint-disable no-undef */
 const mysql_helper_1 = require("../../../infra/db/mysql/mysql-helper");
 const env_1 = __importDefault(require("../../../main/config/env"));
@@ -210,9 +210,9 @@ const mockPassosCmaxOldModel = () => ({
     id_receita: 1
 });
 exports.mockPassosCmaxOldModel = mockPassosCmaxOldModel;
-const mockEquipmentOldModel = () => ({
-    id_equipment: 0,
-    type_equipment: 'string',
+const mockUserOldModel = () => ({
+    id_user: 0,
+    type_user: 'string',
     id_user: 0,
     data_update: 0,
     app_update: 0,
@@ -229,4 +229,4 @@ const mockEquipmentOldModel = () => ({
     hash_sw: 'string',
     power_version: 'string'
 });
-exports.mockEquipmentOldModel = mockEquipmentOldModel;
+exports.mockUserOldModel = mockUserOldModel;

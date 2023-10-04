@@ -15,7 +15,7 @@ const mockFakeStoreWithId = () => ({
     longitude: -1.12345
 });
 exports.mockFakeStoreWithId = mockFakeStoreWithId;
-const mockFakeStore = (id = 1) => ({ id: 1, ...(0, exports.mockFakeStoreWithId)(), equipmentCount: 0 });
+const mockFakeStore = (id = 1) => ({ id: 1, ...(0, exports.mockFakeStoreWithId)(), userCount: 0 });
 exports.mockFakeStore = mockFakeStore;
 // CREATE
 const mockAddStoreRequest = () => ({
@@ -30,10 +30,10 @@ exports.mockAddStoreResponse = mockAddStoreResponse;
 const mockLoadStoresByCompanyIdRequest = () => ({ params: { companyId: 1, userId: 1, userPrivilegeUser: 'admCli' } });
 exports.mockLoadStoresByCompanyIdRequest = mockLoadStoresByCompanyIdRequest;
 const mockLoadStoresByCompanyIdResponse = () => ([{
-        ...(0, exports.mockFakeStore)(1)
-    }, {
-        ...(0, exports.mockFakeStore)(2)
-    }]);
+    ...(0, exports.mockFakeStore)(1)
+}, {
+    ...(0, exports.mockFakeStore)(2)
+}]);
 exports.mockLoadStoresByCompanyIdResponse = mockLoadStoresByCompanyIdResponse;
 const mockLoadStoreByIdRequest = () => ({ params: { id: 1 } });
 exports.mockLoadStoreByIdRequest = mockLoadStoreByIdRequest;

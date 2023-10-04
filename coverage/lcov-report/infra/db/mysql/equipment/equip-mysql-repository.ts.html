@@ -1,59 +1,60 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Code coverage report for infra/db/mysql/equipment/equip-mysql-repository.ts</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type='text/css'>
-        .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
-        }
-    </style>
+  <title>Code coverage report for infra/db/mysql/user/equip-mysql-repository.ts</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="../../../../prettify.css" />
+  <link rel="stylesheet" href="../../../../base.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type='text/css'>
+    .coverage-summary .sorter {
+      background-image: url(../../../../sort-arrow-sprite.png);
+    }
+  </style>
 </head>
-    
+
 <body>
-<div class='wrapper'>
+  <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">infra/db/mysql/equipment</a> equip-mysql-repository.ts</h1>
-        <div class='clearfix'>
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
-                <span class="quiet">Statements</span>
-                <span class='fraction'>34/36</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">92.3% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>12/13</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">93.93% </span>
-                <span class="quiet">Lines</span>
-                <span class='fraction'>31/33</span>
-            </div>
-        
-            
+      <h1><a href="../../../../index.html">All files</a> / <a href="index.html">infra/db/mysql/user</a>
+        equip-mysql-repository.ts</h1>
+      <div class='clearfix'>
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">94.44% </span>
+          <span class="quiet">Statements</span>
+          <span class='fraction'>34/36</span>
         </div>
-        <p class="quiet">
-            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
-        </p>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">100% </span>
+          <span class="quiet">Branches</span>
+          <span class='fraction'>5/5</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">92.3% </span>
+          <span class="quiet">Functions</span>
+          <span class='fraction'>12/13</span>
+        </div>
+
+
+        <div class='fl pad1y space-right2'>
+          <span class="strong">93.93% </span>
+          <span class="quiet">Lines</span>
+          <span class='fraction'>31/33</span>
+        </div>
+
+
+      </div>
+      <p class="quiet">
+        Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the
+        previous block.
+      </p>
     </div>
     <div class='status-line high'></div>
     <pre><table class="coverage">
@@ -250,119 +251,123 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Pool } from 'mysql'
-import { LoadEquipByPinRepository } from '../../../../data/protocols/db/equipment/load-equip-by-pin-repository'
-import { RegisterEquipRepository } from '../../../../data/protocols/db/equipment/register-equip-repository'
-import { LoadEquipByMenuRepository } from '../../../../data/protocols/db/equipment/load-equip-by-menu-repository'
-import { LoadEquipByCompanyIdRepository } from '../../../../data/protocols/db/equipment/load-equip-by-company-id-repository'
-import { LoadEquipByIdRepository } from '../../../../data/protocols/db/equipment/load-equip-by-id-repository'
-import { AddEquipmentRepository } from '../../../../data/protocols/db/equipment/add-equipment-repository'
-import { EquipModel, UpdateEquipModel } from '../../../../domain/models/equipment'
+import { LoadUserByPinRepository } from '../../../../data/protocols/db/user/load-equip-by-pin-repository'
+import { RegisterUserRepository } from '../../../../data/protocols/db/user/register-equip-repository'
+import { LoadUserByMenuRepository } from '../../../../data/protocols/db/user/load-equip-by-menu-repository'
+import { LoadUserByCompanyIdRepository } from '../../../../data/protocols/db/user/load-equip-by-company-id-repository'
+import { LoadUserByIdRepository } from '../../../../data/protocols/db/user/load-equip-by-id-repository'
+import { AddUserRepository } from '../../../../data/protocols/db/user/add-user-repository'
+import { UserModel, UpdateUserModel } from '../../../../domain/models/user'
 import { customGet, deleteById, getOne, insertOne, updateAll, updateById } from '../mysql-helper'
-import { countEquipmentSQL, loadEquipByCompanyIdSQL, loadEquipByIdSQL, loadEquipByUserIdSQL } from '../query-helpers'
-import { UpdateEquipmentRepository } from '../../../../data/protocols/db/equipment/update-equipment-repository'
-import { DeleteEquipmentRepository } from '../../../../data/protocols/db/equipment/delete-equipment-repository'
-import { CountEquipmentRepository } from '../../../../data/protocols/db/equipment/count-equipment-repository'
-import { LoadEquipByUserIdRepository } from '../../../../data/protocols/db/equipment/load-equip-by-user-id-repository'
+import { countUserSQL, loadUserByCompanyIdSQL, loadUserByIdSQL, loadUserByUserIdSQL } from '../query-helpers'
+import { UpdateUserRepository } from '../../../../data/protocols/db/user/update-user-repository'
+import { DeleteUserRepository } from '../../../../data/protocols/db/user/delete-user-repository'
+import { CountUserRepository } from '../../../../data/protocols/db/user/count-user-repository'
+import { LoadUserByUserIdRepository } from '../../../../data/protocols/db/user/load-equip-by-user-id-repository'
 &nbsp;
-export class EquipMySqlRepository implements
-  LoadEquipByPinRepository,
-  RegisterEquipRepository,
-  LoadEquipByMenuRepository,
-  LoadEquipByCompanyIdRepository,
-  LoadEquipByIdRepository,
-  AddEquipmentRepository,
-  UpdateEquipmentRepository,
-  DeleteEquipmentRepository,
-  CountEquipmentRepository,
-  LoadEquipByUserIdRepository {
+export class UserMySqlRepository implements
+  LoadUserByPinRepository,
+  RegisterUserRepository,
+  LoadUserByMenuRepository,
+  LoadUserByCompanyIdRepository,
+  LoadUserByIdRepository,
+  AddUserRepository,
+  UpdateUserRepository,
+  DeleteUserRepository,
+  CountUserRepository,
+  LoadUserByUserIdRepository {
   private readonly connectionPool: Pool
 &nbsp;
   constructor (pool: Pool) {
     this.connectionPool = pool
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  async </span>loadEquipByUserId (userId: number): Promise&lt;LoadEquipByUserIdRepository.Result&gt; {
-    const sql = <span class="cstat-no" title="statement not covered" >loadEquipByUserIdSQL(userId)</span>
-<span class="cstat-no" title="statement not covered" >    return await customGet&lt;LoadEquipByUserIdRepository.Result&gt;(this.connectionPool, sql)</span>
+<span class="fstat-no" title="function not covered" >  async </span>loadUserByUserId (userId: number): Promise&lt;LoadUserByUserIdRepository.Result&gt; {
+    const sql = <span class="cstat-no" title="statement not covered" >loadUserByUserIdSQL(userId)</span>
+<span class="cstat-no" title="statement not covered" >    return await customGet&lt;LoadUserByUserIdRepository.Result&gt;(this.connectionPool, sql)</span>
   }
 &nbsp;
-  async loadEquipBySerialNumber (serialNumber: string): Promise&lt;EquipModel&gt; {
-    const result = await getOne(this.connectionPool, 'equipment', 'serialNumber', serialNumber)
+  async loadUserBySerialNumber (serialNumber: string): Promise&lt;UserModel&gt; {
+    const result = await getOne(this.connectionPool, 'user', 'serialNumber', serialNumber)
     return result[0]
   }
 &nbsp;
-  async addEquipment (equipment: AddEquipmentRepository.Parameter): Promise&lt;AddEquipmentRepository.Result&gt; {
-    const result = await insertOne(this.connectionPool, 'equipment', equipment)
-    const equipmentResponse = await getOne(this.connectionPool, 'equipment', 'id', result.insertId)
-    return equipmentResponse[0]
+  async addUser (user: AddUserRepository.Parameter): Promise&lt;AddUserRepository.Result&gt; {
+    const result = await insertOne(this.connectionPool, 'user', user)
+    const userResponse = await getOne(this.connectionPool, 'user', 'id', result.insertId)
+    return userResponse[0]
   }
 &nbsp;
-  async loadByEquipMenu (menuId: number): Promise&lt;EquipModel[]&gt; {
-    const result = await getOne(this.connectionPool, 'equipment', 'sentMenu', menuId)
+  async loadByUserMenu (menuId: number): Promise&lt;UserModel[]&gt; {
+    const result = await getOne(this.connectionPool, 'user', 'sentMenu', menuId)
     return result
   }
 &nbsp;
-  async loadByEquipPin (IOKPin: string): Promise&lt;EquipModel&gt; {
-    const result = await getOne(this.connectionPool, 'equipment', 'iokPin', IOKPin)
+  async loadByUserPin (IOKPin: string): Promise&lt;UserModel&gt; {
+    const result = await getOne(this.connectionPool, 'user', 'iokPin', IOKPin)
     return result[0]
   }
 &nbsp;
-  async registerEquip (idEquip: number, idCompany: number): Promise&lt;void&gt; {
-    await updateById(this.connectionPool, 'equipment', 'companyId', idEquip, idCompany)
+  async registerUser (idUser: number, idCompany: number): Promise&lt;void&gt; {
+    await updateById(this.connectionPool, 'user', 'companyId', idUser, idCompany)
   }
 &nbsp;
-  async loadEquipByCompanyId (companyId: number): Promise&lt;LoadEquipByCompanyIdRepository.Result&gt; {
-    const sql = loadEquipByCompanyIdSQL(companyId)
-    return await customGet&lt;LoadEquipByCompanyIdRepository.Result&gt;(this.connectionPool, sql)
+  async loadUserByCompanyId (companyId: number): Promise&lt;LoadUserByCompanyIdRepository.Result&gt; {
+    const sql = loadUserByCompanyIdSQL(companyId)
+    return await customGet&lt;LoadUserByCompanyIdRepository.Result&gt;(this.connectionPool, sql)
   }
 &nbsp;
-  async loadEquipById (id: number): Promise&lt;LoadEquipByIdRepository.Result&gt; {
-    const sql = loadEquipByIdSQL(id)
-    const result = await customGet&lt;LoadEquipByIdRepository.Result[]&gt;(this.connectionPool, sql)
+  async loadUserById (id: number): Promise&lt;LoadUserByIdRepository.Result&gt; {
+    const sql = loadUserByIdSQL(id)
+    const result = await customGet&lt;LoadUserByIdRepository.Result[]&gt;(this.connectionPool, sql)
     if (result.length === 0) return null
     return result[0]
   }
 &nbsp;
-  async updateEquipment (id: number, equipment: UpdateEquipModel): Promise&lt;boolean&gt; {
-    const setFields = Object.entries(equipment)
+  async updateUser (id: number, user: UpdateUserModel): Promise&lt;boolean&gt; {
+    const setFields = Object.entries(user)
       .map(value =&gt; `${value[0]} = ${isNaN(value[1]) ? `"${value[1]}"` : value[1]}`)
       .join(', ')
 &nbsp;
-    const result = await updateAll(this.connectionPool, 'equipment', setFields, id)
+    const result = await updateAll(this.connectionPool, 'user', setFields, id)
     if (result.affectedRows === 0) return false
     return true
   }
 &nbsp;
-  async deleteEquipment (id: number): Promise&lt;boolean&gt; {
-    const result = await deleteById(this.connectionPool, 'equipment', 'id', id)
+  async deleteUser (id: number): Promise&lt;boolean&gt; {
+    const result = await deleteById(this.connectionPool, 'user', 'id', id)
     if (result.affectedRows === 0) return false
     return true
   }
 &nbsp;
-  async countEquipment (where?: CountEquipmentRepository.Parameter): Promise&lt;CountEquipmentRepository.Result&gt; {
-    const sql = countEquipmentSQL(where)
+  async countUser (where?: CountUserRepository.Parameter): Promise&lt;CountUserRepository.Result&gt; {
+    const sql = countUserSQL(where)
     const result = await customGet(this.connectionPool, sql)
     return result[0]
   }
 }
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;</pre>
+    </td>
+    </tr>
+    </table>
+    </pre>
 
-                <div class='push'></div><!-- for sticky footer -->
-            </div><!-- /wrapper -->
-            <div class='footer quiet pad2 space-top1 center small'>
-                Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
-            </div>
-        </div>
-        <script src="../../../../prettify.js"></script>
-        <script>
-            window.onload = function () {
-                prettyPrint();
-            };
-        </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
-    </body>
+    <div class='push'></div><!-- for sticky footer -->
+  </div><!-- /wrapper -->
+  <div class='footer quiet pad2 space-top1 center small'>
+    Code coverage generated by
+    <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+    at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+  </div>
+  </div>
+  <script src="../../../../prettify.js"></script>
+  <script>
+    window.onload = function () {
+      prettyPrint();
+    };
+  </script>
+  <script src="../../../../sorter.js"></script>
+  <script src="../../../../block-navigation.js"></script>
+</body>
+
 </html>
-    

@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipBySerialNumber = void 0;
-class DbLoadEquipBySerialNumber {
+exports.DbLoadUserBySerialNumber = void 0;
+class DbLoadUserBySerialNumber {
     constructor(repository) {
         this.repository = repository;
     }
-    async loadEquip(serialNumber) {
-        return this.repository.loadEquipBySerialNumber(serialNumber);
+    async loadUser(serialNumber) {
+        return this.repository.loadUserBySerialNumber(serialNumber);
     }
 }
-exports.DbLoadEquipBySerialNumber = DbLoadEquipBySerialNumber;
+exports.DbLoadUserBySerialNumber = DbLoadUserBySerialNumber;

@@ -1,10 +1,10 @@
-export const addEquipmentRequestSchema = {
+export const addUserRequestSchema = {
   type: 'object',
   properties: {
-    idEquipment: {
+    idUser: {
       type: 'integer'
     },
-    typeEquipment: {
+    typeUser: {
       type: 'string'
     },
     dataUpdate: {
@@ -27,13 +27,13 @@ export const addEquipmentRequestSchema = {
       type: 'string'
     }
   },
-  required: ['idEquipment', 'typeEquipment', 'dataUpdate', 'appUpdate', 'serialNumber', 'creationDate', 'softwareVersion', 'powerVersion']
+  required: ['idUser', 'typeUser', 'dataUpdate', 'appUpdate', 'serialNumber', 'creationDate', 'softwareVersion', 'powerVersion']
 }
 
-export const addEquipmentResponseSchema = {
+export const addUserResponseSchema = {
   type: 'object',
   properties: {
-    idEquipment: {
+    idUser: {
       type: 'integer'
     },
     name: {
@@ -45,7 +45,7 @@ export const addEquipmentResponseSchema = {
     iokPin: {
       type: 'string'
     },
-    typeEquipment: {
+    typeUser: {
       type: 'string'
     },
     dataUpdate: {
@@ -98,9 +98,9 @@ export const addEquipmentResponseSchema = {
     }
   },
   required: [
-    'idEquipment',
     'idUser',
-    'typeEquipment',
+    'idUser',
+    'typeUser',
     'storeId',
     'serialNumber',
     'creationDate',

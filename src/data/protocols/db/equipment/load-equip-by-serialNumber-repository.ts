@@ -1,5 +1,5 @@
-import { EquipModel } from '../../../usecases/load-equip-by-menu/db-load-equip-by-menu-protocols'
+import { UserModel } from '../../../usecases/load-equip-by-menu/db-load-equip-by-menu-protocols'
 
-export interface LoadEquipBySerialNumberRepository {
-  loadEquipBySerialNumber: (serialNumber: string) => Promise<EquipModel | null>
+export interface LoadUserBySerialNumberRepository {
+  loadUserBySerialNumber: (serialNumber: string) => Promise<UserModel | null>
 }

@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbLoadEquipByPin = void 0;
-class DbLoadEquipByPin {
+exports.DbLoadUserByPin = void 0;
+class DbLoadUserByPin {
     constructor(loadequipByPinRepository) {
         this.loadequipByPinRepository = loadequipByPinRepository;
     }
     async load(IOKPin) {
-        const equip = await this.loadequipByPinRepository.loadByEquipPin(IOKPin);
+        const equip = await this.loadequipByPinRepository.loadByUserPin(IOKPin);
         if (equip) {
             return equip;
         }
         return null;
     }
 }
-exports.DbLoadEquipByPin = DbLoadEquipByPin;
+exports.DbLoadUserByPin = DbLoadUserByPin;

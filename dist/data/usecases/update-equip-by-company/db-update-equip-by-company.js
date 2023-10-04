@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbUpdateEquipByCompany = void 0;
-class DbUpdateEquipByCompany {
-    constructor(registerEquipRepository) {
-        this.registerEquipRepository = registerEquipRepository;
+exports.DbUpdateUserByCompany = void 0;
+class DbUpdateUserByCompany {
+    constructor(registerUserRepository) {
+        this.registerUserRepository = registerUserRepository;
     }
-    async update(idEquip, idCompany) {
-        await this.registerEquipRepository.registerEquip(idEquip, idCompany);
+    async update(idUser, idCompany) {
+        await this.registerUserRepository.registerUser(idUser, idCompany);
     }
 }
-exports.DbUpdateEquipByCompany = DbUpdateEquipByCompany;
+exports.DbUpdateUserByCompany = DbUpdateUserByCompany;

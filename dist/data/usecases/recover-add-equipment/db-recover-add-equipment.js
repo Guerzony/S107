@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DbRecoverAddEquip = void 0;
-class DbRecoverAddEquip {
-    constructor(addRecoverEquipmentRepository) {
-        this.addRecoverEquipmentRepository = addRecoverEquipmentRepository;
+exports.DbRecoverAddUser = void 0;
+class DbRecoverAddUser {
+    constructor(addRecoverUserRepository) {
+        this.addRecoverUserRepository = addRecoverUserRepository;
     }
-    async createEquipment(equip, user) {
+    async createUser(equip, user) {
         for (const equipItem of equip) {
             try {
-                const equip = await this.addRecoverEquipmentRepository.addRecoverEquipment({
+                const equip = await this.addRecoverUserRepository.addRecoverUser({
                     name: equipItem.name,
-                    typeEquipment: equipItem.type_equipment,
+                    typeUser: equipItem.type_user,
                     idUser: user.userId,
                     dataUpdate: Boolean(equipItem.data_update),
                     statusData: equipItem.status_data,
@@ -36,4 +36,4 @@ class DbRecoverAddEquip {
         }
     }
 }
-exports.DbRecoverAddEquip = DbRecoverAddEquip;
+exports.DbRecoverAddUser = DbRecoverAddUser;

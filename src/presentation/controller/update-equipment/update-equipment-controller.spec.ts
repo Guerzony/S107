@@ -1,10 +1,10 @@
 import { describe, test, expect, jest, afterEach } from '@jest/globals'
-import { UpdateEquipmentController } from './Update-equipment-controller'
-import { UpdateEquipment } from '../../../domain/usecases/update-equipment'
+import { UpdateUserController } from './Update-user-controller'
+import { UpdateUser } from '../../../domain/usecases/update-user'
 import { Validation } from '../../protocols'
-import { mockEquipModel, mockUpdateEquipmentRequest } from '../../../domain/mocks/equipment'
+import { mockUserModel, mockUpdateUserRequest } from '../../../domain/mocks/user'
 import { badRequest, ok, serverError } from '../../helpers/http-helper'
-import { EquipModel, UpdateEquipModel } from './../../../domain/models/equipment'
+import { UserModel, UpdateUserModel } from './../../../domain/models/user'
 import { MissingParamError } from '../../errors'
 import { NoRowsAffected } from './../../errors/no-rows-affected-error'
 
@@ -14,33 +14,33 @@ class ValidationStub implements Validation {
   }
 }
 
-class DbUpdateEquipmentStub implements UpdateEquipment {
-  async update(id: number, equipment: UpdateEquipModel): Promise<boolean> {
+class DbUpdateUserStub implements UpdateUser {
+  async update(id: number, user: UpdateUserModel): Promise<boolean> {
     return true
   }
 }
 
 interface SutTypes {
-  sut: UpdateEquipmentController
+  sut: UpdateUserController
   paramsValidationStub: Validation
   bodyValidationStub: Validation
-  dbUpdateEquipmentStub: UpdateEquipment
+  dbUpdateUserStub: UpdateUser
 }
 
 const makeSut = (): SutTypes => {
   const paramsValidationStub = new ValidationStub()
   const bodyValidationStub = new ValidationStub()
-  const dbUpdateEquipmentStub = new DbUpdateEquipmentStub()
-  const sut = new UpdateEquipmentController(paramsValidationStub, bodyValidationStub, dbUpdateEquipmentStub)
+  const dbUpdateUserStub = new DbUpdateUserStub()
+  const sut = new UpdateUserController(paramsValidationStub, bodyValidationStub, dbUpdateUserStub)
   return {
     sut,
     paramsValidationStub,
     bodyValidationStub,
-    dbUpdateEquipmentStub
+    dbUpdateUserStub
   }
 }
 
-describe('Testing the UpdateEquipmentController class', () => {
+describe('Testing the UpdateUserController class', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
@@ -48,26 +48,26 @@ describe('Testing the UpdateEquipmentController class', () => {
     test('should call the validate method only once', async () => {
       const { sut, paramsValidationStub } = makeSut()
       const validateSpy = jest.spyOn(paramsValidationStub, 'validate')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
       expect(validateSpy).toHaveBeenCalledTimes(1)
     })
     test('should call the validate method with the correct parameter', async () => {
       const { sut, paramsValidationStub } = makeSut()
       const validateSpy = jest.spyOn(paramsValidationStub, 'validate')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
       expect(validateSpy).toHaveBeenCalledWith(httpRequest.params)
     })
     test('should return 200 if the validate method returns null', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(ok({}))
     })
     test('should return 400 if the validate returns error', async () => {
       const { sut, paramsValidationStub } = makeSut()
       jest.spyOn(paramsValidationStub, 'validate').mockReturnValue(new Error())
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(badRequest(new Error()))
     })
   })
@@ -75,69 +75,69 @@ describe('Testing the UpdateEquipmentController class', () => {
     test('should call the validate method only once', async () => {
       const { sut, bodyValidationStub } = makeSut()
       const validateSpy = jest.spyOn(bodyValidationStub, 'validate')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
       expect(validateSpy).toHaveBeenCalledTimes(1)
     })
     test('should call the validate method with the correct parameter', async () => {
       const { sut, bodyValidationStub } = makeSut()
       const validateSpy = jest.spyOn(bodyValidationStub, 'validate')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
-      expect(validateSpy).toHaveBeenCalledWith(httpRequest.body.equipment)
+      expect(validateSpy).toHaveBeenCalledWith(httpRequest.body.user)
     })
     test('should return 200 if the validate method returns null', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(ok({}))
     })
     test('should return 400 if the validate returns error', async () => {
       const { sut, bodyValidationStub } = makeSut()
       jest.spyOn(bodyValidationStub, 'validate').mockReturnValue(new Error())
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(badRequest(new Error()))
     })
   })
-  describe('Dependency with DbUpdateEquipment class', () => {
+  describe('Dependency with DbUpdateUser class', () => {
     test('should call the Update method only once', async () => {
-      const { sut, dbUpdateEquipmentStub } = makeSut()
-      const dbUpdateEquipmentSpy = jest.spyOn(dbUpdateEquipmentStub, 'update')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const { sut, dbUpdateUserStub } = makeSut()
+      const dbUpdateUserSpy = jest.spyOn(dbUpdateUserStub, 'update')
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
-      expect(dbUpdateEquipmentSpy).toHaveBeenCalledTimes(1)
+      expect(dbUpdateUserSpy).toHaveBeenCalledTimes(1)
     })
     test('should call the Update method with the correct parameter', async () => {
-      const { sut, dbUpdateEquipmentStub } = makeSut()
-      const dbUpdateEquipmentSpy = jest.spyOn(dbUpdateEquipmentStub, 'update')
-      const httpRequest = mockUpdateEquipmentRequest(1)
+      const { sut, dbUpdateUserStub } = makeSut()
+      const dbUpdateUserSpy = jest.spyOn(dbUpdateUserStub, 'update')
+      const httpRequest = mockUpdateUserRequest(1)
       await sut.handle(httpRequest)
-      expect(dbUpdateEquipmentSpy).toHaveBeenCalledWith(httpRequest.params.id, httpRequest.body.equipment)
+      expect(dbUpdateUserSpy).toHaveBeenCalledWith(httpRequest.params.id, httpRequest.body.user)
     })
     test('should return 200 if the Update method returns true ', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(ok({}))
     })
     test('should return 400 if the Update method returns false ', async () => {
-      const { sut, dbUpdateEquipmentStub } = makeSut()
-      jest.spyOn(dbUpdateEquipmentStub, 'update').mockResolvedValue(false)
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const { sut, dbUpdateUserStub } = makeSut()
+      jest.spyOn(dbUpdateUserStub, 'update').mockResolvedValue(false)
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(badRequest(new NoRowsAffected(1)))
     })
     test('should return 500 if the add method throws', async () => {
-      const { sut, dbUpdateEquipmentStub } = makeSut()
-      jest.spyOn(dbUpdateEquipmentStub, 'update').mockRejectedValue(new Error())
-      const httpResponse = await sut.handle(mockUpdateEquipmentRequest(1))
+      const { sut, dbUpdateUserStub } = makeSut()
+      jest.spyOn(dbUpdateUserStub, 'update').mockRejectedValue(new Error())
+      const httpResponse = await sut.handle(mockUpdateUserRequest(1))
       expect(httpResponse).toEqual(serverError(new Error()))
     })
-    test('should return 400 if the equipment object is not in the body', async () => {
+    test('should return 400 if the user object is not in the body', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle({ ...mockUpdateEquipmentRequest(1), body: {} })
-      expect(httpResponse).toEqual(badRequest(new MissingParamError('equipment')))
+      const httpResponse = await sut.handle({ ...mockUpdateUserRequest(1), body: {} })
+      expect(httpResponse).toEqual(badRequest(new MissingParamError('user')))
     })
     test('should return 400 if the id parameter is not given', async () => {
       const { sut } = makeSut()
-      const httpResponse = await sut.handle({ ...mockUpdateEquipmentRequest(1), params: {} })
+      const httpResponse = await sut.handle({ ...mockUpdateUserRequest(1), params: {} })
       expect(httpResponse).toEqual(badRequest(new MissingParamError('id')))
     })
   })

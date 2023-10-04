@@ -1,8 +1,8 @@
-import { EquipMySqlRepository } from '../../../../infra/equipment/equip-mysql-repository'
-import { DbUpdateEquipment } from '../../../../data/usecases/update-equipment/db-update-equipment'
-import { UpdateEquipment } from '../../../../domain/usecases/update-equipment'
+import { UserMySqlRepository } from '../../../../infra/user/equip-mysql-repository'
+import { DbUpdateUser } from '../../../../data/usecases/update-user/db-update-user'
+import { UpdateUser } from '../../../../domain/usecases/update-user'
 
-export const makeDbUpdateEquipment = (): UpdateEquipment => {
-  const repository = new EquipMySqlRepository()
-  return new DbUpdateEquipment(repository)
+export const makeDbUpdateUser = (): UpdateUser => {
+  const repository = new UserMySqlRepository()
+  return new DbUpdateUser(repository)
 }

@@ -6,7 +6,7 @@ export const ExportSpeedOvensFile = {
     tags: ['ExportFile'],
     summary: 'Retorna um arquivo BRAVO.zip para download conforme o modelo',
     parameters: [{
-      name: 'equipmentModel',
+      name: 'userModel',
       in: 'path',
       description: 'Modelo do equipamento',
       required: true,

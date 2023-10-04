@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentNotFoundError = void 0;
-class EquipmentNotFoundError extends Error {
+exports.UserNotFoundError = void 0;
+class UserNotFoundError extends Error {
     constructor() {
-        super('Equipment not found');
-        this.name = 'EquipmentNotFoundError';
+        super('User not found');
+        this.name = 'UserNotFoundError';
     }
 }
-exports.EquipmentNotFoundError = EquipmentNotFoundError;
+exports.UserNotFoundError = UserNotFoundError;

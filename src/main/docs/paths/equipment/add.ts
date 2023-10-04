@@ -1,7 +1,7 @@
-export const addEquipment = {
+export const addUser = {
   post: {
-    tags: ['Equipment'],
-    summary: 'Create an equipment(oven)',
+    tags: ['User'],
+    summary: 'Create an user(oven)',
     parameters: [{
       name: 'pin',
       in: 'path',
@@ -16,18 +16,18 @@ export const addEquipment = {
       content: {
         'application/json': {
           schema: {
-            $ref: '#/schemas/addEquipmentRequest'
+            $ref: '#/schemas/addUserRequest'
           }
         }
       }
     },
     responses: {
       201: {
-        description: 'Equipment created successfully',
+        description: 'User created successfully',
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/addEquipmentResponse'
+              $ref: '#/schemas/addUserResponse'
             }
           }
         }

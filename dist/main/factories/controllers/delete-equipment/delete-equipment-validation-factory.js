@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeDeleteEquipmentValidation = void 0;
+exports.makeDeleteUserValidation = void 0;
 const validator_composite_1 = require("../../../../presentation/helpers/validators/validator-composite");
 const required_field_validation_1 = require("../../../../presentation/helpers/validators/required-field-validation");
 const numeric_fields_validation_1 = require("../../../../presentation/helpers/validators/numeric-fields-validation");
-const makeDeleteEquipmentValidation = () => {
+const makeDeleteUserValidation = () => {
     const validations = [];
     const fields = ['id'];
     for (const field of fields) {
@@ -13,4 +13,4 @@ const makeDeleteEquipmentValidation = () => {
     }
     return new validator_composite_1.ValidationComposite(validations);
 };
-exports.makeDeleteEquipmentValidation = makeDeleteEquipmentValidation;
+exports.makeDeleteUserValidation = makeDeleteUserValidation;

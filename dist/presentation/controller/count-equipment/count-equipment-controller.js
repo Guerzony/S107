@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountEquipmentController = void 0;
+exports.CountUserController = void 0;
 const errors_1 = require("../../errors");
 const http_helper_1 = require("../../helpers/http-helper");
-class CountEquipmentController {
+class CountUserController {
     constructor(validation, db) {
         this.validation = validation;
         this.db = db;
@@ -24,4 +24,4 @@ class CountEquipmentController {
         }
     }
 }
-exports.CountEquipmentController = CountEquipmentController;
+exports.CountUserController = CountUserController;

@@ -1,3 +1,3 @@
-export interface DeleteEquipmentRepository {
-  deleteEquipment: (id: number) => Promise<boolean>
+export interface DeleteUserRepository {
+  deleteUser: (id: number) => Promise<boolean>
 }
