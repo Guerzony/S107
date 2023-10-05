@@ -1,5 +1,5 @@
-import { LoadUserById } from '../../../domain/usecases/load-equip-by-id'
-import { LoadUserByIdRepository } from '../../protocols/db/user/load-equip-by-id-repository'
+import { LoadUserById } from '../../../domain/usecases/load-user-by-id'
+import { LoadUserByIdRepository } from '../../protocols/db/user/load-user-by-id-repository'
 
 export class DbLoadUserById implements LoadUserById {
   private readonly repository: LoadUserByIdRepository

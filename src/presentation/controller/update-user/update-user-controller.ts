@@ -1,7 +1,7 @@
 import { forbidden, ok, serverError } from '../../helpers/http-helper'
 import { UpdateUser } from '../../../domain/usecases/update-user'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
-import { badRequest } from './../../helpers/http-helper'
+import { badRequest } from '../../helpers/http-helper'
 import { MissingParamError, ServerError } from '../../errors'
 import { NoRowsAffected } from '../../errors/no-rows-affected-error'
 

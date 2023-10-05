@@ -5,7 +5,7 @@ import { DeleteUserController } from './delete-user-controller'
 import { mockDeleteUserRequest } from './../../../domain/mocks/user/index'
 import { badRequest, ok, serverError } from '../../helpers/http-helper'
 import { MissingParamError } from '../../errors'
-import { NoRowsAffected } from './../../errors/no-rows-affected-error'
+import { NoRowsAffected } from '../../errors/no-rows-affected-error'
 
 class ValidationStub implements Validation {
   validate(input: { [key: string]: unknown }): Error | null {

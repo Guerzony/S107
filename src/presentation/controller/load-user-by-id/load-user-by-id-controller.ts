@@ -1,4 +1,4 @@
-import { LoadUserById } from '../../../domain/usecases/load-equip-by-id'
+import { LoadUserById } from '../../../domain/usecases/load-user-by-id'
 import { ServerError } from '../../errors'
 import { badRequest, noContent, ok, serverError } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'

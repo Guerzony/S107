@@ -1,7 +1,7 @@
 import { describe, test, expect, jest } from '@jest/globals'
 import { DbUpdateUser } from './db-update-user'
 import { UpdateUserRepository } from '../../protocols/db/user/update-user-repository'
-import { mockUpdateUserRequest } from './../../../domain/mocks/user/index'
+import { mockUpdateUserRequest } from '../../../domain/mocks/user/index'
 import { UpdateUser } from '../../../domain/usecases/update-user'
 
 class UpdateUserRepositoryStub implements UpdateUserRepository {

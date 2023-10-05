@@ -1,4 +1,4 @@
-import { LoadUserById } from '../../../../domain/usecases/load-equip-by-id'
+import { LoadUserById } from '../../../../domain/usecases/load-user-by-id'
 
 export interface LoadUserByIdRepository {
   loadUserById: (Id: number) => Promise<LoadUserByIdRepository.Result>

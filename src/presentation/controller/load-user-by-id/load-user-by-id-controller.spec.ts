@@ -1,8 +1,8 @@
 import { describe, test, expect, jest, afterEach } from '@jest/globals'
 import { mockLoadUserByIdResponse, mockLoadUserByIdRequest } from './../../../domain/mocks/user'
-import { LoadUserById } from './../../../domain/usecases/load-equip-by-id'
-import { LoadUserByIdController } from './load-equip-by-id-controller'
-import { badRequest, noContent, ok, serverError } from './../../helpers/http-helper'
+import { LoadUserById } from '../../../domain/usecases/load-user-by-id'
+import { LoadUserByIdController } from './load-user-by-id-controller'
+import { badRequest, noContent, ok, serverError } from '../../helpers/http-helper'
 import { Validation } from '../../protocols'
 
 class LoadUserByIdStub implements LoadUserById {

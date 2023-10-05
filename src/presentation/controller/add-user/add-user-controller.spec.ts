@@ -4,7 +4,7 @@ import { CreateUserOvenModel, UserModel } from '../../../domain/models/user'
 import { AddUser } from '../../../domain/usecases/add-user'
 import { Validation } from '../../protocols'
 import { badRequest, created, serverError } from '../../helpers/http-helper'
-import { mockAddUserRequest, mockAddUserResponse } from '../../../domain/mocks/user/'
+import { mockAddUserRequest, mockAddUserResponse } from '../../../domain/mocks/user'
 
 class ValidationStub implements Validation {
   validate(input: any): Error | null {

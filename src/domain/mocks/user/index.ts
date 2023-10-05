@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import { AddUser } from './../../usecases/add-user'
+import { AddUser } from '../../usecases/add-user'
 
-import { LoadUserById, LoadHasUpdateUser } from '../../usecases/load-equip-by-id'
+import { LoadUserById, LoadHasUpdateUser } from '../../usecases/load-user-by-id'
 import { UserModel, UpdateUserModel } from '../../models/user'
 import { UpdateUser } from '../../usecases/update-user'
 import { DeleteUser } from '../../usecases/delete-user'

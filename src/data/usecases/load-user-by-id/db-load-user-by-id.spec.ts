@@ -1,7 +1,7 @@
-import { describe, test, expect, jest } from '@jest/globals'
-import { LoadUserByIdRepository } from '../../protocols/db/user/load-equip-by-id-repository'
+import { describe, test, expect, jest } from '@jest'
+import { LoadUserByIdRepository } from '../../protocols/db/user/load-user-by-id-repository'
 import { mockLoadUserByIdResponse } from '../../../domain/mocks/user'
-import { DbLoadUserById } from './db-load-equip-by-id'
+import { DbLoadUserById } from './db-load-user-by-id'
 
 class LoadUserByIdRepositoryStub implements LoadUserByIdRepository {
   async loadUserById(id: number): Promise<LoadUserByIdRepository.Result> {

@@ -1,4 +1,4 @@
-import { CreateUserOvenModel, UserOvenModel, UserModel } from './../models/user'
+import { CreateUserOvenModel, UserOvenModel, UserModel } from '../models/user'
 
 export interface AddUser {
   add(user: CreateUserOvenModel): Promise<UserModel>

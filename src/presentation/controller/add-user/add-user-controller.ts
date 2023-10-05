@@ -2,8 +2,7 @@ import { AddUser } from '../../../domain/usecases/add-user'
 import { badRequest, serverError, created, forbidden } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
 import { UserCreationError } from '../../errors/user-creation-error'
-import { LoadUserByPinError } from '../../errors/load-pin-error'
-import { formatUserOven } from '../../../utils/formatUserOven'
+import { formatUserOven } from '../../../utils/formatUser'
 
 export class AddUserController implements Controller {
   private readonly validation: Validation
