@@ -12,117 +12,48 @@ export const mockLoadHasUpdateUserRequest = (): LoadHasUpdateUser.Request => ({ 
 
 export const mockLoadUserByIdResponse = (): LoadUserById.Response => ({
   id: 1,
-  idUser: 0,
-  typeUser: 'typeUser',
-  storeId: 0,
-  serialNumber: 'serialNumber',
-  creationDate: 'creationDate',
-  softwareVersion: 'softwareVersion',
-  sentMenu: 0,
-  companyId: 0,
-  iokPin: 'iokPin',
-  name: 'name',
-  categoryId: 0,
-  dataUpdate: true,
-  appUpdate: true,
-  statusData: 'statusData',
-  statusApp: 'statusData',
-  hashSw: 'hashSw',
-  menuId: 0,
-  lastUpdate: 0,
-  modelName: 'valid_model',
-  categoryName: 'valid_category',
-  storeName: 'valid_store',
-  menuName: 'valid_menu',
-  address: 'valid_address',
-  city: 'valid_city',
-  zipCode: 'valid_code'
+  name: 'joao',
+  matricula: 123,
+  materia: 'S107',
+  nota: 80
 })
 
 export const mockLoadUserBySerialNumberResponse = (): UserModel => (
   {
     id: 1,
-    idUser: 0,
-    typeUser: 'typeUser',
-    storeId: 0,
-    serialNumber: 'serialNumber',
-    creationDate: 'creationDate',
-    softwareVersion: 'softwareVersion',
-    sentMenu: 0,
-    companyId: 0,
-    iokPin: 'iokPin',
-    name: 'name',
-    categoryId: 0,
-    dataUpdate: true,
-    appUpdate: true,
-    statusData: 'statusData',
-    statusApp: 'statusData',
-    hashSw: 'hashSw',
-    menuId: 0,
-    lastUpdate: 0
+    name: 'joao',
+    matricula: 123,
+    materia: 'S107',
+    nota: 80
   }
 )
 
 export const mockAddUserRequest = (): AddUser.Request => (
   {
     body: {
-      idUser: 1,
-      typeUser: 'typeUser',
-      dataUpdate: true,
-      appUpdate: true,
-      creationDate: 'creationDate',
-      serialNumber: 'serialNumber',
-      softwareVersion: 'softwareVersion'
-    },
-    params: {
-      pin: 'DE@Prat1c@BR2021'
+      name: 'joao',
+      matricula: 123,
+      materia: 'S107',
+      nota: 80
     }
   }
 )
 
 export const mockUpdateUser = (): UpdateUserModel => (
   {
-    idUser: 0,
-    typeUser: 'typeUser',
-    storeId: 0,
-    serialNumber: 'serialNumber',
-    creationDate: 'creationDate',
-    softwareVersion: 'softwareVersion',
-    sentMenu: 0,
-    companyId: 0,
-    iokPin: 'iokPin',
-    name: 'name',
-    categoryId: 0,
-    dataUpdate: true,
-    appUpdate: true,
-    statusData: 'statusData',
-    statusApp: 'statusData',
-    hashSw: 'hashSw',
-    menuId: 0,
-    lastUpdate: 0
+    name: 'joao',
+    matricula: 123,
+    materia: 'S107',
+    nota: 80
   }
 )
 
 export const mockUserModel = (): UserModel => (
   {
-    idUser: 0,
-    typeUser: 'typeUser',
-    storeId: 0,
-    serialNumber: 'serialNumber',
-    creationDate: 'creationDate',
-    softwareVersion: 'softwareVersion',
-    sentMenu: 0,
-    companyId: 0,
-    iokPin: 'iokPin',
-    name: 'name',
-    categoryId: 0,
-    dataUpdate: true,
-    appUpdate: true,
-    statusData: 'statusData',
-    statusApp: 'statusApp',
-    hashSw: 'hashSw',
-    menuId: 0,
-    lastUpdate: 0
+    name: 'joao',
+    matricula: 123,
+    materia: 'S107',
+    nota: 80
   }
 )
 
