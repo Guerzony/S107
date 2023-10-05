@@ -5,7 +5,7 @@ export const formatUserOven = (userResponse: UserModel) => {
     idUser: userResponse.id,
     name: userResponse.name,
     typeUser: userResponse.typeUser,
-    idUser: userResponse.idUser,
+    // idUser: userResponse.idUser,
     dataUpdate: userResponse.dataUpdate,
     statusData: userResponse.statusData,
     appUpdate: userResponse.appUpdate,

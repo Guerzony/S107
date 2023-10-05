@@ -3,7 +3,7 @@ import { NumericFieldValidation } from '../../../../presentation/helpers/validat
 import { RequiredFieldValidaton } from '../../../../presentation/helpers/validators/required-field-validation'
 import { ValidationComposite } from '../../../../presentation/helpers/validators/validator-composite'
 import { Validation } from '../../../../presentation/protocols'
-import { makeLoadUserByIdValidation } from './load-equip-by-id-validation-factory'
+import { makeLoadUserByIdValidation } from './load-user-by-id-validation-factory'
 
 jest.mock('../../../../presentation/helpers/validators/validator-composite')
 
