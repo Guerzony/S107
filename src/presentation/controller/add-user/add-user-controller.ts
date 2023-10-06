@@ -2,7 +2,6 @@ import { AddUser } from '../../../domain/usecases/add-user'
 import { badRequest, serverError, created, forbidden } from '../../helpers/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
 import { UserCreationError } from '../../errors/user-creation-error'
-import { formatUserOven } from '../../../utils/formatUser'
 
 export class AddUserController implements Controller {
   private readonly validation: Validation
@@ -22,7 +21,7 @@ export class AddUserController implements Controller {
       if (validationError) return badRequest(validationError)
 
       const user = await this.addUser.add(requestUser)
-      return created<AddUser.Response>(formatUserOven(user))
+      return created<AddUser.Response>(user)
     } catch (error) {
       return serverError(new UserCreationError())
     }

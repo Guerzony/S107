@@ -1,4 +1,4 @@
-import { describe, test, expect, jest } from '@jest'
+import { describe, test, expect, jest } from '@jest/globals'
 import { LoadUserByIdRepository } from '../../protocols/db/user/load-user-by-id-repository'
 import { mockLoadUserByIdResponse } from '../../../domain/mocks/user'
 import { DbLoadUserById } from './db-load-user-by-id'
