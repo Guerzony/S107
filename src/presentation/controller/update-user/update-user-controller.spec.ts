@@ -1,5 +1,5 @@
 import { describe, test, expect, jest, afterEach } from '@jest/globals'
-import { UpdateUserController } from './Update-user-controller'
+import { UpdateUserController } from './update-user-controller'
 import { UpdateUser } from '../../../domain/usecases/update-user'
 import { Validation } from '../../protocols'
 import { mockUserModel, mockUpdateUserRequest } from '../../../domain/mocks/user'
