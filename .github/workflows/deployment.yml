@@ -29,6 +29,8 @@ jobs:
     - run: npm run test
 
   empacotar:
+
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
