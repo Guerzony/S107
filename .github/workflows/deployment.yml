@@ -44,7 +44,7 @@ jobs:
         npm install --legacy-peer-deps
 
     - name: Build TypeScript
-      run: |
+      run: 
         npm run build 
 
     - name: Upload Artifact
@@ -52,13 +52,4 @@ jobs:
       with:
         name: dist
         path: ./dist
-  
-  notificacao:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Executa comandos
-      uses: actions/checkout@v2
-    - run: sh scripts/shell.sh
-  
+        
