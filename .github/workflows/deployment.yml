@@ -42,9 +42,8 @@ jobs:
         check-latest: true
 
     - name: Install Dependencies
-      run: |
-        npm install -g typescript
-        npm install
+      run:
+        npm install --legacy-peer-deps
 
     - name: Build TypeScript
       run: |
