@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/joaoryan/Projeto1-S107/actions/workflows/deployment.yml/badge.svg)](https://github.com/joaoryan/Projeto1-S107/actions/workflows/deployment.yml)
+
 # S107
 
 ### instalar dependencias
