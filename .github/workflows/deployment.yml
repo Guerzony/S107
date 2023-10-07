@@ -57,12 +57,3 @@ jobs:
         name: dist
         path: ./dist
   
-  notificacao:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Executa comandos
-      uses: actions/checkout@v2
-    - run: sh scripts/shell.sh
-  
