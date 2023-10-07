@@ -1,4 +1,5 @@
-import { UpdateUserModel } from '../../../usecases/load-equip-by-menu/db-load-equip-by-menu-protocols'
+import { UpdateUserModel } from "../../../../domain/models/user"
+
 
 export interface UpdateUserRepository {
   updateUser(id: number, user: UpdateUserRepository.Parameter): Promise<boolean>

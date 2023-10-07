@@ -2,15 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DbLoadUserById = void 0;
 class DbLoadUserById {
-    constructor(loadUserByIdRepository) {
-        this.loadUserByIdRepository = loadUserByIdRepository;
+    constructor(repository) {
+        this.repository = repository;
     }
     async load(id) {
-        const user = await this.loadUserByIdRepository.loadById(id);
-        if (user) {
-            return user;
-        }
-        return null;
+        return this.repository.loadUserById(id);
     }
 }
 exports.DbLoadUserById = DbLoadUserById;

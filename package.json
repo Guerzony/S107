@@ -5,7 +5,7 @@
   "main": "test.js",
   "scripts": {
     "start": "npx env-cmd -f .env.development node dist/main/server.js",
-    "build": "rimraf dist && tsc",
+    "build": "npx rimraf dist && tsc",
     "dev": "sucrase-node src/main/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --detectOpenHandles",
     "test:verbose": "jest --passWithNoTests  --runInBand --watchAll",

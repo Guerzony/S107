@@ -1,4 +1,3 @@
 export default {
-  port: process.env.PORT || 5050,
-  jwtSecret: 'Pr@tic@-2022'
+  port: process.env.PORT || 5050
 }

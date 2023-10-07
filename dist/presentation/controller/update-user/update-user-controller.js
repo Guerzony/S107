@@ -1,36 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EditUserController = void 0;
-const edit_user_data_error_1 = require("../../errors/edit-user-data-error");
+exports.UpdateUserController = void 0;
 const http_helper_1 = require("../../helpers/http-helper");
-class EditUserController {
-    constructor(userDataValidation, editUserData, editUserBelongStoreData) {
-        this.userDataValidation = userDataValidation;
-        this.editUserData = editUserData;
-        this.editUserBelongStoreData = editUserBelongStoreData;
+const http_helper_2 = require("../../helpers/http-helper");
+const errors_1 = require("../../errors");
+const no_rows_affected_error_1 = require("../../errors/no-rows-affected-error");
+class UpdateUserController {
+    constructor(paramsValidation, bodyValidation, dbUpdateUser) {
+        this.paramsValidation = paramsValidation;
+        this.bodyValidation = bodyValidation;
+        this.dbUpdateUser = dbUpdateUser;
     }
     async handle(httpRequest) {
         try {
-            const error = this.userDataValidation.validate(httpRequest.body.user);
-            if (error) {
-                return (0, http_helper_1.badRequest)(error);
-            }
-            const userEdit = httpRequest.body.user;
-            const user = await this.editUserData.editUserData(userEdit);
-            if (!user) {
-                return (0, http_helper_1.forbidden)(new edit_user_data_error_1.EditUserDataError());
-            }
-            const storeId = httpRequest.body.storeId;
-            if (storeId) {
-                await this.editUserBelongStoreData.editUserBelongStoreData(userEdit.id, storeId);
-            }
-            return (0, http_helper_1.ok)({
-                editedUserData: user
-            });
+            if (!httpRequest.body.user)
+                return (0, http_helper_2.badRequest)(new errors_1.MissingParamError('user'));
+            if (!httpRequest.params.id)
+                return (0, http_helper_2.badRequest)(new errors_1.MissingParamError('id'));
+            const validationParamsError = this.paramsValidation.validate(httpRequest.params);
+            const validationBodyError = this.bodyValidation.validate(httpRequest.body.user);
+            if (validationParamsError)
+                return (0, http_helper_2.badRequest)(validationParamsError);
+            if (validationBodyError)
+                return (0, http_helper_2.badRequest)(validationBodyError);
+            const result = await this.dbUpdateUser.update(httpRequest.params.id, httpRequest.body.user);
+            if (!result)
+                return (0, http_helper_2.badRequest)(new no_rows_affected_error_1.NoRowsAffected(httpRequest.params.id));
+            return (0, http_helper_1.ok)({});
         }
         catch (error) {
-            return (0, http_helper_1.serverError)(error);
+            return (0, http_helper_1.serverError)(new errors_1.ServerError(error));
         }
     }
 }
-exports.EditUserController = EditUserController;
+exports.UpdateUserController = UpdateUserController;

@@ -11,13 +11,14 @@ class DeleteUserController {
     }
     async handle(httpRequest) {
         try {
-            const { id } = httpRequest.params;
+            if (!httpRequest.params.id)
+                return (0, http_helper_1.badRequest)(new errors_1.MissingParamError('id'));
             const validationError = this.paramsValidation.validate(httpRequest.params);
             if (validationError)
                 return (0, http_helper_1.badRequest)(new errors_1.MissingParamError('id'));
-            const deleteIsOk = await this.dbDeleteUser.deleteUser(id);
+            const deleteIsOk = await this.dbDeleteUser.delete(httpRequest.params.id);
             if (!deleteIsOk)
-                return (0, http_helper_1.badRequest)(new no_rows_affected_error_1.NoRowsAffected(id));
+                return (0, http_helper_1.badRequest)(new no_rows_affected_error_1.NoRowsAffected(httpRequest.params.id));
             return (0, http_helper_1.ok)({});
         }
         catch (error) {

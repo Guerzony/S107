@@ -5,7 +5,7 @@ class DbDeleteUser {
     constructor(repository) {
         this.repository = repository;
     }
-    async deleteUser(id) {
+    async delete(id) {
         return await this.repository.deleteUser(id);
     }
 }

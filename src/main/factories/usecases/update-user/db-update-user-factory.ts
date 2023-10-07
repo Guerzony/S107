@@ -1,4 +1,4 @@
-import { UserMySqlRepository } from '../../../../infra/user/equip-mysql-repository'
+import { UserMySqlRepository } from '../../../../infra/user/user-mysql-repository'
 import { DbUpdateUser } from '../../../../data/usecases/update-user/db-update-user'
 import { UpdateUser } from '../../../../domain/usecases/update-user'
 

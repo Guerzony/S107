@@ -1,4 +1,5 @@
-import { UserModel, CreateUserOvenModel } from '../../../usecases/load-equip-by-menu/db-load-equip-by-menu-protocols'
+import { CreateUserOvenModel, UserModel } from "../../../../domain/models/user"
+
 
 export interface AddUserRepository {
   addUser: (userType: AddUserRepository.Parameter) => Promise<AddUserRepository.Result>

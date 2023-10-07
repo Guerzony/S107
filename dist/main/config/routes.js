@@ -23,12 +23,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable no-unused-expressions */
 const express_1 = require("express");
 const fs_1 = require("fs");
-exports.default = (app, pool) => {
+exports.default = (app) => {
     const router = (0, express_1.Router)();
     app.use('/api', router);
     (0, fs_1.readdirSync)(`${__dirname}/../routes`).map(async (file) => {
         if (!file.includes('.test.')) {
-            (await Promise.resolve().then(() => __importStar(require(`../routes/${file}`)))).default(router, pool);
+            (await Promise.resolve().then(() => __importStar(require(`../routes/${file}`)))).default(router);
         }
     });
 };
