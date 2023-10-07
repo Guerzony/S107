@@ -61,22 +61,13 @@ jobs:
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
-        # Required mail server address if not connection_url:
         server_address: mail.smtp2go.com
-        # Server port, default 25:
         server_port: 2525
-        # Optional whether this connection use TLS (default is true if server_port is 465)
-        # Optional (recommended) mail server username:
         username: ${{secrets.MAIL_USERNAME}}
-        # Optional (recommended) mail server password:
         password: ${{secrets.MAIL_PASSWORD}}
-        # Required mail subject:
         subject: Email de verificacao
-        # Required recipients' addresses:
         to: ${{secrets.MAIL_TO}}
-        # Required sender full name (address can be skipped):
-        from: ${{secrets.MAIL_FROM}} # <user@example.com>
-        # Optional plain body:
+        from: ${{secrets.MAIL_FROM}}
         body: Build job of ${{github.repository}} completed successfully!
        
   
