@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ['18']
+        node-version: [18]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -56,4 +56,13 @@ jobs:
       with:
         name: dist
         path: ./dist
+  
+  notificacao:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Executa comandos
+      uses: actions/checkout@v2
+    - run: sh scripts/shell.sh
   
