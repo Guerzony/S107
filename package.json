@@ -45,7 +45,6 @@
     "git-commit-msg-linter": "^3.2.8",
     "husky": "^7.0.0",
     "jest": "^27.5.1",
-    "jest-mysql": "^1.1.8",
     "lint-staged": "^12.3.7",
     "rimraf": "^3.0.2",
     "sucrase": "^3.20.3",
@@ -55,14 +54,8 @@
   },
   "dependencies": {
     "archiver": "^6.0.1",
-    "bcrypt": "^5.0.1",
     "env-cmd": "^10.1.0",
     "express": "^4.17.2",
-    "jsonwebtoken": "^8.5.1",
-    "md5": "^2.3.0",
-    "mysql": "^2.18.1",
-    "nodemailer": "^6.5.0",
-    "swagger-ui-express": "^4.5.0",
     "uuid": "^9.0.0",
     "validator": "^13.7.0"
   }
