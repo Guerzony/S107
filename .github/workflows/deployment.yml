@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: ['18']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -49,11 +49,21 @@ jobs:
 
     - name: Build TypeScript
       run: |
-        npm run build
+        npm run build 
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: dist
         path: ./dist
+  
+
+  notificacao:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Executa comandos
+      uses: actions/checkout@v3
+    - run: sh scripts/shell.sh
   
