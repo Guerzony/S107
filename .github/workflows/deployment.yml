@@ -90,11 +90,4 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
 
-      - name: Pasta relatorio
-        uses: actions/upload-artifact@v3
-        with:
-          name: relatorio pasta
-          path: coverage/lcov-report
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
           
