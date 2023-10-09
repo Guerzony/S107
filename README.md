@@ -6,6 +6,11 @@
 - Gabriel Henrique Guerzony
 - Joao Ryan dos Santos
 
+
+### Projeto : 
+
+Basicamente o projeto tem enfase na criaçao de uma pipeline em que possui as etapas de execuçao dos testes, empacotamento ( build), relatorio de testes e um script que irá notificar no email que o teste foi realizado com sucesso.
+
 ### instalar dependencias
 npm i
 
@@ -21,5 +26,8 @@ npm run test
 ### executar deploy 
  npm i --legacy-peer-deps
  npm run test
+
+
+
 
 
