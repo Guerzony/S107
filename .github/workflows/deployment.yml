@@ -11,7 +11,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  test:                                  
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
     - run: npm i --legacy-peer-deps
     - run: npm run test
 
-  empacotar:
+  empacotar:                                   # PARTE DE BUILD DO PROJETO
 
     needs: test
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
         path: ./dist
 
 
-  notifications :
+  notifications :                                                   # PARTE QUE IRÁ CRIAR O SCRIPT PARA MANDAR NOTIFICACAO POR EMAIL QUANDO TERMINAR OS TESTES
 
     needs: test
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
         body: Build job of ${{github.repository}} completed successfully!
        
   
-  relatorioTestes:
+  relatorioTestes:                                               # PARTE QUE IRA SER RESPONSAVEL POR DAR UPDATE AND DOWNLOAD DO RELATORIO DE TESTES
     
     needs: test
     runs-on: ubuntu-latest
