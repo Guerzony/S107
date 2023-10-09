@@ -2,6 +2,10 @@
 
 # S107
 
+### Integrantes : 
+- Gabriel Henrique Guerzony
+- Joao Ryan dos Santos
+
 ### instalar dependencias
 npm i
 
