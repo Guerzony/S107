@@ -25,7 +25,7 @@ jobs:
 
   empacotar:
 
-    needs: test
+    needs: relatorioTestes
     runs-on: ubuntu-latest
 
     steps:
@@ -55,7 +55,7 @@ jobs:
 
   notifications :
 
-    needs: test
+    needs: relatorioTestes
     runs-on: ubuntu-latest
     steps : 
     - name: Send mail
@@ -71,22 +71,18 @@ jobs:
         body: Build job of ${{github.repository}} completed successfully!
        
   
+  relatorioTestes:
     
- name: Node CI
-
-on: [push]
-
-jobs:
-  relatorioTestes:                           
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build --if-present
-          npm test
+          npm install --legacy-peer-deps
+          npm run build
+          npm run test
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
