@@ -82,11 +82,19 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run test:ci
-      - name: Archive code coverage results
+      - name: Html relatorio
         uses: actions/upload-artifact@v3
         with:
-          name: code-coverage-report
+          name: relatorio html
           path: coverage/lcov-report/index.html
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Pasta relatorio
+        uses: actions/upload-artifact@v3
+        with:
+          name: relatorio pasta
+          path: coverage/lcov-report
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
           
