@@ -12,3 +12,10 @@ npm run start
 
 ### executar test
 npm run test
+
+
+### executar deploy 
+ npm i --legacy-peer-deps
+ npm run test
+
+
