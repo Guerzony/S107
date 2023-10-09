@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.47% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/19</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.47% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -54,6 +54,12 @@
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
     </div>
     <div class='status-line high'></div>
     <pre><table class="coverage">
@@ -91,95 +97,71 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">68x</span>
-<span class="cline-any cline-yes">68x</span>
-<span class="cline-any cline-yes">68x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable eol-last */
-import { EditUserBelongStoreData } from '../../../domain/usecases/update-user-belong-store-data'
-import { EditUserData } from '../../../domain/usecases/update-user-data'
-import { EditUserDataError } from '../../errors/edit-user-data-error'
-import { badRequest, forbidden, ok, serverError } from '../../helpers/http-helper'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { forbidden, ok, serverError } from '../../helpers/http-helper'
+import { UpdateUser } from '../../../domain/usecases/update-user'
 import { Controller, HttpRequest, HttpResponse, Validation } from '../../protocols'
+import { badRequest } from '../../helpers/http-helper'
+import { MissingParamError, ServerError } from '../../errors'
+import { NoRowsAffected } from '../../errors/no-rows-affected-error'
 &nbsp;
-export class EditUserController implements Controller {
-  private readonly userDataValidation: Validation
-  private readonly editUserData: EditUserData
-  private readonly editUserBelongStoreData: EditUserBelongStoreData
-&nbsp;
-  constructor (userDataValidation: Validation, editUserData: EditUserData, editUserBelongStoreData: EditUserBelongStoreData) {
-    this.userDataValidation = userDataValidation
-    this.editUserData = editUserData
-    this.editUserBelongStoreData = editUserBelongStoreData
+export class UpdateUserController implements Controller {
+  private readonly paramsValidation: Validation
+  private readonly bodyValidation: Validation
+  private readonly dbUpdateUser: UpdateUser
+  constructor(paramsValidation: Validation, bodyValidation: Validation, dbUpdateUser: UpdateUser) {
+    this.paramsValidation = paramsValidation
+    this.bodyValidation = bodyValidation
+    this.dbUpdateUser = dbUpdateUser
   }
 &nbsp;
-  async handle (httpRequest: HttpRequest): Promise&lt;HttpResponse&gt; {
+  async handle(httpRequest: HttpRequest&lt;UpdateUser.Request&gt;): Promise&lt;HttpResponse&gt; {
     try {
-      const error = this.userDataValidation.validate(httpRequest.body.user)
-      if (error) {
-        return badRequest(error)
-      }
+      if (!httpRequest.body.user) return badRequest(new MissingParamError('user'))
+      if (!httpRequest.params.id) return badRequest(new MissingParamError('id'))
+      const validationParamsError = this.paramsValidation.validate(httpRequest.params)
+      const validationBodyError = this.bodyValidation.validate(httpRequest.body.user)
+      if (validationParamsError) return badRequest(validationParamsError)
+      if (validationBodyError) return badRequest(validationBodyError)
 &nbsp;
-      const userEdit = httpRequest.body.user
-      const user = await this.editUserData.editUserData(userEdit)
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!user) {
-<span class="cstat-no" title="statement not covered" >        return forbidden(new EditUserDataError())</span>
-      }
-      const storeId = httpRequest.body.storeId
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (storeId) {
-<span class="cstat-no" title="statement not covered" >        await this.editUserBelongStoreData.editUserBelongStoreData(userEdit.id, storeId)</span>
-      }
-      return ok({
-        editedUserData: user
-      })
+      const result = await this.dbUpdateUser.update(httpRequest.params.id, httpRequest.body.user)
+      if (!result) return badRequest(new NoRowsAffected(httpRequest.params.id))
+      return ok({})
     } catch (error) {
-      return serverError(error)
+      return serverError(new ServerError(error))
     }
   }
 }
@@ -189,10 +171,9 @@ export class EditUserController implements Controller {
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 28 2023 09:25:30 GMT-0300 (Horário Padrão de Brasília)
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-10-09T18:50:21.024Z
             </div>
-        </div>
         <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {

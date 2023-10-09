@@ -78,16 +78,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: npm install, build, and test
+      - name: relatorio test
         run: |
           npm install --legacy-peer-deps
-          npm run build
-          npm run test
+          npm run test:ci
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
-          path: output/test/code-coverage.html
+          path: coverage/Icov-report/index.html
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
           
