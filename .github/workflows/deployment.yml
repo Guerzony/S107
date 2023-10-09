@@ -69,20 +69,29 @@ jobs:
         to: ${{secrets.MAIL_TO}}
         from: ${{secrets.MAIL_FROM}}
         body: Build job of ${{github.repository}} completed successfully!
-       
+
   
-  relatorioTestes:
     
-    needs: test
+
+
+
+  relatorioTestes:                           
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: npm install, build, and test
         run: |
-          npm install --legacy-peer-deps
-          npm run build
-          npm run test
+          npm install
+          npm run build --if-present
+          npm test
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-without-markdown
+          path: |
+            dist
+            !dist/**/*.md
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
